@@ -11,18 +11,10 @@
 </head>
 <body>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="cr" viewBox="0 0 48 48">
-    <circle cx="24" cy="24" r="20" fill="none" stroke="var(--green)" stroke-width="2.5"/>
-    <circle cx="24" cy="24" r="8.5" fill="none" stroke="var(--green)" stroke-width="2.5"/>
-    <circle cx="24" cy="24" r="3" fill="var(--green)"/>
-  </symbol>
-</svg>
-
 <!-- NAV -->
 <header class="nav" id="nav">
   <div class="wrap nav__in">
-    <a class="brand" href="#top"><svg><use href="#cr"/></svg><b>Les <span>Iguanes</span></b></a>
+    <a class="brand" href="#top"><img class="brand__logo" src="public/images/logos/logo-01.png" alt="" aria-hidden="true" /><b>Les <span>Iguanes</span></b></a>
     <nav class="nav__links">
       <a href="#club">Le club</a>
       <a href="#histoire">Histoire</a>
@@ -59,7 +51,7 @@
 <!-- FEATURE IMAGE -->
 <section class="feature">
   <div class="feature__frame">
-    <img class="parallax media-img" src="public/images/home/home-01.jpg" alt="Les Iguanes en entraînement" />
+    <img class="parallax media-img" src="public/images/home/home-01.jpg" alt="Les Iguanes en photo de groupe apres le Sino Bowl" />
   </div>
   <div class="feature__chip">
     <div class="b"><b>972</b><span>SCHŒLCHER</span></div>
@@ -96,22 +88,54 @@
     <div class="head reveal"><p class="klabel">Histoire du club</p><h2 class="title">Une équipe née à Schœlcher</h2></div>
     <div class="history">
       <div class="history__copy reveal">
-        <p class="lead">Les Iguanes se sont construits autour des entraînements locaux, des tournois de Martinique et d'un noyau de joueuses et joueurs qui ont fait grandir le projet saison après saison.</p>
+        <p class="lead">Les Iguanes se sont construits autour des entraînements locaux, des premiers collectifs, des matchs disputés en Martinique et des moments de vie qui ont soudé le club saison après saison.</p>
         <ul class="history__list">
-          <li><b>2021</b><span>Création du club et premiers entraînements à Schœlcher.</span></li>
-          <li><b>2024</b><span>Montée en rythme avec les compétitions et la structuration de l'effectif.</span></li>
-          <li><b>2026</b><span>Nouvelle étape avec une page d'accueil prête à accueillir les contenus du club.</span></li>
+          <li><b>2021</b><span>Création du club et premiers entraînements à Schœlcher autour d'un noyau motivé.</span></li>
+          <li><b>2024</b><span>Le collectif gagne en identité avec des photos d'équipe, des séquences de match et une présence plus affirmée.</span></li>
+          <li><b>Finale</b><span>Le Sino Bowl apporte les images les plus fortes: émotion, médailles, cérémonie et cohésion de groupe.</span></li>
+          <li><b>Aujourd'hui</b><span>Le club veut montrer son histoire avec une galerie courte, claire et fidèle à son image.</span></li>
         </ul>
+        <div class="history__proof" aria-label="Synthese de la selection historique">
+          <div><b>8</b><span>images histoire</span></div>
+          <div><b>21</b><span>photos galerie</span></div>
+          <div><b>100%</b><span>selection club</span></div>
+        </div>
       </div>
       <div class="history__media reveal d1">
-        <figure class="history__card history__card--tall">
-          <img class="media-img" src="public/images/history/history-01.jpg" alt="Photo d'entraînement des Iguanes" loading="lazy" />
-          <figcaption class="history__tag">Entraînement</figcaption>
-        </figure>
-        <figure class="history__card">
-          <img class="media-img" src="public/images/history/history-02.jpg" alt="Groupe des Iguanes après un match" loading="lazy" />
-          <figcaption class="history__tag">Compétition</figcaption>
-        </figure>
+        <div class="history__gallery">
+          <button class="history__card history__card--tall media-launch" type="button" data-history-item="1" data-full="public/images/final-candidates/web/dsc00318.webp" data-caption="Photo de groupe en ancien maillot, pour raconter les débuts et l'identité du club.">
+            <img class="media-img" src="public/images/final-candidates/web/dsc00318.webp" alt="Photo de groupe des Iguanes en ancien maillot" loading="lazy" />
+            <span class="history__year">01</span><span class="history__tag">Origines</span>
+          </button>
+          <button class="history__card media-launch" type="button" data-history-item="2" data-full="public/images/final-candidates/web/dsc00943.webp" data-caption="Cercle d'équipe de nuit, un moment de travail et de cohésion.">
+            <img class="media-img" src="public/images/final-candidates/web/dsc00943.webp" alt="Cercle des Iguanes pendant un rassemblement d'équipe de nuit" loading="lazy" />
+            <span class="history__year">02</span><span class="history__tag">Collectif</span>
+          </button>
+          <button class="history__card media-launch" type="button" data-history-item="3" data-full="public/images/final-candidates/web/dsc00966.webp" data-caption="Le public et l'entourage du club participent aussi à l'histoire des Iguanes.">
+            <img class="media-img" src="public/images/final-candidates/web/dsc00966.webp" alt="Supporters et proches du club au bord du terrain" loading="lazy" />
+            <span class="history__year">03</span><span class="history__tag">Communauté</span>
+          </button>
+          <button class="history__card media-launch" type="button" data-history-item="4" data-full="public/images/final-candidates/web/img-0968.webp" data-caption="Cercle serré de l'équipe, image simple et sincère de la cohésion des Iguanes.">
+            <img class="media-img" src="public/images/final-candidates/web/img-0968.webp" alt="Joueurs des Iguanes réunis en cercle sur le terrain" loading="lazy" />
+            <span class="history__year">04</span><span class="history__tag">Cohésion</span>
+          </button>
+          <button class="history__card media-launch" type="button" data-history-item="5" data-full="public/images/final-candidates/web/finale-sino-bowl-156.webp" data-caption="La compétition compte, mais l'esprit du club passe aussi par le respect et le lien humain.">
+            <img class="media-img" src="public/images/final-candidates/web/finale-sino-bowl-156.webp" alt="Joueurs des Iguanes se saluant pendant la finale" loading="lazy" />
+            <span class="history__year">05</span><span class="history__tag">Lien</span>
+          </button>
+          <button class="history__card media-launch" type="button" data-history-item="6" data-full="public/images/final-candidates/web/finale-sino-bowl-271.webp" data-caption="Explosion de joie après la finale, l'un des grands moments émotionnels du club.">
+            <img class="media-img" src="public/images/final-candidates/web/finale-sino-bowl-271.webp" alt="Joueurs des Iguanes en pleine celebration apres la finale" loading="lazy" />
+            <span class="history__year">06</span><span class="history__tag">Finale</span>
+          </button>
+          <button class="history__card media-launch" type="button" data-history-item="7" data-full="public/images/final-candidates/web/finale-sino-bowl-302.webp" data-caption="Une image plus familiale et festive qui montre le club dans toute son ampleur.">
+            <img class="media-img" src="public/images/final-candidates/web/finale-sino-bowl-302.webp" alt="Moment familial et festif autour des Iguanes pendant la ceremonie" loading="lazy" />
+            <span class="history__year">07</span><span class="history__tag">Transmission</span>
+          </button>
+          <button class="history__card media-launch" type="button" data-history-item="8" data-full="public/images/final-candidates/web/finale-sino-bowl-311.webp" data-caption="Photo signature avec les médailles, point fort du récit visuel du club.">
+            <img class="media-img" src="public/images/final-candidates/web/finale-sino-bowl-311.webp" alt="Photo de groupe des Iguanes avec les medailles apres la finale" loading="lazy" />
+            <span class="history__year">08</span><span class="history__tag">Signature</span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -175,16 +199,74 @@
 <!-- GALERIE -->
 <section class="section" id="galerie">
   <div class="wrap">
-    <div class="head reveal"><p class="klabel">Galerie</p><h2 class="title">L'équipe en action</h2></div>
-    <div class="grid-g reveal">
-      <div class="gcell g-tall"><img class="media-img" src="public/images/gallery/gallery-01.jpg" alt="Séance d'entraînement en journée" loading="lazy" /></div>
-      <div class="gcell"><img class="media-img" src="public/images/gallery/gallery-02.jpg" alt="Groupe des Iguanes en discussion" loading="lazy" /></div>
-      <div class="gcell g-wide"><img class="media-img" src="public/images/gallery/gallery-03.jpg" alt="Célébration d'après-match" loading="lazy" /></div>
-      <div class="gcell"><img class="media-img" src="public/images/gallery/gallery-04.jpg" alt="Photo d'équipe sur le terrain" loading="lazy" /></div>
-      <div class="gcell g-wide"><img class="media-img" src="assets-web/05-nuit/DSC01089.webp" alt="Action de match sous les lumières" loading="lazy" /></div>
-      <div class="gcell g-tall"><img class="media-img" src="assets-web/05-nuit/DSC01104.webp" alt="Joueuse en réception de nuit" loading="lazy" /></div>
-      <div class="gcell"><img class="media-img" src="assets-web/01-details/DSC00945.webp" alt="Flag des Iguanes" loading="lazy" /></div>
-      <div class="gcell"><img class="media-img" src="assets-web/03-groupe/DSC01263.webp" alt="Les Iguanes réunis après le match" loading="lazy" /></div>
+    <div class="head gallery-head reveal">
+      <div><p class="klabel">Galerie</p><h2 class="title">L'équipe en action</h2></div>
+      <p class="gallery-head__note">21 images retenues pour raconter le club: details, matchs, finale, communaute et celebrations.</p>
+    </div>
+    <div class="grid-g gallery-grid reveal">
+      <button class="gcell media-launch g-wide" type="button" data-gallery-item="1" data-full="public/images/final-candidates/web/dsc00003.webp" data-caption="Ballon posé sur la pelouse, image d'ouverture sobre et identitaire.">
+        <img class="media-img" src="public/images/final-candidates/thumbs/dsc00003.webp" alt="Ballon de flag football pose sur la pelouse" loading="lazy" />
+      </button>
+      <button class="gcell media-launch g-tall" type="button" data-gallery-item="2" data-full="public/images/final-candidates/web/dsc00318.webp" data-caption="Photo de groupe en ancien maillot, un repère important dans l'histoire du club.">
+        <img class="media-img" src="public/images/final-candidates/thumbs/dsc00318.webp" alt="Photo de groupe des Iguanes en ancien maillot" loading="lazy" />
+      </button>
+      <button class="gcell media-launch" type="button" data-gallery-item="3" data-full="public/images/final-candidates/web/dsc00415.webp" data-caption="Réception en contre-plongée, image très graphique.">
+        <img class="media-img" src="public/images/final-candidates/thumbs/dsc00415.webp" alt="Joueur des Iguanes en train de recevoir un ballon" loading="lazy" />
+      </button>
+      <button class="gcell media-launch" type="button" data-gallery-item="4" data-full="public/images/final-candidates/web/dsc00603.webp" data-caption="Gros plan sur le ballon et les gants, détail qui varie le rythme de lecture.">
+        <img class="media-img" src="public/images/final-candidates/thumbs/dsc00603.webp" alt="Gros plan sur une reception avec les gants des Iguanes" loading="lazy" />
+      </button>
+      <button class="gcell media-launch" type="button" data-gallery-item="5" data-full="public/images/final-candidates/web/dsc00608.webp" data-caption="Course franche et lisible, image sportive et directe.">
+        <img class="media-img" src="public/images/final-candidates/thumbs/dsc00608.webp" alt="Joueur des Iguanes lance en pleine course" loading="lazy" />
+      </button>
+      <button class="gcell media-launch g-wide" type="button" data-gallery-item="6" data-full="public/images/final-candidates/web/dsc00943.webp" data-caption="Cercle d'équipe nocturne, moment de concentration collective.">
+        <img class="media-img" src="public/images/final-candidates/thumbs/dsc00943.webp" alt="Cercle d'equipe des Iguanes de nuit" loading="lazy" />
+      </button>
+      <button class="gcell media-launch" type="button" data-gallery-item="7" data-full="public/images/final-candidates/web/dsc00962.webp" data-caption="Applaudissements et présence du public, la vie autour du terrain.">
+        <img class="media-img" src="public/images/final-candidates/thumbs/dsc00962.webp" alt="Supporters des Iguanes au bord du terrain" loading="lazy" />
+      </button>
+      <button class="gcell media-launch" type="button" data-gallery-item="8" data-full="public/images/final-candidates/web/dsc00966.webp" data-caption="Réaction expressive du public, image de communauté et d'émotion.">
+        <img class="media-img" src="public/images/final-candidates/thumbs/dsc00966.webp" alt="Public et proches du club pendant un moment d'encouragement" loading="lazy" />
+      </button>
+      <button class="gcell media-launch g-tall" type="button" data-gallery-item="9" data-full="public/images/final-candidates/web/dsc01014.webp" data-caption="Action de nuit avec projection de terre, image énergique.">
+        <img class="media-img" src="public/images/final-candidates/thumbs/dsc01014.webp" alt="Action de nuit des Iguanes avec projection de terre" loading="lazy" />
+      </button>
+      <button class="gcell media-launch g-wide" type="button" data-gallery-item="10" data-full="public/images/final-candidates/web/finale-sino-bowl-149.webp" data-caption="Action collective pendant la finale, lecture tactique du jeu.">
+        <img class="media-img" src="public/images/final-candidates/thumbs/finale-sino-bowl-149.webp" alt="Action collective des Iguanes pendant la finale du Sino Bowl" loading="lazy" />
+      </button>
+      <button class="gcell media-launch" type="button" data-gallery-item="11" data-full="public/images/final-candidates/web/finale-sino-bowl-156.webp" data-caption="Geste de respect, image plus humaine au coeur de la compétition.">
+        <img class="media-img" src="public/images/final-candidates/thumbs/finale-sino-bowl-156.webp" alt="Joueurs des Iguanes se saluant pendant la finale" loading="lazy" />
+      </button>
+      <button class="gcell media-launch" type="button" data-gallery-item="12" data-full="public/images/final-candidates/web/finale-sino-bowl-159.webp" data-caption="Une des images d'action les plus fortes de la finale.">
+        <img class="media-img" src="public/images/final-candidates/thumbs/finale-sino-bowl-159.webp" alt="Action decisive des Iguanes pendant la finale" loading="lazy" />
+      </button>
+      <button class="gcell media-launch" type="button" data-gallery-item="13" data-full="public/images/final-candidates/web/finale-sino-bowl-166.webp" data-caption="Duel défensif spectaculaire et bien cadré.">
+        <img class="media-img" src="public/images/final-candidates/thumbs/finale-sino-bowl-166.webp" alt="Duel defensif des Iguanes pendant la finale" loading="lazy" />
+      </button>
+      <button class="gcell media-launch" type="button" data-gallery-item="14" data-full="public/images/final-candidates/web/finale-sino-bowl-171.webp" data-caption="Joueurs alignés et attentifs, image de collectif avant l'action.">
+        <img class="media-img" src="public/images/final-candidates/thumbs/finale-sino-bowl-171.webp" alt="Joueurs des Iguanes alignes sur le bord du terrain" loading="lazy" />
+      </button>
+      <button class="gcell media-launch" type="button" data-gallery-item="15" data-full="public/images/final-candidates/web/finale-sino-bowl-176.webp" data-caption="Face-à-face tendu, image nette et engagée.">
+        <img class="media-img" src="public/images/final-candidates/thumbs/finale-sino-bowl-176.webp" alt="Duel entre un joueur des Iguanes et son adversaire" loading="lazy" />
+      </button>
+      <button class="gcell media-launch g-wide" type="button" data-gallery-item="16" data-full="public/images/final-candidates/web/finale-sino-bowl-271.webp" data-caption="Explosion de joie juste après la finale, grand moment de la galerie.">
+        <img class="media-img" src="public/images/final-candidates/thumbs/finale-sino-bowl-271.webp" alt="Celebration des Iguanes apres la finale" loading="lazy" />
+      </button>
+      <button class="gcell media-launch" type="button" data-gallery-item="17" data-full="public/images/final-candidates/web/finale-sino-bowl-274.webp" data-caption="Étreinte collective, image forte de l'esprit d'équipe.">
+        <img class="media-img" src="public/images/final-candidates/thumbs/finale-sino-bowl-274.webp" alt="Etreinte collective des Iguanes pendant la celebration" loading="lazy" />
+      </button>
+      <button class="gcell media-launch" type="button" data-gallery-item="18" data-full="public/images/final-candidates/web/finale-sino-bowl-302.webp" data-caption="Moment de transmission et de fête autour du club.">
+        <img class="media-img" src="public/images/final-candidates/thumbs/finale-sino-bowl-302.webp" alt="Moment familial et festif autour des Iguanes" loading="lazy" />
+      </button>
+      <button class="gcell media-launch" type="button" data-gallery-item="19" data-full="public/images/final-candidates/web/finale-sino-bowl-310.webp" data-caption="Temps de cérémonie et de reconnaissance après la finale.">
+        <img class="media-img" src="public/images/final-candidates/thumbs/finale-sino-bowl-310.webp" alt="Scene de ceremonie et de remise autour des Iguanes" loading="lazy" />
+      </button>
+      <button class="gcell media-launch g-wide" type="button" data-gallery-item="20" data-full="public/images/final-candidates/web/finale-sino-bowl-311.webp" data-caption="Photo signature avec les médailles, image centrale de la sélection.">
+        <img class="media-img" src="public/images/final-candidates/thumbs/finale-sino-bowl-311.webp" alt="Photo de groupe des Iguanes avec les medailles apres la finale" loading="lazy" />
+      </button>
+      <button class="gcell media-launch g-tall" type="button" data-gallery-item="21" data-full="public/images/final-candidates/web/img-0968.webp" data-caption="Cercle d'équipe serré, une image simple et sincère de la cohésion du groupe.">
+        <img class="media-img" src="public/images/final-candidates/thumbs/img-0968.webp" alt="Joueurs des Iguanes reunis en cercle" loading="lazy" />
+      </button>
     </div>
   </div>
 </section>
@@ -270,11 +352,20 @@
 
 </main>
 
+<div class="lightbox" id="history-lightbox" hidden aria-hidden="true">
+  <button class="lightbox__backdrop" type="button" data-lightbox-close tabindex="-1" aria-label="Fermer l'agrandissement"></button>
+  <figure class="lightbox__dialog" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption">
+    <button class="lightbox__close" type="button" data-lightbox-close aria-label="Fermer l'image">×</button>
+    <img class="lightbox__img" src="" alt="" />
+    <figcaption class="lightbox__caption" id="lightbox-caption"></figcaption>
+  </figure>
+</div>
+
 <!-- FOOTER -->
 <footer class="footer">
   <div class="wrap">
     <div class="footer__top">
-      <a class="brand" href="#top"><svg><use href="#cr"/></svg><b>Les <span>Iguanes</span></b></a>
+      <a class="brand" href="#top"><img class="brand__logo" src="public/images/logos/logo-01.png" alt="" aria-hidden="true" /><b>Les <span>Iguanes</span></b></a>
       <nav class="footer__nav">
         <a href="#club">Le club</a><a href="#histoire">Histoire</a><a href="#effectif">Effectif</a><a href="#galerie">Galerie</a><a href="#calendrier">Calendrier</a><a href="#resultats">Résultats</a><a href="#contact">Contact</a>
       </nav>
