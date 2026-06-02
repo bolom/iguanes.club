@@ -81,4 +81,22 @@
       }
     }, { passive: true });
   }
+
+  // ---- Responsive asset sources ----
+  function toResponsiveSrc(src, bucket) {
+    if (!src) return null;
+    if (src.indexOf('assets-web/') === 0 && src.slice(-5).toLowerCase() === '.webp') {
+      return src.replace(/^assets-web\//, bucket + '/');
+    }
+    return null;
+  }
+
+  document.querySelectorAll('img.media-img').forEach(function (img) {
+    var src = img.getAttribute('src');
+    var mobile = toResponsiveSrc(src, 'assets-mobile');
+    var web = toResponsiveSrc(src, 'assets-web');
+    if (!mobile || !web) return;
+    img.setAttribute('srcset', mobile + ' 720w, ' + web + ' 1600w');
+    img.setAttribute('sizes', '(max-width: 720px) 100vw, 50vw');
+  });
 })();

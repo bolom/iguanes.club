@@ -12,7 +12,8 @@ Main files:
 - `index.html`
 - `iguanes-v3.css`
 - `iguanes-v3.js`
-- `assets/`
+- `assets-web/`
+- `assets-mobile/`
 
 Local verification:
 
