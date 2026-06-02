@@ -21,7 +21,7 @@
       <a href="#effectif">Effectif</a>
       <a href="#galerie">Galerie</a>
       <a href="#calendrier">Calendrier</a>
-      <a href="#resultats">Résultats</a>
+      <a href="#rejoindre">Rejoindre</a>
       <a href="#contact">Contact</a>
     </nav>
     <a class="nav__ig" href="https://www.instagram.com/iguanes_footus_972/" target="_blank" rel="noopener" aria-label="Instagram des Iguanes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg></a>
@@ -34,36 +34,44 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero__glow a"></div>
-  <div class="hero__glow b"></div>
+  <!-- Image d'équipe en fond — Photo © JPK Visual @jpk.visual -->
+  <div class="hero__bg">
+    <picture>
+      <source media="(max-width:900px)" srcset="assets-mobile/03-groupe/DSC00935.webp" />
+      <source media="(max-width:1320px)" srcset="assets-tablet/03-groupe/DSC00935.webp" />
+      <img src="assets-web/03-groupe/DSC00935.webp" alt="Les Iguanes à l'entraînement, Schœlcher 2026" fetchpriority="high" />
+    </picture>
+  </div>
+
   <div class="wrap hero__grid">
-    <div class="hero__loc"><i></i> Flag football · Schœlcher · Martinique</div>
+    <div class="hero__badge"><i></i><span>Flag football · Schœlcher · Martinique</span></div>
     <h1><span class="w"><i>Les</i></span><span class="w"><i>Iguanes</i></span></h1>
-    <p class="hero__sub reveal d2">Club de flag football mixte. On court, on attrape, on marque — sans contact, et dans la bonne humeur.</p>
+    <p class="hero__sub reveal d2">Club de flag football mixte, ouvert à tous dès 15 ans. On court, on attrape, on marque — ANSANM'.</p>
     <div class="hero__cta reveal d3">
       <a class="btn btn--p" href="#rejoindre"><span>Rejoindre l'équipe <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-      <a class="btn btn--g" href="#calendrier"><span>Le calendrier</span></a>
+      <a class="btn btn--g" href="#galerie"><span>La galerie</span></a>
     </div>
   </div>
-  <div class="hero__scroll"><span class="ln"></span> Scroll</div>
-</section>
 
-<!-- FEATURE IMAGE -->
-<section class="feature">
-  <div class="feature__frame">
-    <img class="parallax media-img" src="public/images/home/home-01.jpg" alt="Les Iguanes en photo de groupe apres le Sino Bowl" />
+  <!-- Palmarès -->
+  <div class="hero__strip">
+    <div class="hero__trophy">
+      <span>🏆</span><span>Champions SINOBOWL 2024</span>
+    </div>
+    <div class="hero__trophy">
+      <span>🥈</span><span>2e KARAMBOWL 2025</span>
+    </div>
   </div>
-  <div class="feature__chip">
-    <div class="b"><b>972</b><span>SCHŒLCHER</span></div>
-    <div class="t">Saison 2026<span>Équipe mixte · Martinique</span></div>
-  </div>
+
+  <div class="hero__scroll"><span class="ln"></span> Scroll</div>
+  <a class="hero__credit" href="https://www.instagram.com/jpk.visual/" target="_blank" rel="noopener">© JPK Visual</a>
 </section>
 
 <!-- MARQUEE -->
 <div class="marq" aria-hidden="true">
   <div class="marq__t">
-    <span>On court</span><span>On attrape</span><span>On marque</span><span>Esprit club</span><span>Mixte &amp; fier</span>
-    <span>On court</span><span>On attrape</span><span>On marque</span><span>Esprit club</span><span>Mixte &amp; fier</span>
+    <span>On court</span><span>On attrape</span><span>On marque</span><span>ANSANM'</span><span>Mixte &amp; fier</span><span>Flag football</span><span>Schœlcher · 972</span>
+    <span>On court</span><span>On attrape</span><span>On marque</span><span>ANSANM'</span><span>Mixte &amp; fier</span><span>Flag football</span><span>Schœlcher · 972</span>
   </div>
 </div>
 
@@ -72,7 +80,7 @@
   <div class="wrap intro">
     <h2 class="intro__big reveal">Le flag football,<br><em>version créole.</em></h2>
     <div>
-      <p class="lead reveal d1">Né à Schœlcher en 2021. Le flag, c'est du football américain sans plaquage : on arrache un foulard à la ceinture pour stopper l'adversaire. Un jeu rapide, technique et ouvert à tout le monde — filles et gars, débutants comme confirmés.</p>
+      <p class="lead reveal d1">Né à Schœlcher en 2022. Le flag, c'est du football américain sans plaquage : on arrache un foulard à la ceinture pour stopper l'adversaire. Un jeu rapide, technique et ouvert à tout le monde — filles et gars, débutants comme confirmés.</p>
       <div class="stats">
         <div class="stat reveal d1"><b><span data-count="30" data-suffix="+">30+</span></b><span>Membres</span></div>
         <div class="stat reveal d2"><b><span data-count="4">4</span></b><span>Saisons</span></div>
@@ -88,52 +96,86 @@
     <div class="head reveal"><p class="klabel">Histoire du club</p><h2 class="title">Une équipe née à Schœlcher</h2></div>
     <div class="history">
       <div class="history__copy reveal">
-        <p class="lead">Les Iguanes se sont construits autour des entraînements locaux, des premiers collectifs, des matchs disputés en Martinique et des moments de vie qui ont soudé le club saison après saison.</p>
+        <p class="lead">De la création de l'AMFA à la victoire au SINOBOWL — Les Iguanes se sont construits match après match, entraînement après entraînement, à Schœlcher.</p>
         <ul class="history__list">
-          <li><b>2021</b><span>Création du club et premiers entraînements à Schœlcher autour d'un noyau motivé.</span></li>
-          <li><b>2024</b><span>Le collectif gagne en identité avec des photos d'équipe, des séquences de match et une présence plus affirmée.</span></li>
-          <li><b>Finale</b><span>Le Sino Bowl apporte les images les plus fortes: émotion, médailles, cérémonie et cohésion de groupe.</span></li>
-          <li><b>Aujourd'hui</b><span>Le club veut montrer son histoire avec une galerie courte, claire et fidèle à son image.</span></li>
+          <li><b>Oct. 2022</b><span>Création de l'AMFA — Association Martiniquaise de Football Américain — par un noyau de passionnés à Schœlcher.</span></li>
+          <li><b>Sept. 2023</b><span>Naissance de la section flag : Les Iguanes. Premier entraînement collectif, premières couleurs, première identité.</span></li>
+          <li><b>Avr. 2024</b><span>Premier match amical contre les Canners. Le club existe sur un terrain.</span></li>
+          <li><b>Nov. 2024</b><span>Champions du SINOBOWL 2024. La première grande victoire du club.</span></li>
+          <li><b>2025</b><span>2ème place au KARAMBOWL. Camp féminin. Le club grandit et s'affirme à l'échelle régionale.</span></li>
+          <li><b>2026</b><span>Saison en cours. Recrutement ouvert pour septembre. ANSANM'.</span></li>
         </ul>
         <div class="history__proof" aria-label="Synthese de la selection historique">
-          <div><b>8</b><span>images histoire</span></div>
-          <div><b>21</b><span>photos galerie</span></div>
-          <div><b>100%</b><span>selection club</span></div>
+          <div><b>1</b><span>titre SINOBOWL</span></div>
+          <div><b>2e</b><span>KARAMBOWL 2025</span></div>
+          <div><b>3+</b><span>saisons</span></div>
         </div>
       </div>
       <div class="history__media reveal d1">
         <div class="history__gallery">
-          <button class="history__card history__card--tall media-launch" type="button" data-history-item="1" data-full="public/images/final-candidates/web/dsc00318.webp" data-caption="Photo de groupe en ancien maillot, pour raconter les débuts et l'identité du club.">
-            <img class="media-img" src="public/images/final-candidates/web/dsc00318.webp" alt="Photo de groupe des Iguanes en ancien maillot" loading="lazy" />
+          <button class="history__card history__card--tall media-launch" type="button" data-history-item="1" data-full="assets-web/03-groupe/DSC00318.webp" data-caption="Photo de groupe en ancien maillot, pour raconter les débuts et l'identité du club.">
+            <picture>
+              <source media="(max-width:900px)" srcset="assets-mobile/03-groupe/DSC00318.webp" />
+              <source media="(max-width:1320px)" srcset="assets-tablet/03-groupe/DSC00318.webp" />
+              <img class="media-img" src="assets-web/03-groupe/DSC00318.webp" alt="Photo de groupe des Iguanes en ancien maillot" loading="lazy" />
+            </picture>
             <span class="history__year">01</span><span class="history__tag">Origines</span>
           </button>
-          <button class="history__card media-launch" type="button" data-history-item="2" data-full="public/images/final-candidates/web/dsc00943.webp" data-caption="Cercle d'équipe de nuit, un moment de travail et de cohésion.">
-            <img class="media-img" src="public/images/final-candidates/web/dsc00943.webp" alt="Cercle des Iguanes pendant un rassemblement d'équipe de nuit" loading="lazy" />
+          <button class="history__card media-launch" type="button" data-history-item="2" data-full="assets-web/03-groupe/DSC00943.webp" data-caption="Cercle d'équipe de nuit, un moment de travail et de cohésion.">
+            <picture>
+              <source media="(max-width:900px)" srcset="assets-mobile/03-groupe/DSC00943.webp" />
+              <source media="(max-width:1320px)" srcset="assets-tablet/03-groupe/DSC00943.webp" />
+              <img class="media-img" src="assets-web/03-groupe/DSC00943.webp" alt="Cercle des Iguanes pendant un rassemblement d'équipe de nuit" loading="lazy" />
+            </picture>
             <span class="history__year">02</span><span class="history__tag">Collectif</span>
           </button>
-          <button class="history__card media-launch" type="button" data-history-item="3" data-full="public/images/final-candidates/web/dsc00966.webp" data-caption="Le public et l'entourage du club participent aussi à l'histoire des Iguanes.">
-            <img class="media-img" src="public/images/final-candidates/web/dsc00966.webp" alt="Supporters et proches du club au bord du terrain" loading="lazy" />
-            <span class="history__year">03</span><span class="history__tag">Communauté</span>
+          <button class="history__card media-launch" type="button" data-history-item="3" data-full="assets-web/sinobowl-2024/sb24-appel-42.webp" data-caption="L'appel avant la finale du SINOBOWL 2024 — concentration maximale.">
+            <picture>
+              <source media="(max-width:900px)" srcset="assets-mobile/sinobowl-2024/sb24-appel-42.webp" />
+              <source media="(max-width:1320px)" srcset="assets-tablet/sinobowl-2024/sb24-appel-42.webp" />
+              <img class="media-img" src="assets-web/sinobowl-2024/sb24-appel-42.webp" alt="Les Iguanes à l'appel avant la finale du SINOBOWL 2024" loading="lazy" />
+            </picture>
+            <span class="history__year">03</span><span class="history__tag">SINOBOWL</span>
           </button>
-          <button class="history__card media-launch" type="button" data-history-item="4" data-full="public/images/final-candidates/web/img-0968.webp" data-caption="Cercle serré de l'équipe, image simple et sincère de la cohésion des Iguanes.">
-            <img class="media-img" src="public/images/final-candidates/web/img-0968.webp" alt="Joueurs des Iguanes réunis en cercle sur le terrain" loading="lazy" />
-            <span class="history__year">04</span><span class="history__tag">Cohésion</span>
+          <button class="history__card media-launch" type="button" data-history-item="4" data-full="assets-web/sinobowl-2024/sb24-celebration-271.webp" data-caption="Explosion de joie après la victoire au SINOBOWL 2024.">
+            <picture>
+              <source media="(max-width:900px)" srcset="assets-mobile/sinobowl-2024/sb24-celebration-271.webp" />
+              <source media="(max-width:1320px)" srcset="assets-tablet/sinobowl-2024/sb24-celebration-271.webp" />
+              <img class="media-img" src="assets-web/sinobowl-2024/sb24-celebration-271.webp" alt="Les Iguanes célèbrent la victoire au SINOBOWL 2024" loading="lazy" />
+            </picture>
+            <span class="history__year">04</span><span class="history__tag">Victoire</span>
           </button>
-          <button class="history__card media-launch" type="button" data-history-item="5" data-full="public/images/final-candidates/web/finale-sino-bowl-156.webp" data-caption="La compétition compte, mais l'esprit du club passe aussi par le respect et le lien humain.">
-            <img class="media-img" src="public/images/final-candidates/web/finale-sino-bowl-156.webp" alt="Joueurs des Iguanes se saluant pendant la finale" loading="lazy" />
-            <span class="history__year">05</span><span class="history__tag">Lien</span>
+          <button class="history__card media-launch" type="button" data-history-item="5" data-full="assets-web/sinobowl-2024/sb24-ceremonie-311.webp" data-caption="Photo signature avec les médailles du SINOBOWL 2024.">
+            <picture>
+              <source media="(max-width:900px)" srcset="assets-mobile/sinobowl-2024/sb24-ceremonie-311.webp" />
+              <source media="(max-width:1320px)" srcset="assets-tablet/sinobowl-2024/sb24-ceremonie-311.webp" />
+              <img class="media-img" src="assets-web/sinobowl-2024/sb24-ceremonie-311.webp" alt="Les Iguanes avec les médailles du SINOBOWL 2024" loading="lazy" />
+            </picture>
+            <span class="history__year">05</span><span class="history__tag">Champions</span>
           </button>
-          <button class="history__card media-launch" type="button" data-history-item="6" data-full="public/images/final-candidates/web/finale-sino-bowl-271.webp" data-caption="Explosion de joie après la finale, l'un des grands moments émotionnels du club.">
-            <img class="media-img" src="public/images/final-candidates/web/finale-sino-bowl-271.webp" alt="Joueurs des Iguanes en pleine celebration apres la finale" loading="lazy" />
-            <span class="history__year">06</span><span class="history__tag">Finale</span>
+          <button class="history__card media-launch" type="button" data-history-item="6" data-full="assets-web/camp-feminin-2026/camp26-07.webp" data-caption="Camp féminin du 8 mars 2026 — le club ouvre la voie à une section féminine.">
+            <picture>
+              <source media="(max-width:900px)" srcset="assets-mobile/camp-feminin-2026/camp26-07.webp" />
+              <source media="(max-width:1320px)" srcset="assets-tablet/camp-feminin-2026/camp26-07.webp" />
+              <img class="media-img" src="assets-web/camp-feminin-2026/camp26-07.webp" alt="Camp féminin des Iguanes, 8 mars 2026" loading="lazy" />
+            </picture>
+            <span class="history__year">06</span><span class="history__tag">Camp féminin</span>
           </button>
-          <button class="history__card media-launch" type="button" data-history-item="7" data-full="public/images/final-candidates/web/finale-sino-bowl-302.webp" data-caption="Une image plus familiale et festive qui montre le club dans toute son ampleur.">
-            <img class="media-img" src="public/images/final-candidates/web/finale-sino-bowl-302.webp" alt="Moment familial et festif autour des Iguanes pendant la ceremonie" loading="lazy" />
-            <span class="history__year">07</span><span class="history__tag">Transmission</span>
+          <button class="history__card media-launch" type="button" data-history-item="7" data-full="assets-web/03-groupe/img-0968.webp" data-caption="Cercle serré de l'équipe, image simple et sincère de la cohésion des Iguanes.">
+            <picture>
+              <source media="(max-width:900px)" srcset="assets-mobile/03-groupe/img-0968.webp" />
+              <source media="(max-width:1320px)" srcset="assets-tablet/03-groupe/img-0968.webp" />
+              <img class="media-img" src="assets-web/03-groupe/img-0968.webp" alt="Joueurs des Iguanes réunis en cercle sur le terrain" loading="lazy" />
+            </picture>
+            <span class="history__year">07</span><span class="history__tag">Cohésion</span>
           </button>
-          <button class="history__card media-launch" type="button" data-history-item="8" data-full="public/images/final-candidates/web/finale-sino-bowl-311.webp" data-caption="Photo signature avec les médailles, point fort du récit visuel du club.">
-            <img class="media-img" src="public/images/final-candidates/web/finale-sino-bowl-311.webp" alt="Photo de groupe des Iguanes avec les medailles apres la finale" loading="lazy" />
-            <span class="history__year">08</span><span class="history__tag">Signature</span>
+          <button class="history__card media-launch" type="button" data-history-item="8" data-full="assets-web/sinobowl-2024/sb24-ceremonie-302.webp" data-caption="Moment de fête et de transmission autour du club après le SINOBOWL.">
+            <picture>
+              <source media="(max-width:900px)" srcset="assets-mobile/sinobowl-2024/sb24-ceremonie-302.webp" />
+              <source media="(max-width:1320px)" srcset="assets-tablet/sinobowl-2024/sb24-ceremonie-302.webp" />
+              <img class="media-img" src="assets-web/sinobowl-2024/sb24-ceremonie-302.webp" alt="Fête et transmission autour des Iguanes après le SINOBOWL" loading="lazy" />
+            </picture>
+            <span class="history__year">08</span><span class="history__tag">Famille</span>
           </button>
         </div>
       </div>
@@ -146,19 +188,127 @@
   <div class="wrap">
     <div class="head reveal"><p class="klabel">L'effectif</p><h2 class="title">Les joueuses et joueurs</h2></div>
     <div class="roster">
-      <article class="pl reveal d1"><div class="pl__img"><span class="pl__num">84</span><img class="media-img" src="assets-web/portraits-by-jersey/84-Bolo/DSC00124.webp" alt="Bolo, numéro 84" loading="lazy" /></div><div class="pl__b"><div class="pl__pos">Centre</div><div class="pl__name">Bolo</div></div></article>
-      <article class="pl reveal d2"><div class="pl__img"><span class="pl__num">12</span><img class="media-img" src="assets-web/portraits-by-jersey/12-Jonathan/DSC00320.webp" alt="Jonathan, numéro 12" loading="lazy" /></div><div class="pl__b"><div class="pl__pos">CB / Safety</div><div class="pl__name">Jonathan</div></div></article>
-      <article class="pl reveal d3"><div class="pl__img"><span class="pl__num">25</span><img class="media-img" src="assets-web/portraits-by-jersey/25-Vincent-VINCENTE/DSC00103.webp" alt="Vincent, numéro 25" loading="lazy" /></div><div class="pl__b"><div class="pl__pos">X / Cornerback</div><div class="pl__name">Vincent</div><span class="pl__cap">Vincente</span></div></article>
-      <article class="pl reveal d4"><div class="pl__img"><span class="pl__num">33</span><img class="media-img" src="assets-web/portraits-by-jersey/33-JD-PRESIDENT/DSC00261.webp" alt="JD, numéro 33" loading="lazy" /></div><div class="pl__b"><div class="pl__pos">Coach</div><div class="pl__name">JD</div><span class="pl__cap">President</span></div></article>
-      <article class="pl reveal d1"><div class="pl__img"><span class="pl__num">67</span><img class="media-img" src="assets-web/portraits-by-jersey/67-Kenael-OBITO/DSC00111.webp" alt="Kenael, numéro 67" loading="lazy" /></div><div class="pl__b"><div class="pl__pos">Cornerback</div><div class="pl__name">Kenael</div><span class="pl__cap">Obito</span></div></article>
-      <article class="pl reveal d2"><div class="pl__img"><span class="pl__num">90</span><img class="media-img" src="assets-web/portraits-by-jersey/90-Sasha-PIKACHU/DSC00200.webp" alt="Sasha, numéro 90" loading="lazy" /></div><div class="pl__b"><div class="pl__pos">LB / Rusher</div><div class="pl__name">Sasha</div><span class="pl__cap">Pikachu</span></div></article>
-      <article class="pl reveal d3"><div class="pl__img"><span class="pl__num">99</span><img class="media-img" src="assets-web/portraits-by-jersey/99-Ulric/DSC00204.webp" alt="Ulric, numéro 99" loading="lazy" /></div><div class="pl__b"><div class="pl__pos">Safety</div><div class="pl__name">Ulric</div></div></article>
-      <article class="pl reveal d4"><div class="pl__img"><span class="pl__num">55</span><img class="media-img" src="assets-web/portraits-by-jersey/55-christina/DSC00142.webp" alt="Christina, numéro 55" loading="lazy" /></div><div class="pl__b"><div class="pl__pos">Rusher / CB</div><div class="pl__name">Christina</div></div></article>
-      <article class="pl reveal d1"><div class="pl__img"><span class="pl__num">00</span><img class="media-img" src="assets-web/portraits-by-jersey/0-davys-KABRERA/DSC00500.webp" alt="Davys, numéro 0" loading="lazy" /></div><div class="pl__b"><div class="pl__pos">X / Cornerback</div><div class="pl__name">Davys</div><span class="pl__cap">Kabrera</span></div></article>
-      <article class="pl reveal d2"><div class="pl__img"><span class="pl__num">09</span><img class="media-img" src="assets-web/portraits-by-jersey/9-johan-LOVE-YOURZ/DSC00250.webp" alt="Johan, numéro 9" loading="lazy" /></div><div class="pl__b"><div class="pl__pos">Quarterback / Safety</div><div class="pl__name">Johan</div><span class="pl__cap">Love Yourz</span></div></article>
-      <article class="pl reveal d3"><div class="pl__img"><span class="pl__num">24</span><img class="media-img" src="assets-web/portraits-by-jersey/24-Lucas/DSC00512.webp" alt="Lucas, numéro 24" loading="lazy" /></div><div class="pl__b"><div class="pl__pos">Z / Cornerback</div><div class="pl__name">Lucas</div></div></article>
+      <article class="pl reveal d1"><div class="pl__img"><span class="pl__num">84</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/84-Bolo/DSC00124.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/84-Bolo/DSC00124.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/84-Bolo/DSC00124.webp" alt="Bolo, numéro 84" loading="lazy" /></picture></div><div class="pl__b"><div class="pl__pos">Centre</div><div class="pl__name">Bolo</div></div></article>
+      <article class="pl reveal d2"><div class="pl__img"><span class="pl__num">12</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/12-Jonathan/DSC00320.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/12-Jonathan/DSC00320.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/12-Jonathan/DSC00320.webp" alt="Jonathan, numéro 12" loading="lazy" /></picture></div><div class="pl__b"><div class="pl__pos">CB / Safety</div><div class="pl__name">Jonathan</div></div></article>
+      <article class="pl reveal d3"><div class="pl__img"><span class="pl__num">25</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/25-Vincent-VINCENTE/DSC00103.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/25-Vincent-VINCENTE/DSC00103.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/25-Vincent-VINCENTE/DSC00103.webp" alt="Vincent, numéro 25" loading="lazy" /></picture></div><div class="pl__b"><div class="pl__pos">X / Cornerback</div><div class="pl__name">Vincent</div><span class="pl__cap">Vincente</span></div></article>
+      <article class="pl reveal d4"><div class="pl__img"><span class="pl__num">33</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/33-JD-PRESIDENT/DSC00261.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/33-JD-PRESIDENT/DSC00261.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/33-JD-PRESIDENT/DSC00261.webp" alt="JD, numéro 33" loading="lazy" /></picture></div><div class="pl__b"><div class="pl__pos">Coach</div><div class="pl__name">JD</div></div></article>
+      <article class="pl reveal d1"><div class="pl__img"><span class="pl__num">67</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/67-Kenael-OBITO/DSC00111.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/67-Kenael-OBITO/DSC00111.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/67-Kenael-OBITO/DSC00111.webp" alt="Kenael, numéro 67" loading="lazy" /></picture></div><div class="pl__b"><div class="pl__pos">Cornerback</div><div class="pl__name">Kenael</div><span class="pl__cap">Obito</span></div></article>
+      <article class="pl reveal d2"><div class="pl__img"><span class="pl__num">90</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/90-Sasha-PIKACHU/DSC00200.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/90-Sasha-PIKACHU/DSC00200.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/90-Sasha-PIKACHU/DSC00200.webp" alt="Sasha, numéro 90" loading="lazy" /></picture></div><div class="pl__b"><div class="pl__pos">LB / Rusher</div><div class="pl__name">Sasha</div><span class="pl__cap">Pikachu</span></div></article>
+      <article class="pl reveal d3"><div class="pl__img"><span class="pl__num">99</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/99-Ulric/DSC00204.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/99-Ulric/DSC00204.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/99-Ulric/DSC00204.webp" alt="Ulric, numéro 99" loading="lazy" /></picture></div><div class="pl__b"><div class="pl__pos">Safety</div><div class="pl__name">Ulric</div></div></article>
+      <article class="pl reveal d4"><div class="pl__img"><span class="pl__num">55</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/55-christina/DSC00142.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/55-christina/DSC00142.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/55-christina/DSC00142.webp" alt="Christina, numéro 55" loading="lazy" /></picture></div><div class="pl__b"><div class="pl__pos">Rusher / CB</div><div class="pl__name">Christina</div></div></article>
+      <article class="pl reveal d1"><div class="pl__img"><span class="pl__num">00</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/0-davys-KABRERA/DSC00500.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/0-davys-KABRERA/DSC00500.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/0-davys-KABRERA/DSC00500.webp" alt="Davys, numéro 0" loading="lazy" /></picture></div><div class="pl__b"><div class="pl__pos">X / Cornerback</div><div class="pl__name">Davys</div><span class="pl__cap">Kabrera</span></div></article>
+      <article class="pl reveal d2"><div class="pl__img"><span class="pl__num">09</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/9-johan-LOVE-YOURZ/DSC00250.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/9-johan-LOVE-YOURZ/DSC00250.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/9-johan-LOVE-YOURZ/DSC00250.webp" alt="Johan, numéro 9" loading="lazy" /></picture></div><div class="pl__b"><div class="pl__pos">Quarterback / Safety</div><div class="pl__name">Johan</div><span class="pl__cap">Love Yourz</span></div></article>
+      <article class="pl reveal d3"><div class="pl__img"><span class="pl__num">24</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/24-Lucas/DSC00512.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/24-Lucas/DSC00512.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/24-Lucas/DSC00512.webp" alt="Lucas, numéro 24" loading="lazy" /></picture></div><div class="pl__b"><div class="pl__pos">Z / Cornerback</div><div class="pl__name">Lucas</div></div></article>
     </div>
     <p class="note reveal">Portraits issus de la séance Flag Football · Les Iguanes · 30 mai 2026.</p>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section class="section" id="galerie">
+  <div class="wrap">
+    <div class="head gallery-head reveal">
+      <div><p class="klabel">Galerie</p><h2 class="title">Le club en images</h2></div>
+    </div>
+
+    <!-- Filtres saisons -->
+    <div class="gallery-tabs reveal" role="tablist" aria-label="Filtrer par saison">
+      <button class="gtab active" role="tab" aria-selected="true" data-tab="all">Tout</button>
+      <button class="gtab" role="tab" aria-selected="false" data-tab="sinobowl-2024">SINOBOWL 2024</button>
+      <button class="gtab" role="tab" aria-selected="false" data-tab="camp-feminin">Camp féminin 2026</button>
+      <button class="gtab" role="tab" aria-selected="false" data-tab="club">Club &amp; équipe</button>
+    </div>
+
+    <div class="grid-g gallery-grid reveal">
+
+      <!-- CLUB & ÉQUIPE -->
+      <button class="gcell media-launch g-wide" type="button" data-tab="club" data-full="assets-web/01-details/DSC00003.webp" data-caption="Ballon posé sur la pelouse, image d'ouverture sobre et identitaire.">
+        <picture><source media="(max-width:900px)" srcset="assets-mobile/01-details/DSC00003.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/01-details/DSC00003.webp" /><img class="media-img" src="assets-web/01-details/DSC00003.webp" alt="Ballon de flag football pose sur la pelouse" loading="lazy" /></picture>
+      </button>
+      <button class="gcell media-launch g-tall" type="button" data-tab="club" data-full="assets-web/03-groupe/DSC00318.webp" data-caption="Photo de groupe en ancien maillot — les débuts du club.">
+        <picture><source media="(max-width:900px)" srcset="assets-mobile/03-groupe/DSC00318.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/03-groupe/DSC00318.webp" /><img class="media-img" src="assets-web/03-groupe/DSC00318.webp" alt="Photo de groupe des Iguanes en ancien maillot" loading="lazy" /></picture>
+      </button>
+      <button class="gcell media-launch" type="button" data-tab="club" data-full="assets-web/04-action/DSC00415.webp" data-caption="Réception en contre-plongée, image très graphique.">
+        <picture><source media="(max-width:900px)" srcset="assets-mobile/04-action/DSC00415.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/04-action/DSC00415.webp" /><img class="media-img" src="assets-web/04-action/DSC00415.webp" alt="Joueur des Iguanes en train de recevoir un ballon" loading="lazy" /></picture>
+      </button>
+      <button class="gcell media-launch" type="button" data-tab="club" data-full="assets-web/04-action/DSC00603.webp" data-caption="Gros plan sur le ballon et les gants.">
+        <picture><source media="(max-width:900px)" srcset="assets-mobile/04-action/DSC00603.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/04-action/DSC00603.webp" /><img class="media-img" src="assets-web/04-action/DSC00603.webp" alt="Gros plan sur une reception avec les gants des Iguanes" loading="lazy" /></picture>
+      </button>
+      <button class="gcell media-launch" type="button" data-tab="club" data-full="assets-web/04-action/DSC00608.webp" data-caption="Course franche et lisible, image sportive et directe.">
+        <picture><source media="(max-width:900px)" srcset="assets-mobile/04-action/DSC00608.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/04-action/DSC00608.webp" /><img class="media-img" src="assets-web/04-action/DSC00608.webp" alt="Joueur des Iguanes lance en pleine course" loading="lazy" /></picture>
+      </button>
+      <button class="gcell media-launch g-wide" type="button" data-tab="club" data-full="assets-web/03-groupe/DSC00943.webp" data-caption="Cercle d'équipe nocturne, moment de concentration collective.">
+        <picture><source media="(max-width:900px)" srcset="assets-mobile/03-groupe/DSC00943.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/03-groupe/DSC00943.webp" /><img class="media-img" src="assets-web/03-groupe/DSC00943.webp" alt="Cercle d'equipe des Iguanes de nuit" loading="lazy" /></picture>
+      </button>
+      <button class="gcell media-launch g-tall" type="button" data-tab="club" data-full="assets-web/03-groupe/img-0968.webp" data-caption="Cercle d'équipe serré, cohésion du groupe.">
+        <picture><source media="(max-width:900px)" srcset="assets-mobile/03-groupe/img-0968.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/03-groupe/img-0968.webp" /><img class="media-img" src="assets-web/03-groupe/img-0968.webp" alt="Joueurs des Iguanes reunis en cercle" loading="lazy" /></picture>
+      </button>
+      <button class="gcell media-launch" type="button" data-tab="club" data-full="assets-web/03-groupe/DSC00966.webp" data-caption="Réaction expressive du public, image de communauté.">
+        <picture><source media="(max-width:900px)" srcset="assets-mobile/03-groupe/DSC00966.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/03-groupe/DSC00966.webp" /><img class="media-img" src="assets-web/03-groupe/DSC00966.webp" alt="Public et proches du club pendant un moment d'encouragement" loading="lazy" /></picture>
+      </button>
+
+      <!-- SINOBOWL 2024 -->
+      <button class="gcell media-launch g-wide" type="button" data-tab="sinobowl-2024" data-full="assets-web/sinobowl-2024/sb24-warmup-17.webp" data-caption="Échauffement avant la finale du SINOBOWL 2024.">
+        <picture><source media="(max-width:900px)" srcset="assets-mobile/sinobowl-2024/sb24-warmup-17.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/sinobowl-2024/sb24-warmup-17.webp" /><img class="media-img" src="assets-web/sinobowl-2024/sb24-warmup-17.webp" alt="Les Iguanes à l'échauffement avant la finale du SINOBOWL 2024" loading="lazy" /></picture>
+      </button>
+      <button class="gcell media-launch" type="button" data-tab="sinobowl-2024" data-full="assets-web/sinobowl-2024/sb24-appel-25.webp" data-caption="L'appel avant la finale — le calme avant la tempête.">
+        <picture><source media="(max-width:900px)" srcset="assets-mobile/sinobowl-2024/sb24-appel-25.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/sinobowl-2024/sb24-appel-25.webp" /><img class="media-img" src="assets-web/sinobowl-2024/sb24-appel-25.webp" alt="Les Iguanes à l'appel avant la finale du SINOBOWL" loading="lazy" /></picture>
+      </button>
+      <button class="gcell media-launch" type="button" data-tab="sinobowl-2024" data-full="assets-web/sinobowl-2024/sb24-appel-52.webp" data-caption="Concentration maximale à l'appel avant la finale.">
+        <picture><source media="(max-width:900px)" srcset="assets-mobile/sinobowl-2024/sb24-appel-52.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/sinobowl-2024/sb24-appel-52.webp" /><img class="media-img" src="assets-web/sinobowl-2024/sb24-appel-52.webp" alt="Concentration des Iguanes à l'appel du SINOBOWL" loading="lazy" /></picture>
+      </button>
+      <button class="gcell media-launch g-tall" type="button" data-tab="sinobowl-2024" data-full="assets-web/sinobowl-2024/sb24-offense-149.webp" data-caption="Action offensive pendant la finale du SINOBOWL 2024.">
+        <picture><source media="(max-width:900px)" srcset="assets-mobile/sinobowl-2024/sb24-offense-149.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/sinobowl-2024/sb24-offense-149.webp" /><img class="media-img" src="assets-web/sinobowl-2024/sb24-offense-149.webp" alt="Action offensive des Iguanes pendant la finale du SINOBOWL" loading="lazy" /></picture>
+      </button>
+      <button class="gcell media-launch" type="button" data-tab="sinobowl-2024" data-full="assets-web/sinobowl-2024/sb24-offense-159.webp" data-caption="Une des images d'action les plus fortes de la finale.">
+        <picture><source media="(max-width:900px)" srcset="assets-mobile/sinobowl-2024/sb24-offense-159.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/sinobowl-2024/sb24-offense-159.webp" /><img class="media-img" src="assets-web/sinobowl-2024/sb24-offense-159.webp" alt="Action decisive des Iguanes pendant la finale du SINOBOWL" loading="lazy" /></picture>
+      </button>
+      <button class="gcell media-launch" type="button" data-tab="sinobowl-2024" data-full="assets-web/sinobowl-2024/sb24-offense-176.webp" data-caption="Face-à-face tendu pendant la finale.">
+        <picture><source media="(max-width:900px)" srcset="assets-mobile/sinobowl-2024/sb24-offense-176.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/sinobowl-2024/sb24-offense-176.webp" /><img class="media-img" src="assets-web/sinobowl-2024/sb24-offense-176.webp" alt="Duel pendant la finale du SINOBOWL 2024" loading="lazy" /></picture>
+      </button>
+      <button class="gcell media-launch" type="button" data-tab="sinobowl-2024" data-full="assets-web/sinobowl-2024/sb24-defense-123.webp" data-caption="Pression défensive des Iguanes pendant la finale.">
+        <picture><source media="(max-width:900px)" srcset="assets-mobile/sinobowl-2024/sb24-defense-123.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/sinobowl-2024/sb24-defense-123.webp" /><img class="media-img" src="assets-web/sinobowl-2024/sb24-defense-123.webp" alt="Défense des Iguanes pendant le SINOBOWL 2024" loading="lazy" /></picture>
+      </button>
+      <button class="gcell media-launch g-wide" type="button" data-tab="sinobowl-2024" data-full="assets-web/sinobowl-2024/sb24-sideline-120.webp" data-caption="Le banc des Iguanes pendant la finale — concentration et soutien.">
+        <picture><source media="(max-width:900px)" srcset="assets-mobile/sinobowl-2024/sb24-sideline-120.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/sinobowl-2024/sb24-sideline-120.webp" /><img class="media-img" src="assets-web/sinobowl-2024/sb24-sideline-120.webp" alt="Sideline des Iguanes pendant le SINOBOWL 2024" loading="lazy" /></picture>
+      </button>
+      <button class="gcell media-launch g-wide" type="button" data-tab="sinobowl-2024" data-full="assets-web/sinobowl-2024/sb24-celebration-271.webp" data-caption="Explosion de joie — Les Iguanes sont champions du SINOBOWL 2024 !">
+        <picture><source media="(max-width:900px)" srcset="assets-mobile/sinobowl-2024/sb24-celebration-271.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/sinobowl-2024/sb24-celebration-271.webp" /><img class="media-img" src="assets-web/sinobowl-2024/sb24-celebration-271.webp" alt="Celebration des Iguanes champions du SINOBOWL 2024" loading="lazy" /></picture>
+      </button>
+      <button class="gcell media-launch" type="button" data-tab="sinobowl-2024" data-full="assets-web/sinobowl-2024/sb24-celebration-274.webp" data-caption="Étreinte collective après la victoire.">
+        <picture><source media="(max-width:900px)" srcset="assets-mobile/sinobowl-2024/sb24-celebration-274.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/sinobowl-2024/sb24-celebration-274.webp" /><img class="media-img" src="assets-web/sinobowl-2024/sb24-celebration-274.webp" alt="Etreinte collective des Iguanes apres la victoire au SINOBOWL" loading="lazy" /></picture>
+      </button>
+      <button class="gcell media-launch" type="button" data-tab="sinobowl-2024" data-full="assets-web/sinobowl-2024/sb24-ceremonie-299.webp" data-caption="La cérémonie de remise des médailles — SINOBOWL 2024.">
+        <picture><source media="(max-width:900px)" srcset="assets-mobile/sinobowl-2024/sb24-ceremonie-299.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/sinobowl-2024/sb24-ceremonie-299.webp" /><img class="media-img" src="assets-web/sinobowl-2024/sb24-ceremonie-299.webp" alt="Cérémonie de remise des médailles du SINOBOWL 2024" loading="lazy" /></picture>
+      </button>
+      <button class="gcell media-launch g-tall" type="button" data-tab="sinobowl-2024" data-full="assets-web/sinobowl-2024/sb24-ceremonie-311.webp" data-caption="Photo signature avec les médailles du SINOBOWL 2024 — Champions.">
+        <picture><source media="(max-width:900px)" srcset="assets-mobile/sinobowl-2024/sb24-ceremonie-311.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/sinobowl-2024/sb24-ceremonie-311.webp" /><img class="media-img" src="assets-web/sinobowl-2024/sb24-ceremonie-311.webp" alt="Les Iguanes champions du SINOBOWL 2024 avec leurs médailles" loading="lazy" /></picture>
+      </button>
+      <button class="gcell media-launch" type="button" data-tab="sinobowl-2024" data-full="assets-web/sinobowl-2024/sb24-ceremonie-302.webp" data-caption="Moment de fête et de transmission — le club au complet après la victoire.">
+        <picture><source media="(max-width:900px)" srcset="assets-mobile/sinobowl-2024/sb24-ceremonie-302.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/sinobowl-2024/sb24-ceremonie-302.webp" /><img class="media-img" src="assets-web/sinobowl-2024/sb24-ceremonie-302.webp" alt="Fête autour des Iguanes après la victoire au SINOBOWL 2024" loading="lazy" /></picture>
+      </button>
+
+      <!-- CAMP FÉMININ 2026 -->
+      <button class="gcell media-launch g-wide" type="button" data-tab="camp-feminin" data-full="assets-web/camp-feminin-2026/camp26-04.webp" data-caption="Camp féminin du 8 mars 2026 — Les Iguanes ouvrent la voie à une section féminine.">
+        <picture><source media="(max-width:900px)" srcset="assets-mobile/camp-feminin-2026/camp26-04.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/camp-feminin-2026/camp26-04.webp" /><img class="media-img" src="assets-web/camp-feminin-2026/camp26-04.webp" alt="Camp féminin des Iguanes, 8 mars 2026" loading="lazy" /></picture>
+      </button>
+      <button class="gcell media-launch" type="button" data-tab="camp-feminin" data-full="assets-web/camp-feminin-2026/camp26-05.webp" data-caption="Entraînement lors du camp féminin, 8 mars 2026.">
+        <picture><source media="(max-width:900px)" srcset="assets-mobile/camp-feminin-2026/camp26-05.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/camp-feminin-2026/camp26-05.webp" /><img class="media-img" src="assets-web/camp-feminin-2026/camp26-05.webp" alt="Entraînement camp féminin Iguanes mars 2026" loading="lazy" /></picture>
+      </button>
+      <button class="gcell media-launch" type="button" data-tab="camp-feminin" data-full="assets-web/camp-feminin-2026/camp26-07.webp" data-caption="Action lors du camp féminin des Iguanes.">
+        <picture><source media="(max-width:900px)" srcset="assets-mobile/camp-feminin-2026/camp26-07.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/camp-feminin-2026/camp26-07.webp" /><img class="media-img" src="assets-web/camp-feminin-2026/camp26-07.webp" alt="Action du camp féminin des Iguanes" loading="lazy" /></picture>
+      </button>
+      <button class="gcell media-launch g-tall" type="button" data-tab="camp-feminin" data-full="assets-web/camp-feminin-2026/camp26-10.webp" data-caption="Concentration et technique au camp féminin.">
+        <picture><source media="(max-width:900px)" srcset="assets-mobile/camp-feminin-2026/camp26-10.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/camp-feminin-2026/camp26-10.webp" /><img class="media-img" src="assets-web/camp-feminin-2026/camp26-10.webp" alt="Camp féminin des Iguanes - concentration" loading="lazy" /></picture>
+      </button>
+      <button class="gcell media-launch" type="button" data-tab="camp-feminin" data-full="assets-web/camp-feminin-2026/camp26-12.webp" data-caption="Esprit d'équipe lors du camp féminin — 8 mars 2026.">
+        <picture><source media="(max-width:900px)" srcset="assets-mobile/camp-feminin-2026/camp26-12.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/camp-feminin-2026/camp26-12.webp" /><img class="media-img" src="assets-web/camp-feminin-2026/camp26-12.webp" alt="Esprit d'équipe au camp féminin des Iguanes" loading="lazy" /></picture>
+      </button>
+      <button class="gcell media-launch" type="button" data-tab="camp-feminin" data-full="assets-web/camp-feminin-2026/camp26-13.webp" data-caption="Fin de séance — sourires et fierté au camp féminin.">
+        <picture><source media="(max-width:900px)" srcset="assets-mobile/camp-feminin-2026/camp26-13.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/camp-feminin-2026/camp26-13.webp" /><img class="media-img" src="assets-web/camp-feminin-2026/camp26-13.webp" alt="Fin de séance du camp féminin des Iguanes" loading="lazy" /></picture>
+      </button>
+
+    </div>
   </div>
 </section>
 
@@ -172,17 +322,17 @@
       <div class="fix__row"><div class="fix__d"><b>09</b><span>Mai</span></div><div class="fix__m"><b>Iguanes</b> <em>vs</em> <b>Rapaces</b><p>samedi 9 mai · Osenat</p></div><span class="pill pill--a">J3</span><div class="fix__t">12 - 24</div></div>
       <div class="fix__row"><div class="fix__d"><b>24</b><span>Mai</span></div><div class="fix__m"><b>Iguanes</b> <em>vs</em> <b>Canners</b><p>dimanche 24 mai · B. Gondeau</p></div><span class="pill pill--a">J4</span><div class="fix__t">6 - 22</div></div>
       <div class="fix__row"><div class="fix__d"><b>30</b><span>Mai</span></div><div class="fix__m"><b>Iguanes</b> <em>vs</em> <b>Gators</b><p>samedi 30 mai · Schœlcher</p></div><span class="pill pill--a">J5</span><div class="fix__t">12 - 14</div></div>
-      <div class="fix__row"><div class="fix__d"><b>06-07</b><span>Juin</span></div><div class="fix__m"><b>Iguanes</b> <em>vs</em> <b>Rapaces</b><p>samedi 6 juin · dimanche 7 juin · lieu à confirmer</p></div><span class="pill pill--p">J6</span><div class="fix__t">h - h</div></div>
-      <div class="fix__row"><div class="fix__d"><b>20</b><span>Juin</span></div><div class="fix__m"><b>Iguanes</b> <em>vs</em> <b>Adversaire à confirmer</b><p>samedi 20 juin · Le François</p></div><span class="pill pill--p">Finale</span><div class="fix__t">h - h</div></div>
+      <div class="fix__row"><div class="fix__d"><b>06-07</b><span>Juin</span></div><div class="fix__m"><b>Iguanes</b> <em>vs</em> <b>Rapaces</b><p>samedi 6 juin · dimanche 7 juin · lieu à confirmer</p></div><span class="pill pill--p">J6</span><div class="fix__t">– –</div></div>
+      <div class="fix__row"><div class="fix__d"><b>20</b><span>Juin</span></div><div class="fix__m"><b>Iguanes</b> <em>vs</em> <b>Adversaire à confirmer</b><p>samedi 20 juin · Le François</p></div><span class="pill pill--p">Finale</span><div class="fix__t">– –</div></div>
     </div>
-    <p class="note reveal">Source: planning de compétition partagé par l'équipe, complété avec les scores retrouvés. Les informations marquées <strong>à confirmer</strong> restent en attente.</p>
+    <p class="note reveal">Source : planning partagé par l'équipe. Les matchs sans score restent à jouer.</p>
   </div>
 </section>
 
 <!-- RÉSULTATS -->
 <section class="section" id="resultats">
   <div class="wrap">
-    <div class="head reveal"><p class="klabel">Résultats</p><h2 class="title">Classement actuel</h2></div>
+    <div class="head reveal"><p class="klabel">Résultats</p><h2 class="title">Classement · Saison 2026</h2></div>
     <table class="tbl reveal">
       <thead><tr><th class="rk">#</th><th>Club</th><th class="n">J</th><th class="n">V</th><th class="n">D</th><th class="n">Diff</th><th class="pt">Pts</th></tr></thead>
       <tbody>
@@ -192,108 +342,12 @@
         <tr class="us"><td class="rk">4</td><td class="cl">Iguanes</td><td class="n">5</td><td class="n">0</td><td class="n">5</td><td class="n">-46</td><td class="pt">0</td></tr>
       </tbody>
     </table>
-    <p class="note reveal">Classement calculé à partir des résultats connus des weeks 1 à 5 au 2 juin 2026. La phase de groupe n'est pas encore terminée: la week 6 reste à jouer avant les finales.</p>
+    <p class="note reveal">Weeks 1 à 5 au 2 juin 2026 — la week 6 et les finales restent à jouer. Source : LMFA.</p>
   </div>
 </section>
 
-<!-- GALERIE -->
-<section class="section" id="galerie">
-  <div class="wrap">
-    <div class="head gallery-head reveal">
-      <div><p class="klabel">Galerie</p><h2 class="title">L'équipe en action</h2></div>
-      <p class="gallery-head__note">21 images retenues pour raconter le club: details, matchs, finale, communaute et celebrations.</p>
-    </div>
-    <div class="grid-g gallery-grid reveal">
-      <button class="gcell media-launch g-wide" type="button" data-gallery-item="1" data-full="public/images/final-candidates/web/dsc00003.webp" data-caption="Ballon posé sur la pelouse, image d'ouverture sobre et identitaire.">
-        <img class="media-img" src="public/images/final-candidates/thumbs/dsc00003.webp" alt="Ballon de flag football pose sur la pelouse" loading="lazy" />
-      </button>
-      <button class="gcell media-launch g-tall" type="button" data-gallery-item="2" data-full="public/images/final-candidates/web/dsc00318.webp" data-caption="Photo de groupe en ancien maillot, un repère important dans l'histoire du club.">
-        <img class="media-img" src="public/images/final-candidates/thumbs/dsc00318.webp" alt="Photo de groupe des Iguanes en ancien maillot" loading="lazy" />
-      </button>
-      <button class="gcell media-launch" type="button" data-gallery-item="3" data-full="public/images/final-candidates/web/dsc00415.webp" data-caption="Réception en contre-plongée, image très graphique.">
-        <img class="media-img" src="public/images/final-candidates/thumbs/dsc00415.webp" alt="Joueur des Iguanes en train de recevoir un ballon" loading="lazy" />
-      </button>
-      <button class="gcell media-launch" type="button" data-gallery-item="4" data-full="public/images/final-candidates/web/dsc00603.webp" data-caption="Gros plan sur le ballon et les gants, détail qui varie le rythme de lecture.">
-        <img class="media-img" src="public/images/final-candidates/thumbs/dsc00603.webp" alt="Gros plan sur une reception avec les gants des Iguanes" loading="lazy" />
-      </button>
-      <button class="gcell media-launch" type="button" data-gallery-item="5" data-full="public/images/final-candidates/web/dsc00608.webp" data-caption="Course franche et lisible, image sportive et directe.">
-        <img class="media-img" src="public/images/final-candidates/thumbs/dsc00608.webp" alt="Joueur des Iguanes lance en pleine course" loading="lazy" />
-      </button>
-      <button class="gcell media-launch g-wide" type="button" data-gallery-item="6" data-full="public/images/final-candidates/web/dsc00943.webp" data-caption="Cercle d'équipe nocturne, moment de concentration collective.">
-        <img class="media-img" src="public/images/final-candidates/thumbs/dsc00943.webp" alt="Cercle d'equipe des Iguanes de nuit" loading="lazy" />
-      </button>
-      <button class="gcell media-launch" type="button" data-gallery-item="7" data-full="public/images/final-candidates/web/dsc00962.webp" data-caption="Applaudissements et présence du public, la vie autour du terrain.">
-        <img class="media-img" src="public/images/final-candidates/thumbs/dsc00962.webp" alt="Supporters des Iguanes au bord du terrain" loading="lazy" />
-      </button>
-      <button class="gcell media-launch" type="button" data-gallery-item="8" data-full="public/images/final-candidates/web/dsc00966.webp" data-caption="Réaction expressive du public, image de communauté et d'émotion.">
-        <img class="media-img" src="public/images/final-candidates/thumbs/dsc00966.webp" alt="Public et proches du club pendant un moment d'encouragement" loading="lazy" />
-      </button>
-      <button class="gcell media-launch g-tall" type="button" data-gallery-item="9" data-full="public/images/final-candidates/web/dsc01014.webp" data-caption="Action de nuit avec projection de terre, image énergique.">
-        <img class="media-img" src="public/images/final-candidates/thumbs/dsc01014.webp" alt="Action de nuit des Iguanes avec projection de terre" loading="lazy" />
-      </button>
-      <button class="gcell media-launch g-wide" type="button" data-gallery-item="10" data-full="public/images/final-candidates/web/finale-sino-bowl-149.webp" data-caption="Action collective pendant la finale, lecture tactique du jeu.">
-        <img class="media-img" src="public/images/final-candidates/thumbs/finale-sino-bowl-149.webp" alt="Action collective des Iguanes pendant la finale du Sino Bowl" loading="lazy" />
-      </button>
-      <button class="gcell media-launch" type="button" data-gallery-item="11" data-full="public/images/final-candidates/web/finale-sino-bowl-156.webp" data-caption="Geste de respect, image plus humaine au coeur de la compétition.">
-        <img class="media-img" src="public/images/final-candidates/thumbs/finale-sino-bowl-156.webp" alt="Joueurs des Iguanes se saluant pendant la finale" loading="lazy" />
-      </button>
-      <button class="gcell media-launch" type="button" data-gallery-item="12" data-full="public/images/final-candidates/web/finale-sino-bowl-159.webp" data-caption="Une des images d'action les plus fortes de la finale.">
-        <img class="media-img" src="public/images/final-candidates/thumbs/finale-sino-bowl-159.webp" alt="Action decisive des Iguanes pendant la finale" loading="lazy" />
-      </button>
-      <button class="gcell media-launch" type="button" data-gallery-item="13" data-full="public/images/final-candidates/web/finale-sino-bowl-166.webp" data-caption="Duel défensif spectaculaire et bien cadré.">
-        <img class="media-img" src="public/images/final-candidates/thumbs/finale-sino-bowl-166.webp" alt="Duel defensif des Iguanes pendant la finale" loading="lazy" />
-      </button>
-      <button class="gcell media-launch" type="button" data-gallery-item="14" data-full="public/images/final-candidates/web/finale-sino-bowl-171.webp" data-caption="Joueurs alignés et attentifs, image de collectif avant l'action.">
-        <img class="media-img" src="public/images/final-candidates/thumbs/finale-sino-bowl-171.webp" alt="Joueurs des Iguanes alignes sur le bord du terrain" loading="lazy" />
-      </button>
-      <button class="gcell media-launch" type="button" data-gallery-item="15" data-full="public/images/final-candidates/web/finale-sino-bowl-176.webp" data-caption="Face-à-face tendu, image nette et engagée.">
-        <img class="media-img" src="public/images/final-candidates/thumbs/finale-sino-bowl-176.webp" alt="Duel entre un joueur des Iguanes et son adversaire" loading="lazy" />
-      </button>
-      <button class="gcell media-launch g-wide" type="button" data-gallery-item="16" data-full="public/images/final-candidates/web/finale-sino-bowl-271.webp" data-caption="Explosion de joie juste après la finale, grand moment de la galerie.">
-        <img class="media-img" src="public/images/final-candidates/thumbs/finale-sino-bowl-271.webp" alt="Celebration des Iguanes apres la finale" loading="lazy" />
-      </button>
-      <button class="gcell media-launch" type="button" data-gallery-item="17" data-full="public/images/final-candidates/web/finale-sino-bowl-274.webp" data-caption="Étreinte collective, image forte de l'esprit d'équipe.">
-        <img class="media-img" src="public/images/final-candidates/thumbs/finale-sino-bowl-274.webp" alt="Etreinte collective des Iguanes pendant la celebration" loading="lazy" />
-      </button>
-      <button class="gcell media-launch" type="button" data-gallery-item="18" data-full="public/images/final-candidates/web/finale-sino-bowl-302.webp" data-caption="Moment de transmission et de fête autour du club.">
-        <img class="media-img" src="public/images/final-candidates/thumbs/finale-sino-bowl-302.webp" alt="Moment familial et festif autour des Iguanes" loading="lazy" />
-      </button>
-      <button class="gcell media-launch" type="button" data-gallery-item="19" data-full="public/images/final-candidates/web/finale-sino-bowl-310.webp" data-caption="Temps de cérémonie et de reconnaissance après la finale.">
-        <img class="media-img" src="public/images/final-candidates/thumbs/finale-sino-bowl-310.webp" alt="Scene de ceremonie et de remise autour des Iguanes" loading="lazy" />
-      </button>
-      <button class="gcell media-launch g-wide" type="button" data-gallery-item="20" data-full="public/images/final-candidates/web/finale-sino-bowl-311.webp" data-caption="Photo signature avec les médailles, image centrale de la sélection.">
-        <img class="media-img" src="public/images/final-candidates/thumbs/finale-sino-bowl-311.webp" alt="Photo de groupe des Iguanes avec les medailles apres la finale" loading="lazy" />
-      </button>
-      <button class="gcell media-launch g-tall" type="button" data-gallery-item="21" data-full="public/images/final-candidates/web/img-0968.webp" data-caption="Cercle d'équipe serré, une image simple et sincère de la cohésion du groupe.">
-        <img class="media-img" src="public/images/final-candidates/thumbs/img-0968.webp" alt="Joueurs des Iguanes reunis en cercle" loading="lazy" />
-      </button>
-    </div>
-  </div>
-</section>
-
-<!-- BOUTIQUE -->
-<section class="section" id="boutique">
-  <div class="wrap">
-    <div class="head reveal"><p class="klabel">Boutique</p><h2 class="title">Aux couleurs du club</h2></div>
-    <div class="shop">
-      <article class="it reveal d1"><div class="it__img"><img class="media-img" src="assets-web/01-details/DSC01117.webp" alt="Détail du maillot des Iguanes" loading="lazy" /></div><div class="it__b"><div><div class="it__n">Maillot domicile</div><div class="it__d">Noir &amp; vert · floqué</div></div><div class="it__p">45 €</div></div></article>
-      <article class="it reveal d2"><div class="it__img"><img class="media-img" src="assets-web/01-details/DSC00513.webp" alt="Flag vert des Iguanes" loading="lazy" /></div><div class="it__b"><div><div class="it__n">Pack joueur</div><div class="it__d">Flag · gants · équipement</div></div><div class="it__p">35 €</div></div></article>
-      <article class="it reveal d3"><div class="it__img"><img class="media-img" src="assets-web/05-nuit/DSC00938.webp" alt="Gants des Iguanes en action" loading="lazy" /></div><div class="it__b"><div><div class="it__n">Accessoires</div><div class="it__d">Gants &amp; flags club</div></div><div class="it__p">22 €</div></div></article>
-    </div>
-    <p class="note reveal">Commandes &amp; tailles en message privé sur Instagram. <a class="alink" href="https://www.instagram.com/iguanes_footus_972/" target="_blank" rel="noopener">@iguanes_footus_972 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
-  </div>
-</section>
-
-<!-- PARTENAIRES -->
-<section class="section" id="partenaires">
-  <div class="wrap">
-    <div class="head reveal"><p class="klabel">Partenaires</p><h2 class="title">Ils soutiennent le club</h2></div>
-    <div class="parts reveal">
-      <a class="part" href="https://www.instagram.com/lmfa_972/" target="_blank" rel="noopener">LMFA 972</a><div class="part">Votre logo</div><div class="part">Votre logo</div><div class="part">Votre logo</div><div class="part">Votre logo</div>
-    </div>
-    <p class="note reveal"><a class="alink" href="#contact">Devenir partenaire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
-  </div>
-</section>
+<!-- BOUTIQUE : à activer saison 2027 -->
+<!-- PARTENAIRES : à activer quand logos disponibles -->
 
 <!-- REJOINDRE -->
 <section class="section" id="rejoindre">
@@ -302,24 +356,26 @@
       <div class="join__glow"></div>
       <div class="join__grid">
         <div>
-          <p class="klabel">Entraînement</p>
+          <p class="klabel">Recrutement · Saison 2026–2027</p>
           <h2 class="title" style="margin-bottom:18px">Viens tester,<br>tu vas adorer.</h2>
-          <p class="lead" style="margin-bottom:28px">Débutant ou confirmé, fille ou gars, dès 16 ans. On prête l'équipement, les deux premières séances sont offertes.</p>
+          <p class="lead" style="margin-bottom:28px">Le flag football, c'est pour tout le monde : débutant ou confirmé, fille ou gars, dès 15 ans. On prête les flags, les premières séances sont gratuites — viens juste avec des baskets et de l'eau.</p>
           <ol>
-            <li><div><b>Viens à un entraînement</b><p>Mardi ou jeudi, présente-toi 15 min avant.</p></div></li>
-            <li><div><b>Essaie gratuitement</b><p>Deux séances découverte, sans engagement.</p></div></li>
-            <li><div><b>Rejoins les Iguanes</b><p>Licence + adhésion, et bienvenue dans la famille.</p></div></li>
+            <li><div><b>Débarque à l'entraînement</b><p>Mardi ou vendredi à 19h45 — portes ouvertes, aucune inscription nécessaire.</p></div></li>
+            <li><div><b>Essaie gratuitement</b><p>Premières séances découverte offertes, sans engagement.</p></div></li>
+            <li><div><b>Rejoins les Iguanes</b><p>Licence FFFA + adhésion, et bienvenue dans la famille.</p></div></li>
           </ol>
         </div>
         <div>
           <div class="infos">
-            <div><span>Entraînements</span><b>Mardi &amp; jeudi · 18h30</b></div>
-            <div><span>Lieu</span><b>Stade Osenat</b></div>
-            <div><span>Niveau</span><b>Débutant à confirmé</b></div>
-            <div><span>Âge</span><b>Dès 16 ans · mixte</b></div>
+            <div><span>Entraînements</span><b>Mardi &amp; vendredi · 19h45–21h45</b></div>
+            <div><span>Lieu</span><b>Terrain Osenat · Schœlcher</b></div>
+            <div><span>Niveau</span><b>Débutant à confirmé · mixte</b></div>
+            <div><span>Âge</span><b>Dès 15 ans (naissance 2012)</b></div>
+            <div><span>Équipement</span><b>Baskets + eau — flags prêtés par le club</b></div>
           </div>
           <div class="infos--cta">
-            <a class="btn btn--p" href="https://www.instagram.com/iguanes_footus_972/" target="_blank" rel="noopener"><span>Écris-nous sur Instagram</span></a>
+            <a class="btn btn--p" href="https://www.instagram.com/iguanes_footus_972/" target="_blank" rel="noopener"><span>Nous suivre sur Instagram</span></a>
+            <a class="btn btn--g" href="https://whatsapp.com/channel/0029Vb8N8n230LKLoF0cRj2o" target="_blank" rel="noopener"><span>Rejoindre la chaîne WhatsApp</span></a>
           </div>
         </div>
       </div>
@@ -333,19 +389,23 @@
     <div class="reveal">
       <p class="klabel">Contact</p>
       <h2 class="title" style="margin-bottom:28px">On se parle ?</h2>
-      <form onsubmit="event.preventDefault();this.reset();alert('Merci ! Ce formulaire est une démo — écris-nous plutôt sur Instagram pour le moment.');">
-        <div class="f"><label for="n">Nom</label><input id="n" type="text" placeholder="Ton nom" required /></div>
-        <div class="f"><label for="e">Email</label><input id="e" type="email" placeholder="toi@exemple.com" required /></div>
-        <div class="f"><label for="m">Message</label><textarea id="m" rows="4" placeholder="Je veux essayer le flag…" required></textarea></div>
+      <form id="contact-form" action="https://formspree.io/f/xpwzgqkb" method="POST">
+        <div class="f"><label for="n">Prénom</label><input id="n" name="prenom" type="text" placeholder="Ton prénom" required /></div>
+        <div class="f"><label for="e">Email</label><input id="e" name="email" type="email" placeholder="toi@exemple.com" required /></div>
+        <div class="f"><label for="tel">Téléphone</label><input id="tel" name="telephone" type="tel" placeholder="+596 6XX XX XX XX" /></div>
+        <div class="f"><label for="age">Âge</label><input id="age" name="age" type="number" min="15" max="99" placeholder="Ton âge" /></div>
+        <div class="f"><label for="niv">Niveau</label><select id="niv" name="niveau"><option value="">— Sélectionne —</option><option>Débutant complet</option><option>J'ai déjà joué au foot US / flag</option><option>Joueur expérimenté</option></select></div>
+        <div class="f"><label for="m">Message</label><textarea id="m" name="message" rows="4" placeholder="Je veux essayer le flag, je veux plus d'infos…"></textarea></div>
         <button class="btn btn--p" type="submit"><span>Envoyer</span></button>
       </form>
     </div>
     <div class="cinfo reveal d1">
       <div><div class="k">Instagram</div><div class="v"><a href="https://www.instagram.com/iguanes_footus_972/" target="_blank" rel="noopener">@iguanes_footus_972</a></div></div>
+      <div><div class="k">WhatsApp</div><div class="v"><a href="https://whatsapp.com/channel/0029Vb8N8n230LKLoF0cRj2o" target="_blank" rel="noopener">Chaîne officielle du club</a></div></div>
+      <div><div class="k">Email</div><div class="v"><a href="mailto:contact.iguanes.footus@gmail.com">contact.iguanes.footus@gmail.com</a></div></div>
+      <div><div class="k">Terrain</div><div class="v">Terrain Osenat · Schœlcher · Martinique (972)</div></div>
+      <div><div class="k">Entraînements</div><div class="v">Mardi &amp; vendredi · 19h45–21h45 — viens quand tu veux essayer</div></div>
       <div><div class="k">Ligue</div><div class="v"><a href="https://www.instagram.com/lmfa_972/" target="_blank" rel="noopener">@lmfa_972</a></div></div>
-      <div><div class="k">Où nous trouver</div><div class="v">Stade Osenat · Schœlcher · Martinique (972)</div></div>
-      <div><div class="k">Email</div><div class="v"><a href="mailto:contact@iguanes.club">contact@iguanes.club</a></div></div>
-      <div><div class="k">Entraînements</div><div class="v">Mardi &amp; jeudi, 18h30 à Osenat — viens quand tu veux essayer</div></div>
     </div>
   </div>
 </section>
@@ -367,12 +427,12 @@
     <div class="footer__top">
       <a class="brand" href="#top"><img class="brand__logo" src="public/images/logos/logo-01.png" alt="" aria-hidden="true" /><b>Les <span>Iguanes</span></b></a>
       <nav class="footer__nav">
-        <a href="#club">Le club</a><a href="#histoire">Histoire</a><a href="#effectif">Effectif</a><a href="#galerie">Galerie</a><a href="#calendrier">Calendrier</a><a href="#resultats">Résultats</a><a href="#contact">Contact</a>
+        <a href="#club">Le club</a><a href="#histoire">Histoire</a><a href="#effectif">Effectif</a><a href="#galerie">Galerie</a><a href="#calendrier">Calendrier</a><a href="#rejoindre">Rejoindre</a><a href="#contact">Contact</a>
       </nav>
     </div>
     <div class="footer__bot">
-      <span>© 2026 Les Iguanes — Schœlcher, Martinique (972)</span>
-      <span>Club de flag football mixte</span>
+      <span>© 2026 Les Iguanes · AMFA — Schœlcher, Martinique (972)</span>
+      <span>Club de flag football mixte · ANSANM' · <a href="mentions-legales.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Mentions légales</a></span>
     </div>
   </div>
 </footer>

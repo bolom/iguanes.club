@@ -14,6 +14,9 @@ Main files:
 - `iguanes-v3.js`
 - `assets-web/`
 - `assets-mobile/`
+- `assets-tablet/`
+- `scripts/build-responsive-media.mjs`
+- `*.zip` source archives at the repository root
 
 Local verification:
 
