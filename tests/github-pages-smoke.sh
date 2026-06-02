@@ -33,9 +33,16 @@ for competition in "samedi 25 avril" "dimanche 3 mai" "samedi 9 mai" "dimanche 2
   fi
 done
 
-for score in "0 - 15" "12 - 14" "12 - 24" "6 - 22" "18 - 19" "0V - 5D" "48 - 94"; do
+for score in "0 - 15" "12 - 14" "12 - 24" "6 - 22" "18 - 19"; do
   if ! rg -Fq "$score" "$index_file"; then
     echo "Missing score entry in $index_file: $score"
+    exit 1
+  fi
+done
+
+for standing in "Rapaces" "Canners" "Gators" "Iguanes" "+110" "+6" "-70" "-46"; do
+  if ! rg -Fq -- "$standing" "$index_file"; then
+    echo "Missing standings entry in $index_file: $standing"
     exit 1
   fi
 done
