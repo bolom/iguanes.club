@@ -252,3 +252,54 @@
     });
   }
 })();
+
+// Contact form — Cloudflare Worker + Resend
+(function () {
+  var WORKER_URL = 'https://api.iguanes.club/contact';
+
+  var form = document.getElementById('contact-form');
+  if (!form) return;
+
+  var status = document.getElementById('contact-status');
+  var btn = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var prenom = form.querySelector('[name="prenom"]').value.trim();
+    var email = form.querySelector('[name="email"]').value.trim();
+    var message = form.querySelector('[name="message"]').value.trim();
+
+    btn.disabled = true;
+    status.textContent = 'Envoi en cours…';
+    status.style.color = '';
+
+    fetch(WORKER_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prenom: prenom, email: email, message: message }),
+    })
+      .then(function (res) {
+        return res.json().then(function (data) {
+          return { ok: res.ok, data: data };
+        });
+      })
+      .then(function (r) {
+        if (r.ok) {
+          status.textContent = 'Message envoyé ! On te répond bientôt.';
+          status.style.color = '#4caf50';
+          form.reset();
+        } else {
+          status.textContent = r.data.error || 'Erreur lors de l\'envoi. Réessaie.';
+          status.style.color = '#e53935';
+        }
+      })
+      .catch(function () {
+        status.textContent = 'Impossible de joindre le serveur. Réessaie plus tard.';
+        status.style.color = '#e53935';
+      })
+      .finally(function () {
+        btn.disabled = false;
+      });
+  });
+})();

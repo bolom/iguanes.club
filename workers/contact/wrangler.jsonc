@@ -1,0 +1,14 @@
+{
+  "name": "iguanes-contact",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-06-03",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  "routes": [
+    { "pattern": "api.iguanes.club/contact", "zone_name": "iguanes.club" }
+  ]
+  // Secret RESEND_API_KEY : wrangler secret put RESEND_API_KEY
+}

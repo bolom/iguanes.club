@@ -530,11 +530,12 @@
     <div class="reveal">
       <p class="klabel">Contact</p>
       <h2 class="title" style="margin-bottom:28px">On se parle ?</h2>
-      <form id="contact-form" action="https://formspree.io/f/xpwzgqkb" method="POST">
+      <form id="contact-form">
         <div class="f"><label for="n">Prénom</label><input id="n" name="prenom" type="text" placeholder="Ton prénom" required /></div>
         <div class="f"><label for="e">Email</label><input id="e" name="email" type="email" placeholder="toi@exemple.com" required /></div>
         <div class="f"><label for="m">Message</label><textarea id="m" name="message" rows="4" placeholder="Je veux essayer le flag, je veux plus d'infos…"></textarea></div>
         <button class="btn btn--p" type="submit"><span>Envoyer</span></button>
+        <p id="contact-status" aria-live="polite" style="margin-top:12px;font-size:.9rem"></p>
       </form>
     </div>
     <div class="cinfo reveal d1">
