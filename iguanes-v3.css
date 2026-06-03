@@ -272,15 +272,19 @@ html.shown .hero h1 .w i { animation: none !important; transform: none !importan
 @media (prefers-reduced-motion: reduce) { .marq__t { animation: none; } }
 
 /* =================== INTRO / CLUB =================== */
-.intro { display: grid; grid-template-columns: 1fr; gap: clamp(40px, 7vw, 110px); align-items: end; }
-.intro__big { font-family: var(--font-display); font-weight: 800; text-transform: uppercase; font-size: clamp(2.4rem, 5vw, 4.6rem); line-height: 0.92; letter-spacing: -0.01em; }
+.intro { display: grid; grid-template-columns: 1fr; gap: clamp(40px, 7vw, 80px); align-items: center; }
+.intro__content { display: flex; flex-direction: column; gap: 0; }
+.intro__big { font-family: var(--font-display); font-weight: 800; text-transform: uppercase; font-size: clamp(2.4rem, 5vw, 4.6rem); line-height: 0.92; letter-spacing: -0.01em; margin-bottom: clamp(24px, 3vw, 40px); }
 .intro__big em { font-style: normal; color: var(--muted); }
+.intro__visual { position: relative; }
+.intro__img { width: 100%; height: clamp(300px, 55vw, 700px); object-fit: cover; object-position: center 20%; border-radius: 2px; display: block; }
+.intro__visual-label { position: absolute; bottom: 12px; right: 12px; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; color: rgba(244,242,236,0.4); }
 /* Stats → chiffres nus séparés par des filets verticaux. Zéro carte. */
-.stats { display: grid; grid-template-columns: 1fr; margin-top: clamp(48px, 6vw, 80px); border-top: 1px solid var(--line); }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: clamp(48px, 6vw, 80px); border-top: 1px solid var(--line); }
 .stat { padding: 32px 24px 0 0; position: relative; }
 .stat + .stat { padding-left: clamp(20px, 3vw, 40px); border-left: 1px solid var(--line); }
 .stat b { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.8rem, 5vw, 4.2rem); line-height: 0.9; color: var(--text); display: flex; align-items: baseline; gap: 2px; letter-spacing: -0.01em; }
-.stat span { display: block; margin-top: 12px; font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.18em; }
+.stat span { display: block; margin-top: 12px; font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em; }
 .stat__x { font-family: var(--font-display); font-size: 0.7em; color: var(--muted); }
 
 /* =================== HISTORY =================== */
@@ -521,6 +525,9 @@ body.lightbox-open { overflow: hidden; }
 .hero__badge { gap: 8px; }
 .hero__badge i { width: 20px; }
 .hero__badge span { letter-spacing: 0.12em; font-size: 0.62rem; }
+.stat { padding-right: 8px; }
+.stat + .stat { padding-left: 8px; }
+.stat span { letter-spacing: 0.06em; font-size: 0.58rem; }
 
 .nav__links { display: none; }
 .nav .btn { display: none; }
@@ -550,6 +557,9 @@ body.lightbox-open { overflow: hidden; }
   .hero__badge i { width: 34px; }
 
   .stats { grid-template-columns: repeat(3, 1fr); }
+  .stat { padding-right: 24px; }
+  .stat + .stat { padding-left: clamp(20px, 3vw, 40px); }
+  .stat span { letter-spacing: 0.18em; font-size: 0.7rem; }
 
   .history__gallery { grid-template-columns: repeat(2, 1fr); }
   .history__card--tall { min-height: 260px; }
@@ -577,7 +587,9 @@ body.lightbox-open { overflow: hidden; }
   .hero__grid { max-width: 58%; }
   .hero__media { display: block; }
 
-  .intro { grid-template-columns: 1fr 1fr; }
+  .intro { grid-template-columns: 1fr 0.6fr; align-items: stretch; }
+  .intro__visual { min-height: 480px; }
+  .intro__img { height: 100%; min-height: 480px; }
   .history { grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.18fr); }
   .history__gallery { grid-template-columns: 1.18fr 0.82fr 0.82fr; }
   .history__card--tall { grid-row: span 3; }
