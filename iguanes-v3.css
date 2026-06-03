@@ -163,7 +163,7 @@ html.shown .reveal { opacity: 1 !important; transform: none !important; transiti
   position: relative; z-index: 2; width: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  max-width: 58%;
+  max-width: 100%;
 }
 
 /* Badge → label brut : un filet, un texte espacé. Pas de pastille, pas de pilule. */
@@ -516,8 +516,11 @@ body.lightbox-open { overflow: hidden; }
 /* =================== RESPONSIVE — mobile-first =================== */
 
 /* ── Base mobile (< 620px) : toutes les grilles en colonne unique ── */
-.hero__grid { max-width: 100%; }
 .hero__media { display: none; }
+.hero__strip { display: none; }
+.hero__badge { gap: 8px; }
+.hero__badge i { width: 20px; }
+.hero__badge span { letter-spacing: 0.12em; font-size: 0.62rem; }
 
 .nav__links { display: none; }
 .nav .btn { display: none; }
@@ -541,9 +544,10 @@ body.lightbox-open { overflow: hidden; }
 
 /* ── Tablet (≥ 620px) ── */
 @media (min-width: 620px) {
-  .nav__links { display: flex; }
-  .nav .btn { display: inline-flex; }
-  .burger { display: none; }
+  .hero__strip { display: flex; }
+  .hero__badge span { letter-spacing: 0.32em; font-size: 0.7rem; }
+  .hero__badge { gap: 14px; }
+  .hero__badge i { width: 34px; }
 
   .stats { grid-template-columns: repeat(3, 1fr); }
 
@@ -567,6 +571,9 @@ body.lightbox-open { overflow: hidden; }
 
 /* ── Desktop étroit (≥ 900px) ── */
 @media (min-width: 900px) {
+  .nav__links { display: flex; }
+  .nav .btn { display: inline-flex; }
+  .burger { display: none; }
   .hero__grid { max-width: 58%; }
   .hero__media { display: block; }
 
