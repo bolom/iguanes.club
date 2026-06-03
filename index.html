@@ -10,6 +10,8 @@
 <link rel="stylesheet" href="iguanes-v3.css" />
 </head>
 <body>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="cursor--ring" id="cursor-ring" aria-hidden="true"></div>
 
 <!-- NAV -->
 <header class="nav" id="nav">
@@ -34,14 +36,81 @@
 
 <!-- HERO -->
 <section class="hero">
-  <!-- Image d'équipe en fond — Photo © JPK Visual @jpk.visual -->
-  <div class="hero__bg">
-    <picture>
-      <source media="(max-width:900px)" srcset="public/images/home/home-hero.jpg" />
-      <source media="(max-width:1320px)" srcset="public/images/home/home-hero.jpg" />
-      <img src="public/images/home/home-hero.jpg" alt="Les Iguanes en cercle d'équipe sous les projecteurs, stade de Schœlcher" fetchpriority="high" />
-    </picture>
+  <!-- Slideshow fond — Photos © JPK Visual @jpk.visual -->
+  <div class="hero__bg" id="hero-bg">
+    <div class="hero__slide hero__slide--active" style="--pos:center 35%">
+      <picture>
+        <source media="(max-width:900px)" srcset="assets-mobile/03-groupe/DSC00943.webp" />
+        <source media="(max-width:1320px)" srcset="assets-tablet/03-groupe/DSC00943.webp" />
+        <img src="assets-web/03-groupe/DSC00943.webp" alt="Cercle d'équipe nocturne sous les projecteurs" fetchpriority="high" />
+      </picture>
+    </div>
+    <div class="hero__slide" style="--pos:center 20%">
+      <picture>
+        <source media="(max-width:900px)" srcset="assets-mobile/03-groupe/DSC00318.webp" />
+        <source media="(max-width:1320px)" srcset="assets-tablet/03-groupe/DSC00318.webp" />
+        <img src="assets-web/03-groupe/DSC00318.webp" alt="Photo de groupe officielle des Iguanes" loading="lazy" />
+      </picture>
+    </div>
+    <div class="hero__slide" style="--pos:center 30%">
+      <picture>
+        <source media="(max-width:900px)" srcset="assets-mobile/04-action/dsc00432.webp" />
+        <source media="(max-width:1320px)" srcset="assets-tablet/04-action/dsc00432.webp" />
+        <img src="assets-web/04-action/dsc00432.webp" alt="Duel intense — flag football à Schœlcher" loading="lazy" />
+      </picture>
+    </div>
+    <div class="hero__slide" style="--pos:center 25%">
+      <picture>
+        <source media="(max-width:900px)" srcset="assets-mobile/sinobowl-2024/sb24-celebration-271.webp" />
+        <source media="(max-width:1320px)" srcset="assets-tablet/sinobowl-2024/sb24-celebration-271.webp" />
+        <img src="assets-web/sinobowl-2024/sb24-celebration-271.webp" alt="Explosion de joie — Champions SINOBOWL 2024" loading="lazy" />
+      </picture>
+    </div>
+    <div class="hero__slide" style="--pos:center 30%">
+      <picture>
+        <source media="(max-width:900px)" srcset="assets-mobile/03-groupe/dsc00734.webp" />
+        <source media="(max-width:1320px)" srcset="assets-tablet/03-groupe/dsc00734.webp" />
+        <img src="assets-web/03-groupe/dsc00734.webp" alt="Cercle d'équipe ANSANM' — nuit à Schœlcher" loading="lazy" />
+      </picture>
+    </div>
+    <div class="hero__slide" style="--pos:center 30%">
+      <picture>
+        <source media="(max-width:900px)" srcset="assets-mobile/04-action/dsc00493.webp" />
+        <source media="(max-width:1320px)" srcset="assets-tablet/04-action/dsc00493.webp" />
+        <img src="assets-web/04-action/dsc00493.webp" alt="Action en plein mouvement — séance nuit" loading="lazy" />
+      </picture>
+    </div>
+    <div class="hero__slide" style="--pos:center 20%">
+      <picture>
+        <source media="(max-width:900px)" srcset="assets-mobile/sinobowl-2024/sb24-appel-42.webp" />
+        <source media="(max-width:1320px)" srcset="assets-tablet/sinobowl-2024/sb24-appel-42.webp" />
+        <img src="assets-web/sinobowl-2024/sb24-appel-42.webp" alt="Concentration avant la finale SINOBOWL 2024" loading="lazy" />
+      </picture>
+    </div>
+    <div class="hero__slide" style="--pos:center 25%">
+      <picture>
+        <source media="(max-width:900px)" srcset="assets-mobile/03-groupe/dsc00691.webp" />
+        <source media="(max-width:1320px)" srcset="assets-tablet/03-groupe/dsc00691.webp" />
+        <img src="assets-web/03-groupe/dsc00691.webp" alt="Les Iguanes réunis sous les projecteurs" loading="lazy" />
+      </picture>
+    </div>
+    <div class="hero__slide" style="--pos:center 30%">
+      <picture>
+        <source media="(max-width:900px)" srcset="assets-mobile/sinobowl-2024/sb24-ceremonie-311.webp" />
+        <source media="(max-width:1320px)" srcset="assets-tablet/sinobowl-2024/sb24-ceremonie-311.webp" />
+        <img src="assets-web/sinobowl-2024/sb24-ceremonie-311.webp" alt="Champions SINOBOWL 2024 avec leurs médailles" loading="lazy" />
+      </picture>
+    </div>
+    <div class="hero__slide" style="--pos:center 30%">
+      <picture>
+        <source media="(max-width:900px)" srcset="assets-mobile/sinobowl-2024/sb24-warmup-17.webp" />
+        <source media="(max-width:1320px)" srcset="assets-tablet/sinobowl-2024/sb24-warmup-17.webp" />
+        <img src="assets-web/sinobowl-2024/sb24-warmup-17.webp" alt="Échauffement avant la finale SINOBOWL" loading="lazy" />
+      </picture>
+    </div>
   </div>
+  <!-- Dots navigation -->
+  <div class="hero__dots" id="hero-dots" aria-hidden="true"></div>
 
   <div class="wrap hero__grid">
     <div class="hero__badge"><i></i><span>Flag football · Schœlcher · Martinique</span></div>
@@ -65,6 +134,7 @@
     </div>
   </div>
 
+  <div class="hero__year" aria-hidden="true">2022</div>
   <div class="hero__scroll"><span class="ln"></span> Scroll</div>
   <a class="hero__credit" href="https://www.instagram.com/jpk.visual/" target="_blank" rel="noopener">© JPK Visual</a>
 </section>

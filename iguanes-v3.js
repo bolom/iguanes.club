@@ -82,6 +82,97 @@
     }, { passive: true });
   }
 
+  // ---- Hero slideshow — Ken Burns + dots ----
+  var slides = document.querySelectorAll('.hero__slide');
+  var dotsContainer = document.getElementById('hero-dots');
+  if (slides.length > 1 && dotsContainer) {
+    var cur = 0;
+    var timer;
+    var INTERVAL = 5500;
+
+    // Créer les dots
+    var dots = [];
+    slides.forEach(function (_, i) {
+      var d = document.createElement('button');
+      d.className = 'hero__dot' + (i === 0 ? ' hero__dot--active' : '');
+      d.setAttribute('aria-label', 'Slide ' + (i + 1));
+      d.addEventListener('click', function () { goTo(i); resetTimer(); });
+      dotsContainer.appendChild(d);
+      dots.push(d);
+    });
+
+    function goTo(idx) {
+      slides[cur].classList.remove('hero__slide--active');
+      dots[cur].classList.remove('hero__dot--active');
+      cur = (idx + slides.length) % slides.length;
+      slides[cur].classList.add('hero__slide--active');
+      dots[cur].classList.add('hero__dot--active');
+      // Précharger le suivant
+      var next = (cur + 1) % slides.length;
+      var img = slides[next].querySelector('img');
+      if (img && img.loading === 'lazy') img.loading = 'eager';
+    }
+
+    function advance() { goTo(cur + 1); }
+
+    function resetTimer() {
+      clearInterval(timer);
+      timer = setInterval(advance, INTERVAL);
+    }
+
+    resetTimer();
+
+    // Pause si tab cachée
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) clearInterval(timer);
+      else resetTimer();
+    });
+
+    // Swipe mobile
+    var touchStartX = 0;
+    document.querySelector('.hero__bg').addEventListener('touchstart', function (e) {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+    document.querySelector('.hero__bg').addEventListener('touchend', function (e) {
+      var dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 40) { goTo(dx < 0 ? cur + 1 : cur - 1); resetTimer(); }
+    }, { passive: true });
+  }
+
+  // ---- Inject "Agrandir" hints on media-launch elements ----
+  document.querySelectorAll('.media-launch').forEach(function (el) {
+    var hint = document.createElement('span');
+    hint.className = 'media-launch__hint';
+    hint.textContent = 'Agrandir';
+    hint.setAttribute('aria-hidden', 'true');
+    el.appendChild(hint);
+  });
+
+  // ---- Custom cursor (desktop only) ----
+  var cursor = document.getElementById('cursor');
+  var ring = document.getElementById('cursor-ring');
+  if (cursor && ring && !('ontouchstart' in window)) {
+    var mx = -100, my = -100, rx = -100, ry = -100;
+    document.addEventListener('mousemove', function (e) {
+      mx = e.clientX; my = e.clientY;
+      cursor.style.transform = 'translate(' + mx + 'px,' + my + 'px) translate(-50%,-50%)';
+    });
+    (function animRing() {
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      ring.style.transform = 'translate(' + rx + 'px,' + ry + 'px) translate(-50%,-50%)';
+      requestAnimationFrame(animRing);
+    })();
+    document.querySelectorAll('a,button,.gcell,.history__card,.pl').forEach(function (el) {
+      el.addEventListener('mouseenter', function () { ring.classList.add('hov'); });
+      el.addEventListener('mouseleave', function () { ring.classList.remove('hov'); });
+    });
+    document.addEventListener('mouseleave', function () { cursor.style.opacity = '0'; ring.style.opacity = '0'; });
+    document.addEventListener('mouseenter', function () { cursor.style.opacity = ''; ring.style.opacity = ''; });
+  } else {
+    document.body.classList.add('no-cursor');
+  }
+
   // ---- Responsive asset sources ----
   function toResponsiveSrc(src, bucket) {
     if (!src) return null;
