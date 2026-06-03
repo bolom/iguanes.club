@@ -78,8 +78,10 @@ button { font: inherit; cursor: pointer; }
 .klabel::before { content: “””; }
 .klabel::after  { content: “””; }
 
-/* Titre : contraste extrême — énorme, serré, ivoire pur */
-.title { font-family: var(--font-display); font-weight: 800; text-transform: uppercase; font-size: clamp(2.6rem, 7vw, 5.4rem); line-height: 0.9; letter-spacing: -0.01em; }
+/* Titre : ultra-agressif — énorme, serré, ultra-condensé */
+.title { font-family: var(--font-display); font-weight: 900; text-transform: uppercase; font-size: clamp(2.8rem, 8.5vw, 6.2rem); line-height: 0.85; letter-spacing: -0.03em; text-shadow: 0 2px 4px rgba(0,0,0,0.4); }
+/* Titre secondaire — dynamique, énergique */
+.title--alt { font-weight: 800; font-size: clamp(2.2rem, 6vw, 4.8rem); letter-spacing: -0.02em; }
 .lead { color: var(--muted); font-size: clamp(1rem, 1.4vw, 1.14rem); line-height: 1.7; max-width: 52ch; }
 
 /* Texte or métallique — usage RARE */
@@ -104,10 +106,12 @@ html.shown .reveal { opacity: 1 !important; transform: none !important; transiti
 .btn svg { width: 15px; height: 15px; transition: transform .4s var(--ease); }
 .btn:hover svg { transform: translateX(5px); }
 /* CTA principal : ivoire plein → or métallique au survol */
-.btn--p { background: var(--text); color: var(--on); }
+.btn--p { background: var(--text); color: var(--on); position: relative; }
 .btn--p::before { content: ""; position: absolute; inset: 0; background: var(--gold-metal); opacity: 0; transition: opacity .4s var(--ease); }
+.btn--p::after { content: ""; position: absolute; inset: -1px; background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%); opacity: 0; transition: opacity .6s ease; pointer-events: none; }
 .btn--p:hover::before { opacity: 1; }
-.btn--p:hover { background: var(--text); color: var(--on); }
+.btn--p:hover::after { opacity: 1; animation: shimmer 1.5s ease-in-out forwards; }
+.btn--p:hover { background: var(--text); color: var(--on); box-shadow: 0 8px 24px rgba(201,168,76,0.25); }
 /* Secondaire : contour ivoire fin */
 .btn--g { color: var(--text); box-shadow: inset 0 0 0 1px var(--line-2); }
 .btn--g:hover { box-shadow: inset 0 0 0 1px var(--text); }
@@ -377,9 +381,10 @@ html.shown .hero h1 .w i { animation: none !important; transform: none !importan
 .stats { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: clamp(48px, 6vw, 80px); border-top: 1px solid var(--line); }
 .stat { padding: 32px 24px 0 0; position: relative; }
 .stat + .stat { padding-left: clamp(20px, 3vw, 40px); border-left: 1px solid var(--line); }
-.stat b { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.8rem, 5vw, 4.2rem); line-height: 0.9; color: var(--gold-l); display: flex; align-items: baseline; gap: 2px; letter-spacing: -0.01em; }
+.stat b { font-family: var(--font-display); font-weight: 900; font-size: clamp(3rem, 6vw, 4.6rem); line-height: 0.9; color: var(--gold-l); display: flex; align-items: baseline; gap: 2px; letter-spacing: -0.02em; text-shadow: 0 2px 8px rgba(201,168,76,0.25); }
 .stat b span { color: inherit; font-size: inherit; }
-.stat > span { display: block; margin-top: 12px; font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em; }
+.stat > span { display: block; margin-top: 12px; font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 600; }
+.stat:hover b { animation: heartbeat .8s ease-in-out 1; color: var(--gold); }
 .stat__x { font-family: var(--font-display); font-size: 0.7em; color: var(--muted); }
 
 /* =================== HISTORY =================== */
@@ -418,7 +423,10 @@ html.shown .hero h1 .w i { animation: none !important; transform: none !importan
 .pl__img image-slot::part(frame) { background: rgba(244,242,236,0.04); }
 .pl__img image-slot { color: var(--muted); }
 .pl__img img { height: 100%; object-fit: cover; }
-.pl:hover .pl__img image-slot, .pl:hover .pl__img img { transform: scale(1.03); filter: grayscale(0); }
+.pl:hover .pl__img image-slot, .pl:hover .pl__img img { transform: scale(1.05); filter: grayscale(0); }
+/* Glare effect premium sur les portraits */
+.pl__img::before { content: ""; position: absolute; inset: 0; background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%); opacity: 0; transition: opacity .5s ease; pointer-events: none; z-index: 2; }
+.pl:hover .pl__img::before { opacity: 1; animation: shimmer 1.2s ease-in-out; }
 .pl__num { position: absolute; top: 8px; right: 12px; z-index: 2; font-family: var(--font-display); font-weight: 800; font-size: 2rem; line-height: .8; color: transparent; -webkit-text-stroke: 1px rgba(244,242,236,0.35); transition: all .4s var(--ease); }
 .pl:hover .pl__num { -webkit-text-stroke: 1px var(--gold); text-shadow: 0 0 18px rgba(201,168,76,0.4); }
 /* Overlay gradient bas sur les portraits */
@@ -812,3 +820,63 @@ body.lightbox-open { overflow: hidden; }
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ── PREMIUM ANIMATIONS SPORTIVES ── */
+
+/* Pulse d'énergie — souffle sportif */
+@keyframes pulse-energy {
+  0% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(201, 168, 76, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0); }
+}
+
+/* Heartbeat — cœur du sport */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.08); }
+  50% { transform: scale(1); }
+}
+
+/* Shimmer — scintillement or métallique */
+@keyframes shimmer {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+/* Slide-up premium — monté dramatique */
+@keyframes slide-up-premium {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Stats pulse — animations statistiques énergiques */
+.stat-pulse { animation: heartbeat 1.6s ease-in-out infinite; }
+.stat-pulse.active { animation: pulse-energy 2s ease-out infinite; }
+
+/* Médaille/badge premium */
+.medal { display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; border-radius: 2px; background: linear-gradient(135deg, rgba(232,211,138,0.1) 0%, rgba(201,168,76,0.08) 100%); border: 1px solid rgba(201,168,76,0.2); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-l); transition: all .3s ease; }
+.medal:hover { box-shadow: inset 0 0 20px rgba(201,168,76,0.15), 0 0 20px rgba(201,168,76,0.1); transform: scale(1.05); background: linear-gradient(135deg, rgba(232,211,138,0.15) 0%, rgba(201,168,76,0.12) 100%); }
+.medal::before { content: "★"; font-size: 1.1em; }
+
+/* Section awards — luxe pur */
+.awards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.award-card { padding: 28px; background: linear-gradient(135deg, var(--surface-2) 0%, var(--bg-2) 100%); border: 1px solid var(--line-2); border-radius: 2px; text-align: center; transition: all .4s var(--ease); position: relative; overflow: hidden; }
+.award-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(201,168,76,0.05) 0%, transparent 100%); opacity: 0; transition: opacity .4s ease; }
+.award-card:hover { border-color: var(--gold); box-shadow: 0 0 30px rgba(201,168,76,0.15); }
+.award-card:hover::before { opacity: 1; }
+.award-icon { font-size: 3rem; margin-bottom: 16px; filter: drop-shadow(0 2px 4px rgba(201,168,76,0.2)); }
+.award-title { font-family: var(--font-display); font-weight: 800; font-size: 1.1rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; color: var(--gold-l); }
+.award-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+
+/* Stat card ultra-premium */
+.stat-card { padding: 24px; background: linear-gradient(135deg, rgba(58,122,52,0.08) 0%, rgba(201,168,76,0.04) 100%); border: 1px solid rgba(201,168,76,0.15); border-radius: 2px; text-align: center; transition: all .3s ease; }
+.stat-card:hover { border-color: rgba(201,168,76,0.4); background: linear-gradient(135deg, rgba(58,122,52,0.12) 0%, rgba(201,168,76,0.08) 100%); box-shadow: 0 8px 24px rgba(201,168,76,0.1); }
+.stat-num { font-family: var(--font-display); font-weight: 900; font-size: clamp(2rem, 5vw, 3.2rem); letter-spacing: -0.02em; background: var(--gold-metal); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+.stat-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
+
+/* Sponsor showcase — glassmorphism luxe */
+.sponsors { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; }
+.sponsor-badge { padding: 20px; background: rgba(14,15,14,0.6); backdrop-filter: blur(12px); border: 1px solid rgba(244,242,236,0.1); border-radius: 2px; display: flex; align-items: center; justify-content: center; min-height: 120px; transition: all .3s ease; }
+.sponsor-badge:hover { border-color: rgba(201,168,76,0.3); background: rgba(14,15,14,0.8); box-shadow: 0 8px 24px rgba(201,168,76,0.1), inset 0 0 20px rgba(201,168,76,0.05); }
+.sponsor-logo { width: 100%; height: auto; filter: grayscale(100%) brightness(0.9); transition: filter .4s ease; }
+.sponsor-badge:hover .sponsor-logo { filter: grayscale(40%) brightness(1.1); }
