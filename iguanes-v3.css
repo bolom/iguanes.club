@@ -776,3 +776,39 @@ body.lightbox-open { overflow: hidden; }
   .shop { grid-template-columns: repeat(3, 1fr); }
   .parts { grid-template-columns: repeat(5, 1fr); }
 }
+
+/* ── Nox Credit Easter Egg ── */
+.nox-credit {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.nox-credit::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(0,255,0,0.1) 0%, rgba(255,215,0,0.1) 100%);
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  font-size: 0.85em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.nox-credit:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
