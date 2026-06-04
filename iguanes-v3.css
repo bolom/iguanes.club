@@ -754,8 +754,10 @@ body.lightbox-open { overflow: hidden; }
   .nav .btn { display: inline-flex; }
   .burger { display: none; }
   .hero { align-items: center; }
-  .hero__grid { max-width: 48%; margin-left: auto; margin-right: var(--pad); text-align: right; }
+  .hero__grid { max-width: 48%; margin-left: auto; margin-right: var(--pad); }
   .hero h1, .hero__sub, .hero__cta, .hero__badge { text-align: left; }
+  /* Quand la slide active a --text-left, le bloc bascule à gauche */
+  .hero--text-left .hero__grid { margin-left: var(--pad); margin-right: auto; }
   .hero__media { display: block; }
 
   .intro { grid-template-columns: 1fr 0.6fr; align-items: center; }

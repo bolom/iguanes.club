@@ -35,14 +35,28 @@
 <main id="top">
 
 <!-- HERO -->
-<section class="hero">
-  <!-- Photo hero fixe — © JPK Visual @jpk.visual -->
-  <div class="hero__bg">
-    <picture>
-      <source media="(max-width:900px)" srcset="assets-mobile/05-nuit/dsc01056.webp" />
-      <source media="(max-width:1320px)" srcset="assets-tablet/05-nuit/dsc01056.webp" />
-      <img src="assets-web/05-nuit/dsc01056.webp" alt="Joueur Iguanes sous la lune — mai 2026" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;" />
-    </picture>
+<section class="hero" id="hero">
+  <!-- Slideshow 3 photos — © JPK Visual @jpk.visual -->
+  <div class="hero__bg" id="hero-bg">
+    <div class="hero__slide hero__slide--active" style="--pos:center 30%">
+      <picture>
+        <source media="(max-width:900px)" srcset="assets-mobile/05-nuit/dsc01056.webp" />
+        <source media="(max-width:1320px)" srcset="assets-tablet/05-nuit/dsc01056.webp" />
+        <img src="assets-web/05-nuit/dsc01056.webp" alt="Joueur Iguanes sous la lune — mai 2026" fetchpriority="high" />
+      </picture>
+    </div>
+    <div class="hero__slide" style="--pos:center 25%">
+      <picture>
+        <source media="(max-width:900px)" srcset="assets-mobile/05-nuit/dsc01082.webp" />
+        <source media="(max-width:1320px)" srcset="assets-tablet/05-nuit/dsc01082.webp" />
+        <img src="assets-web/05-nuit/dsc01082.webp" alt="Arbitre — flag football mai 2026" loading="lazy" />
+      </picture>
+    </div>
+    <div class="hero__slide hero__slide--text-left" style="--pos:center 35%">
+      <picture>
+        <img src="assets-web/gallery-15.jpg" alt="Les Iguanes sous le ciel de Martinique" loading="lazy" />
+      </picture>
+    </div>
   </div>
 
   <div class="wrap hero__grid">

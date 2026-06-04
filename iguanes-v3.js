@@ -101,17 +101,26 @@
       dots.push(d);
     });
 
+    var heroSection = document.getElementById('hero');
+    function updateTextPos() {
+      var isLeft = slides[cur].classList.contains('hero__slide--text-left');
+      heroSection.classList.toggle('hero--text-left', isLeft);
+    }
+
     function goTo(idx) {
       slides[cur].classList.remove('hero__slide--active');
       dots[cur].classList.remove('hero__dot--active');
       cur = (idx + slides.length) % slides.length;
       slides[cur].classList.add('hero__slide--active');
       dots[cur].classList.add('hero__dot--active');
+      updateTextPos();
       // Précharger le suivant
       var next = (cur + 1) % slides.length;
       var img = slides[next].querySelector('img');
       if (img && img.loading === 'lazy') img.loading = 'eager';
     }
+
+    updateTextPos();
 
     function advance() { goTo(cur + 1); }
 
