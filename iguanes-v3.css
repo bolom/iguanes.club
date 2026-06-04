@@ -872,15 +872,65 @@ body.lightbox-open { overflow: hidden; }
 .medal:hover { box-shadow: inset 0 0 20px rgba(201,168,76,0.15), 0 0 20px rgba(201,168,76,0.1); transform: scale(1.05); background: linear-gradient(135deg, rgba(232,211,138,0.15) 0%, rgba(201,168,76,0.12) 100%); }
 .medal::before { content: "★"; font-size: 1.1em; }
 
-/* Section awards — luxe pur */
-.awards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-.award-card { padding: 28px; background: linear-gradient(135deg, var(--surface-2) 0%, var(--bg-2) 100%); border: 1px solid var(--line-2); border-radius: 2px; text-align: center; transition: all .4s var(--ease); position: relative; overflow: hidden; }
-.award-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(201,168,76,0.05) 0%, transparent 100%); opacity: 0; transition: opacity .4s ease; }
-.award-card:hover { border-color: var(--gold); box-shadow: 0 0 30px rgba(201,168,76,0.15); }
-.award-card:hover::before { opacity: 1; }
-.award-icon { font-size: 3rem; margin-bottom: 16px; filter: drop-shadow(0 2px 4px rgba(201,168,76,0.2)); }
-.award-title { font-family: var(--font-display); font-weight: 800; font-size: 1.1rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; color: var(--gold-l); }
-.award-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+/* ── Palmarès — scène luxe ── */
+.pal-scene { position: relative; padding-top: 96px; padding-bottom: 112px; overflow: hidden; }
+
+/* Filigrane or en fond — texture subtile */
+.pal-bg { position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 50%, rgba(201,168,76,0.045) 0%, transparent 70%),
+    radial-gradient(ellipse 1px 100% at 18% 0%, rgba(201,168,76,0.12) 0%, transparent 100%);
+}
+
+.pal-wrap { position: relative; }
+
+/* Bloc héro — victoire principale */
+.pal-hero { margin-top: 52px; display: flex; align-items: flex-end; gap: 32px;
+  padding-bottom: 52px;
+  border-bottom: 1px solid rgba(201,168,76,0.25);
+}
+.pal-hero__rank { font-family: var(--font-display); font-weight: 900;
+  font-size: clamp(7rem, 22vw, 16rem); line-height: 0.82;
+  letter-spacing: -0.04em;
+  background: var(--gold-metal); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  flex-shrink: 0; user-select: none;
+}
+.pal-hero__rank span { font-size: 0.3em; font-weight: 400; vertical-align: super; -webkit-text-fill-color: var(--gold-l); }
+.pal-hero__content { padding-bottom: 12px; }
+.pal-hero__comp { font-family: var(--font-display); font-weight: 900;
+  font-size: clamp(2.4rem, 7vw, 5.4rem); line-height: 0.88;
+  letter-spacing: -0.02em; text-transform: uppercase; color: var(--text);
+}
+.pal-hero__sub { margin-top: 18px; font-size: 0.82rem; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); opacity: .75;
+}
+
+/* Ligne mentions secondaires */
+.pal-rest { display: flex; align-items: center; gap: 0; margin-top: 36px; flex-wrap: wrap; }
+.pal-item { display: flex; align-items: baseline; gap: 10px; padding: 0 32px; }
+.pal-item:first-child { padding-left: 0; }
+.pal-item__rank { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem;
+  color: var(--gold-l); letter-spacing: -0.02em;
+}
+.pal-item__rank sup { font-size: 0.6em; }
+.pal-item__comp { font-family: var(--font-display); font-weight: 800; font-size: 1rem;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--text);
+}
+.pal-item__year { font-size: 0.72rem; letter-spacing: 0.18em; color: var(--muted); }
+.pal-sep { width: 1px; height: 18px; background: var(--line-2); flex-shrink: 0; }
+.pal-item--live .pal-item__comp { color: var(--muted); }
+.pal-item__dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--gold); margin-right: 4px;
+  animation: palDot 2s ease-in-out infinite;
+}
+@keyframes palDot { 0%,100% { opacity: .3; transform: scale(.8); } 50% { opacity: 1; transform: scale(1); } }
+
+@media (max-width: 600px) {
+  .pal-hero { flex-direction: column; gap: 16px; align-items: flex-start; }
+  .pal-hero__rank { font-size: clamp(5rem, 26vw, 7rem); }
+  .pal-item { padding: 0 18px; }
+  .pal-item:first-child { padding-left: 0; }
+}
 
 /* Stat card ultra-premium */
 .stat-card { padding: 24px; background: linear-gradient(135deg, rgba(58,122,52,0.08) 0%, rgba(201,168,76,0.04) 100%); border: 1px solid rgba(201,168,76,0.15); border-radius: 2px; text-align: center; transition: all .3s ease; }
