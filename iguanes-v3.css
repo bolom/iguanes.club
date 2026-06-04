@@ -145,7 +145,6 @@ html.shown .reveal { opacity: 1 !important; transform: none !important; transiti
   display: flex;
   align-items: flex-end;
   overflow: hidden;
-  /* Mobile : plus de place en bas pour les CTA */
   padding-bottom: clamp(60px, 8vw, 120px);
   padding-top: 72px;
 }
@@ -288,9 +287,9 @@ html.js .hero h1 .w { overflow: hidden; }
   font-size: 0.72em;
   letter-spacing: 0.04em;
 }
-/* "IGUANES" plein, décalé — crée la tension horizontale */
+/* "IGUANES" plein — aligné à droite, "LES" en retrait à gauche */
 .hero h1 .w:nth-child(2) i {
-  margin-left: clamp(8px, 2vw, 32px);
+  margin-left: 0;
 }
 @media (prefers-reduced-motion: no-preference) {
   html.js .hero h1 .w i { animation: rise 0.95s var(--ease) both; }
@@ -754,7 +753,9 @@ body.lightbox-open { overflow: hidden; }
   .nav__links { display: flex; }
   .nav .btn { display: inline-flex; }
   .burger { display: none; }
-  .hero__grid { max-width: 50%; margin-left: auto; margin-right: 0; text-align: right; align-items: flex-end; }
+  .hero { align-items: center; }
+  .hero__grid { max-width: 48%; margin-left: auto; margin-right: var(--pad); text-align: right; }
+  .hero h1 { text-align: left; }
   .hero__media { display: block; }
 
   .intro { grid-template-columns: 1fr 0.6fr; align-items: center; }
