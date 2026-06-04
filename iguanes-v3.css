@@ -418,11 +418,11 @@ html.shown .hero h1 .w i { animation: none !important; transform: none !importan
 .roster { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(10px, 1.4vw, 16px); }
 .pl { position: relative; }
 .pl__img { position: relative; border-radius: 2px; overflow: hidden; }
-.pl__img image-slot, .pl__img img { width: 100%; height: auto; aspect-ratio: 3/4; transition: transform 1.2s var(--ease), filter 0.6s var(--ease); filter: grayscale(1) contrast(1.1); }
+.pl__img image-slot, .pl__img img { width: 100%; height: auto; aspect-ratio: 3/4; transition: transform 1.2s var(--ease); filter: grayscale(0.4); }
 .pl__img image-slot::part(frame) { background: rgba(244,242,236,0.04); }
 .pl__img image-slot { color: var(--muted); }
 .pl__img img { height: 100%; object-fit: cover; }
-.pl:hover .pl__img image-slot, .pl:hover .pl__img img { transform: scale(1.05); filter: grayscale(0) contrast(1); }
+.pl:hover .pl__img image-slot, .pl:hover .pl__img img { transform: scale(1.05); filter: grayscale(0); }
 /* Glare effect premium sur les portraits */
 .pl__img::before { content: ""; position: absolute; inset: 0; background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%); opacity: 0; transition: opacity .5s ease; pointer-events: none; z-index: 2; }
 .pl:hover .pl__img::before { opacity: 1; animation: shimmer 1.2s ease-in-out; }
