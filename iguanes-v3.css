@@ -627,23 +627,32 @@ html.shown .hero h1 .w i { animation: none !important; transform: none !importan
   align-items: flex-start;
 }
 
-/* Carte Polaroïd */
+/* Carte Polaroïd — wrapper flex pour carte + légende */
 .pl {
   position: relative;
   flex: 0 0 68vw;
   max-width: 260px;
   scroll-snap-align: center;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform 0.4s var(--ease);
+}
+/* La carte blanche elle-même */
+.pl__card {
   background: #f2ede4;
-  padding: 10px 10px 56px;
+  padding: 10px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.6), 0 2px 6px rgba(0,0,0,0.35);
-  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
   border-radius: 1px;
+  transition: box-shadow 0.4s var(--ease);
 }
 /* Rotations alternées légères */
 .pl:nth-child(odd)  { transform: rotate(-2deg); }
 .pl:nth-child(even) { transform: rotate(1.6deg); }
 .pl:nth-child(3n)   { transform: rotate(-0.7deg); }
-.pl:hover { transform: rotate(0deg) scale(1.05) !important; box-shadow: 0 22px 60px rgba(0,0,0,0.75), 0 4px 14px rgba(0,0,0,0.45); z-index: 10; }
+.pl:hover { transform: rotate(0deg) scale(1.05) !important; z-index: 10; }
+.pl:hover .pl__card { box-shadow: 0 22px 60px rgba(0,0,0,0.75), 0 4px 14px rgba(0,0,0,0.45); }
 
 /* Zone photo — taille fixe identique pour tous les Polaroïds */
 .pl__img {
@@ -687,25 +696,27 @@ html.shown .hero h1 .w i { animation: none !important; transform: none !importan
 }
 .pl:hover .pl__num { color: rgba(255,255,255,0.9); }
 
-/* Zone texte sous la photo — style écrit à la main */
+/* Légende sous la carte — hors du Polaroïd */
 .pl__b {
-  padding-top: 12px;
+  padding-top: 14px;
   text-align: center;
+  background: transparent;
 }
 .pl__pos {
   font-size: 0.58rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #888;
+  color: var(--muted);
   font-weight: 600;
 }
 .pl__name {
-  font-family: 'Archivo', cursive, sans-serif;
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: #1a1a1a;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--text);
   margin-top: 4px;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
 }
 .pl__cap {
   display: inline-block;
@@ -714,7 +725,7 @@ html.shown .hero h1 .w i { animation: none !important; transform: none !importan
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #666;
+  color: var(--muted);
   border: none;
   box-shadow: none;
   padding: 0;
