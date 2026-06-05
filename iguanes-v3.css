@@ -166,6 +166,20 @@ html.shown .reveal { opacity: 1 !important; transform: none !important; transiti
     linear-gradient(to bottom, rgba(6,7,6,0) 80%, rgba(6,7,6,1) 100%),
     linear-gradient(to right, rgba(6,7,6,0.45) 0%, transparent 60%);
 }
+/* Image hero — MOBILE FIRST (90 % du trafic).
+   La variante portrait (480×720) est scalée par la hauteur : ~175px rognés
+   en largeur. Centré (50%) la bouche du joueur sortait du cadre à gauche.
+   On décale le cadrage vers la gauche de l'image pour garder le visage entier. */
+.hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 38% 28%;
+}
+/* Desktop : variante paysage, le visage est déjà bien centré. */
+@media (min-width: 900px) {
+  .hero__img { object-position: center 30%; }
+}
 .hero__slide {
   position: absolute;
   inset: 0;
@@ -729,7 +743,7 @@ body.lightbox-open { overflow: hidden; }
 .hero__badge i { width: 20px; }
 .hero__badge span { letter-spacing: 0.12em; font-size: 0.62rem; }
 .stat { padding-right: 8px; }
-.stat + .stat { padding-left: 8px; }
+.stat + .stat { padding-left: 0; }
 .stat > span { letter-spacing: 0.06em; font-size: 0.58rem; }
 
 .nav__links { display: none; }
@@ -765,7 +779,7 @@ body.lightbox-open { overflow: hidden; }
 
   .stats { grid-template-columns: repeat(3, 1fr); }
   .stat { padding-right: 24px; }
-  .stat + .stat { padding-left: clamp(20px, 3vw, 40px); }
+  .stat + .stat { margin-top: 0; padding-top: 32px; padding-left: clamp(20px, 3vw, 40px); border-top: 0; border-left: 1px solid var(--line); }
   .stat > span { letter-spacing: 0.18em; font-size: 0.7rem; }
 
   .history__gallery { grid-template-columns: repeat(2, 1fr); }
@@ -775,6 +789,11 @@ body.lightbox-open { overflow: hidden; }
 
   .grid-g { grid-template-columns: repeat(3, 1fr); }
   .g-wide, .g-tall { grid-column: auto; grid-row: auto; }
+
+  .gallery-head { display: flex; align-items: end; justify-content: space-between; gap: 28px; }
+
+  .history__proof { grid-template-columns: repeat(3, 1fr); }
+  .history__proof div + div { margin-top: 0; padding-top: 26px; padding-left: clamp(16px, 2vw, 28px); border-top: 0; border-left: 1px solid var(--line); }
 
   .shop { grid-template-columns: repeat(2, 1fr); }
   .parts { grid-template-columns: repeat(3, 1fr); }
