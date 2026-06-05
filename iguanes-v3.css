@@ -630,37 +630,44 @@ html.shown .hero h1 .w i { animation: none !important; transform: none !importan
 /* Carte Polaroïd */
 .pl {
   position: relative;
-  flex: 0 0 72vw;
-  max-width: 280px;
+  flex: 0 0 68vw;
+  max-width: 260px;
   scroll-snap-align: center;
-  background: #f5f0e8; /* blanc cassé papier photo */
-  padding: 12px 12px 52px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.55), 0 2px 6px rgba(0,0,0,0.3);
+  background: #f2ede4;
+  padding: 10px 10px 56px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6), 0 2px 6px rgba(0,0,0,0.35);
   transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  border-radius: 1px;
 }
 /* Rotations alternées légères */
-.pl:nth-child(odd)  { transform: rotate(-1.8deg); }
-.pl:nth-child(even) { transform: rotate(1.4deg); }
-.pl:nth-child(3n)   { transform: rotate(-0.8deg); }
-.pl:hover { transform: rotate(0deg) scale(1.04) !important; box-shadow: 0 20px 56px rgba(0,0,0,0.7), 0 4px 12px rgba(0,0,0,0.4); z-index: 10; }
+.pl:nth-child(odd)  { transform: rotate(-2deg); }
+.pl:nth-child(even) { transform: rotate(1.6deg); }
+.pl:nth-child(3n)   { transform: rotate(-0.7deg); }
+.pl:hover { transform: rotate(0deg) scale(1.05) !important; box-shadow: 0 22px 60px rgba(0,0,0,0.75), 0 4px 14px rgba(0,0,0,0.45); z-index: 10; }
 
-/* Zone photo */
+/* Zone photo — taille fixe identique pour tous les Polaroïds */
 .pl__img {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 3/4;
+  width: 100%;
+  height: 0;
+  padding-bottom: 133%; /* ratio 3/4 fixe */
+  display: block;
 }
 .pl__img--placeholder {
-  aspect-ratio: 3/4;
-  background: #ddd8cc;
+  position: absolute;
+  inset: 0;
+  background: #ccc8be;
   display: flex; align-items: center; justify-content: center;
 }
 .pl__img--placeholder svg { width: 40%; height: 40%; color: #999; }
 .pl__img img {
+  position: absolute;
+  inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
   display: block;
-  filter: sepia(0.12) contrast(1.05);
+  filter: sepia(0.1) contrast(1.05);
   transition: transform 1.2s var(--ease), filter 0.4s;
 }
 .pl:hover .pl__img img { transform: scale(1.04); filter: sepia(0) contrast(1.08); }
