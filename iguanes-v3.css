@@ -77,6 +77,12 @@ button { font: inherit; cursor: pointer; }
 .klabel { display: inline-block; font-family: var(--font); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin: 0 0 28px; opacity: 0.75; }
 .klabel::before { content: “””; }
 .klabel::after  { content: “””; }
+/* Mobile : le letter-spacing 0.32em rend les labels longs (« Recrutement ·
+   Saison 2026–2027 ») trop larges → wrap moche et texte collé au bord droit.
+   On le resserre sur petit écran. */
+@media (max-width: 600px) {
+  .klabel { letter-spacing: 0.2em; }
+}
 
 /* Titre : ultra-agressif — énorme, serré, ultra-condensé */
 .title { font-family: var(--font-display); font-weight: 900; text-transform: uppercase; font-size: clamp(2.8rem, 8.5vw, 6.2rem); line-height: 0.85; letter-spacing: -0.03em; text-shadow: 0 2px 4px rgba(0,0,0,0.4); }
