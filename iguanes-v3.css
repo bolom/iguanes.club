@@ -466,47 +466,72 @@ html.shown .hero h1 .w i { animation: none !important; transform: none !importan
 .intro__p--dark { max-width: 62ch; color: var(--muted); margin-bottom: 1.4em; }
 /* Para 2 : clair/blanc, mise en avant */
 .intro__content .lead.d2 { max-width: 62ch; color: var(--text); }
-.intro__banner {
+/* Ancienne bannière supprimée — remplacée par .club-banner */
+.intro__banner { display: none; }
+
+/* ── Club banner — chevauchement luxe entre sections ── */
+.club-banner {
   position: relative;
-  margin-top: clamp(40px, 6vw, 72px);
-  /* Pleine largeur : la .section est déjà à 100 %, pas de marge négative
-     (sinon débordement horizontal de var(--pad) sur mobile). */
+  z-index: 2;
+  margin-top: clamp(-60px, -8vw, -100px);
+  margin-bottom: clamp(-60px, -8vw, -100px);
+}
+.club-banner__img {
+  position: relative;
   overflow: hidden;
 }
-.intro__banner::before {
+.club-banner__img::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 30%;
+  height: 35%;
   background: linear-gradient(to bottom, var(--bg), transparent);
   z-index: 1;
   pointer-events: none;
 }
-.intro__banner::after {
+.club-banner__img::after {
   content: "";
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold) 30%, var(--gold) 70%, transparent);
-  opacity: .35;
-  z-index: 2;
+  height: 35%;
+  background: linear-gradient(to top, var(--bg-2), transparent);
+  z-index: 1;
+  pointer-events: none;
 }
-.intro__banner img {
+.club-banner__img img {
   width: 100%;
-  height: clamp(300px, 44vw, 580px);
+  height: clamp(320px, 50vw, 640px);
   object-fit: cover;
   object-position: center 22%;
   display: block;
-  filter: brightness(.88) contrast(1.06);
+  filter: brightness(0.72) contrast(1.1);
 }
-.intro__banner-credit {
+.club-banner__credit {
   position: absolute;
-  bottom: 16px; right: var(--pad);
+  bottom: 18px; right: var(--pad);
   font-size: 0.6rem; font-weight: 600;
   letter-spacing: 0.18em; text-transform: uppercase;
   color: rgba(244,242,236,0.3);
   z-index: 3;
 }
+.club-banner__over {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(5rem, 18vw, 16rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(244,242,236,0.13);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+.section--club { padding-bottom: clamp(100px, 14vw, 180px); }
+#histoire { padding-top: clamp(120px, 16vw, 200px); }
 .intro__big { font-family: var(--font-display); font-weight: 900; text-transform: uppercase; font-size: clamp(3rem, 6.5vw, 6rem); line-height: 0.88; letter-spacing: -0.02em; margin-bottom: clamp(28px, 3.5vw, 48px); }
 .intro__big em { font-style: normal; color: var(--muted); display: block; }
 /* Stats → chiffres nus séparés par des filets verticaux. Zéro carte. */
