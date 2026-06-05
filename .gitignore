@@ -5,3 +5,4 @@ media/
 tmp/
 *.zip
 9-20260602T191905Z-3-001.zip
+.worktrees/
