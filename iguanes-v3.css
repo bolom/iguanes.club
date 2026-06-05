@@ -618,8 +618,7 @@ html.shown .hero h1 .w i { animation: none !important; transform: none !importan
 .roster-scroll-wrap::-webkit-scrollbar { display: none; }
 
 .roster { display: flex; flex-wrap: nowrap; gap: 12px; width: max-content; }
-.pl { flex: 0 0 72vw; max-width: 300px; scroll-snap-align: start; }
-.pl { position: relative; }
+.pl { position: relative; flex: 0 0 72vw; max-width: 300px; scroll-snap-align: start; }
 .pl__img { position: relative; border-radius: 2px; overflow: hidden; }
 .pl__img--placeholder { aspect-ratio: 3/4; background: repeating-linear-gradient(135deg, rgba(244,242,236,0.03) 0px, rgba(244,242,236,0.03) 1px, transparent 1px, transparent 12px); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; }
 .pl__img--placeholder svg { width: 52%; height: 52%; color: var(--muted); opacity: 0.6; }
@@ -1035,7 +1034,7 @@ body.lightbox-open { overflow: hidden; }
     padding-inline: 0;
   }
   .roster { display: grid; grid-template-columns: repeat(3, 1fr); width: auto; }
-  .pl { flex: none; max-width: none; }
+  .pl { flex: none; max-width: none; scroll-snap-align: none; }
 
   .grid-g { grid-template-columns: repeat(3, 1fr); }
   .g-wide, .g-tall { grid-column: auto; grid-row: auto; }
