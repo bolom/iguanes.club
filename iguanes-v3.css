@@ -832,11 +832,36 @@ body.lightbox-open { overflow: hidden; }
    et déborde (le texte se faisait couper par .join { overflow:hidden } sur mobile). */
 .join__grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(36px, 5vw, 80px); align-items: center; }
 .join ol { list-style: none; counter-reset: s; margin: 0; padding: 0; }
-.join li { counter-increment: s; display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 20px; padding: 24px 0; border-top: 1px solid var(--line); }
+.join li {
+  counter-increment: s;
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 24px;
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+  transition: background 0.25s;
+  border-radius: 2px;
+}
 .join li:last-child { border-bottom: 1px solid var(--line); }
-.join li::before { content: counter(s, decimal-leading-zero); font-family: var(--font-display); font-weight: 800; color: transparent; -webkit-text-stroke: 1px var(--text); font-size: 1.8rem; line-height: 1; }
-.join li b { display: block; margin-bottom: 6px; font-size: 1.02rem; }
-.join li p { color: var(--muted); font-size: 0.92rem; line-height: 1.6; }
+.join li:hover { background: rgba(201,168,76,0.03); }
+.join li::before {
+  content: counter(s, decimal-leading-zero);
+  font-family: var(--font-display);
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--gold);
+  font-size: 2.4rem;
+  line-height: 1;
+  opacity: 0.7;
+  transition: opacity 0.3s, -webkit-text-stroke 0.3s;
+}
+.join li:hover::before {
+  opacity: 1;
+  -webkit-text-stroke: 1px var(--gold-l);
+  text-shadow: 0 0 20px rgba(201,168,76,0.3);
+}
+.join li b { display: block; margin-bottom: 8px; font-size: 1.06rem; letter-spacing: 0.01em; }
+.join li p { color: var(--muted); font-size: 0.94rem; line-height: 1.65; }
 .infos { font-size: 0.97rem; }
 .infos div { display: flex; justify-content: space-between; gap: 16px; padding: 15px 0; border-bottom: 1px solid var(--line); }
 .infos div:first-child { border-top: 1px solid var(--line); }
