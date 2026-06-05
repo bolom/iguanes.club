@@ -53,7 +53,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800;900&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Russo+One&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="iguanes-v3.css" />
 </head>
 <body>
@@ -65,10 +65,9 @@
   <div class="wrap nav__in">
     <a class="brand" href="#top"><img class="brand__logo" src="public/logos/logo-01.png" alt="" aria-hidden="true" /><b>Les <span>Iguanes</span></b></a>
     <nav class="nav__links" id="nav-links" aria-label="Navigation principale">
-      <a href="#club">Le club</a>
-      <a href="#effectif">Effectif</a>
       <a href="#calendrier">Calendrier</a>
-      <a href="#histoire">Histoire</a>
+      <a href="#resultats">Résultats</a>
+      <a href="#club">Le club</a>
       <a href="#galerie">Galerie</a>
       <a href="#rejoindre">Rejoindre</a>
       <a href="#contact">Contact</a>
@@ -89,10 +88,9 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
     </button>
     <div class="drawer__links">
-      <a class="drawer__link" href="#club">Le club</a>
-      <a class="drawer__link" href="#effectif">Effectif</a>
       <a class="drawer__link" href="#calendrier">Calendrier</a>
-      <a class="drawer__link" href="#histoire">Histoire</a>
+      <a class="drawer__link" href="#resultats">Résultats</a>
+      <a class="drawer__link" href="#club">Le club</a>
       <a class="drawer__link" href="#galerie">Galerie</a>
       <a class="drawer__link" href="#rejoindre">Rejoindre</a>
       <a class="drawer__link" href="#contact">Contact</a>
@@ -111,26 +109,26 @@
 
 <!-- HERO -->
 <section class="hero" id="hero">
-  <!-- Photo hero — © JPK Visual @jpk.visual -->
   <div class="hero__bg">
-    <picture>
-      <source media="(max-width:900px)" srcset="assets-mobile/05-nuit/dsc01056.webp" />
-      <source media="(max-width:1320px)" srcset="assets-tablet/05-nuit/dsc01056.webp" />
-      <img class="hero__img" src="assets-web/05-nuit/dsc01056.webp" alt="Joueur Iguanes sous la lune — mai 2026" fetchpriority="high" />
-    </picture>
+    <img class="hero__img" src="public/images/hero-player.png" alt="Joueur Iguanes en maillot — explosion d'énergie" fetchpriority="high" />
   </div>
 
   <div class="wrap hero__grid">
     <div class="hero__badge"><i></i><span>Flag football · Schœlcher · Martinique</span></div>
-    <h1>Les Iguanes<span style="display:none">— Club de Flag Football en Martinique</span></h1>
-    <p class="hero__sub reveal d2">Club de flag football mixte, ouvert à tous dès 15 ans.<br>On court, on attrape, on marque — ANSANM'.</p>
+    <h1 class="hero__title">
+      <picture>
+        <source media="(max-width:600px)" srcset="public/images/iguanes-title-mobile.png" />
+        <source media="(max-width:900px)" srcset="public/images/iguanes-title-tablet.png" />
+        <img src="public/images/iguanes-title-desktop.png" alt="Iguanes" class="hero__title-img" />
+      </picture>
+    </h1>
+    <p class="hero__sub reveal d2">Flag football mixte · Martinique · Ouvert à tous dès 15 ans.</p>
     <div class="hero__cta reveal d3">
       <a class="btn btn--p" href="#rejoindre"><span>Rejoindre l'équipe <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
       <a class="btn btn--g" href="#galerie"><span>La galerie</span></a>
     </div>
   </div>
 
-  <!-- Palmarès -->
   <div class="hero__strip">
     <div class="hero__trophy">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4a2 2 0 0 1-2-2V5h4m14 4h2a2 2 0 0 0 2-2V5h-4"/><path d="M6 9c0 5 3 7 6 8 3-1 6-3 6-8V5H6v4z"/><path d="M9 21h6m-3-4v4"/></svg>
@@ -143,7 +141,8 @@
   </div>
 
   <div class="hero__scroll"><span class="ln"></span> Scroll</div>
-  <a class="hero__credit" href="https://www.instagram.com/jpk.visual/" target="_blank" rel="noopener">© JPK Visual</a>
+  <span class="hero__credit">© Les Iguanes</span>
+  <canvas class="hero__sparks" id="heroSparks" aria-hidden="true"></canvas>
 </section>
 
 <!-- MARQUEE -->
@@ -154,121 +153,48 @@
   </div>
 </div>
 
-<!-- CLUB -->
-<section class="section section--club" id="club">
-  <div class="wrap intro">
-    <div class="intro__content">
-      <h2 class="intro__big reveal">Le flag football,<br><em>version créole.</em></h2>
-      <p class="lead reveal d1 intro__p--dark">Fondés à Schœlcher en octobre 2022 par un groupe de passionnés, les Iguanes sont le premier club de flag football mixte de Martinique. Le flag football est une version sans contact du football américain où l'objectif est d'arracher un flag à la ceinture de son adversaire pour l'arrêter. Rapide, stratégique et spectaculaire, ce sport est accessible à toutes et à tous dès 15 ans.</p>
-      <p class="lead reveal d2">Basés à Schœlcher, où nous nous entraînons deux fois par semaine, nous représentons fièrement nos couleurs lors des compétitions régionales et nationales. Champions du SINOBOWL 2024, nous poursuivons le développement d'un projet sportif ambitieux avec une volonté simple : faire grandir durablement le flag football en Martinique. Rejoignez l'aventure et découvrez un sport d'équipe dynamique, inclusif et ouvert à tous.</p>
-      <div class="stats">
-        <div class="stat reveal d1"><b><span data-count="30" data-suffix="+">30+</span></b><span>Membres</span></div>
-        <div class="stat reveal d2"><b><span data-count="3">3</span></b><span>Saisons</span></div>
-        <div class="stat reveal d3"><b><span data-count="2">2</span><span class="stat__x">x</span></b><span>Séances / sem.</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CLUB BANNER — chevauchement entre #club et #histoire -->
-<div class="club-banner">
-  <div class="club-banner__img reveal">
-    <picture>
-      <source media="(max-width:900px)" srcset="assets-mobile/03-groupe/dsc00318.webp" />
-      <source media="(max-width:1320px)" srcset="assets-tablet/03-groupe/dsc00318.webp" />
-      <img src="assets-web/03-groupe/dsc00318.webp" alt="Joueuse et joueur des Iguanes — flag football mixte à Schœlcher" loading="lazy" />
-    </picture>
-    <span class="club-banner__credit">© JPK Visual</span>
-    <div class="club-banner__over" aria-hidden="true">IGUANES</div>
-  </div>
-</div>
-
-<!-- EFFECTIF -->
-<section class="section" id="effectif">
-  <div class="wrap">
-    <div class="head reveal"><p class="klabel">L'effectif</p><h2 class="title">Effectif 2025-2026</h2></div>
-    <div class="roster-scroll-wrap">
-    <div class="roster">
-      <article class="pl reveal d1"><div class="pl__card"><div class="pl__img"><span class="pl__num">09</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/9-johan-LOVE-YOURZ/dsc00250.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/9-johan-LOVE-YOURZ/dsc00250.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/9-johan-LOVE-YOURZ/dsc00250.webp" alt="Johan, numéro 9" loading="lazy" /></picture></div></div><div class="pl__b"><div class="pl__pos">QB · WR · S</div><div class="pl__name">Johan</div><span class="pl__cap">Love Yourz</span></div></article>
-      <article class="pl reveal d2"><div class="pl__card"><div class="pl__img"><span class="pl__num">33</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/33-JD-PRESIDENT/dsc00261.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/33-JD-PRESIDENT/dsc00261.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/33-JD-PRESIDENT/dsc00261.webp" alt="JD, numéro 33" loading="lazy" /></picture></div></div><div class="pl__b"><div class="pl__pos">QB · Centre</div><div class="pl__name">JD</div></div></article>
-      <article class="pl reveal d3"><div class="pl__card"><div class="pl__img"><span class="pl__num">90</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/90-Sasha-PIKACHU/dsc00200.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/90-Sasha-PIKACHU/dsc00200.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/90-Sasha-PIKACHU/dsc00200.webp" alt="Sasha, numéro 90" loading="lazy" /></picture></div></div><div class="pl__b"><div class="pl__pos">LB · Rusher</div><div class="pl__name">Sasha</div><span class="pl__cap">Pikachu</span></div></article>
-      <article class="pl reveal d4"><div class="pl__card"><div class="pl__img"><span class="pl__num">67</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/67-Kenael-OBITO/dsc00111.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/67-Kenael-OBITO/dsc00111.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/67-Kenael-OBITO/dsc00111.webp" alt="Kenael, numéro 67" loading="lazy" /></picture></div></div><div class="pl__b"><div class="pl__pos">CB</div><div class="pl__name">Kenael</div><span class="pl__cap">Obito</span></div></article>
-      <article class="pl reveal d1"><div class="pl__card"><div class="pl__img"><span class="pl__num">99</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/99-Ulric/dsc00204.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/99-Ulric/dsc00204.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/99-Ulric/dsc00204.webp" alt="Ulric, numéro 99" loading="lazy" /></picture></div></div><div class="pl__b"><div class="pl__pos">CB · S</div><div class="pl__name">Ulric</div><span class="pl__cap">Wulfric</span></div></article>
-      <article class="pl reveal d2"><div class="pl__card"><div class="pl__img"><span class="pl__num">55</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/55-christina/dsc00142.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/55-christina/dsc00142.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/55-christina/dsc00142.webp" alt="Christina, numéro 55" loading="lazy" /></picture></div></div><div class="pl__b"><div class="pl__pos">LB · Rusher</div><div class="pl__name">Christina</div></div></article>
-      <article class="pl reveal d3"><div class="pl__card"><div class="pl__img"><span class="pl__num">00</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/0-davys-KABRERA/dsc00500.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/0-davys-KABRERA/dsc00500.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/0-davys-KABRERA/dsc00500.webp" alt="Davys, numéro 0" loading="lazy" /></picture></div></div><div class="pl__b"><div class="pl__pos">WR · Rusher</div><div class="pl__name">Davys</div><span class="pl__cap">Karma</span></div></article>
-      <article class="pl reveal d4"><div class="pl__card"><div class="pl__img"><span class="pl__num">24</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/24-Lucas/dsc00512.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/24-Lucas/dsc00512.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/24-Lucas/dsc00512.webp" alt="Lucas, numéro 24" loading="lazy" /></picture></div></div><div class="pl__b"><div class="pl__pos">WR · CB</div><div class="pl__name">Lucas</div></div></article>
-      <article class="pl reveal d1"><div class="pl__card"><div class="pl__img"><span class="pl__num">25</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/25-Vincent-VINCENTE/dsc00103.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/25-Vincent-VINCENTE/dsc00103.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/25-Vincent-VINCENTE/dsc00103.webp" alt="Vincent, numéro 25" loading="lazy" /></picture></div></div><div class="pl__b"><div class="pl__pos">WR</div><div class="pl__name">Vincent</div><span class="pl__cap">Vincente</span></div></article>
-      <article class="pl reveal d2"><div class="pl__card"><div class="pl__img"><span class="pl__num">84</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/84-Bolo/dsc00124.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/84-Bolo/dsc00124.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/84-Bolo/dsc00124.webp" alt="Bolo, numéro 84" loading="lazy" /></picture></div></div><div class="pl__b"><div class="pl__pos">Centre</div><div class="pl__name">Bolo</div></div></article>
-      <article class="pl reveal d3"><div class="pl__card"><div class="pl__img"><span class="pl__num">12</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/12-Jonathan/dsc00293.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/12-Jonathan/dsc00293.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/12-Jonathan/dsc00293.webp" alt="Jonathan, numéro 12" loading="lazy" /></picture></div></div><div class="pl__b"><div class="pl__pos">WR · CB · LB</div><div class="pl__name">Jonathan</div></div></article>
-      <article class="pl reveal d4"><div class="pl__card"><div class="pl__img pl__img--placeholder"><span class="pl__initial">E</span></div></div><div class="pl__b"><div class="pl__pos">—</div><div class="pl__name">Emmanuel</div></div></article>
-      <article class="pl reveal d1"><div class="pl__card"><div class="pl__img pl__img--placeholder"><span class="pl__initial">M</span></div></div><div class="pl__b"><div class="pl__pos">—</div><div class="pl__name">Mélanie</div></div></article>
-      <article class="pl reveal d2"><div class="pl__card"><div class="pl__img pl__img--placeholder"><span class="pl__initial">M</span></div></div><div class="pl__b"><div class="pl__pos">—</div><div class="pl__name">Magali</div></div></article>
-      <article class="pl reveal d3"><div class="pl__card"><div class="pl__img pl__img--placeholder"><span class="pl__initial">P</span></div></div><div class="pl__b"><div class="pl__pos">—</div><div class="pl__name">Priscilla</div></div></article>
-      <article class="pl reveal d4"><div class="pl__card"><div class="pl__img pl__img--placeholder"><span class="pl__initial">L</span></div></div><div class="pl__b"><div class="pl__pos">—</div><div class="pl__name">Lina</div></div></article>
-    </div>
-    </div><!-- /.roster -->
-    </div><!-- /.roster-scroll-wrap -->
-    <p class="note reveal">Portraits issus de la séance Flag Football · Les Iguanes · 30 mai 2026. Photos <a href="https://www.instagram.com/jpk.visual/" target="_blank" rel="noopener">© JPK Visual</a>.</p>
-
-      <!-- Historique des effectifs par saison -->
-      <div class="roster-history reveal">
-        <div class="rh-head">
-          <p class="rh-eyebrow">Depuis 2022</p>
-          <h3 class="rh-title">36 licenciés</h3>
-        </div>
-        <div class="rh-grid">
-
-          <div class="rh-season">
-            <button class="rh-season__toggle" aria-expanded="false">
-              <span class="rh-season__year">2023<em>–24</em></span>
-              <span class="rh-season__count">19 joueurs</span>
-              <span class="rh-season__chevron" aria-hidden="true"></span>
-            </button>
-            <div class="rh-season__body" hidden>
-              <p class="rh-names">JD · Johan · Jonathan · Lucas · Nicy · Eddy · Maxime · Loan · Lena · Charles · Noah · Chloé · Alexi · Marvin · Marie · Marcus · Luidgi · Emma · Laurianne</p>
-            </div>
-          </div>
-
-          <div class="rh-season">
-            <button class="rh-season__toggle" aria-expanded="false">
-              <span class="rh-season__year">2024<em>–25</em></span>
-              <span class="rh-season__count">12 joueurs</span>
-              <span class="rh-season__chevron" aria-hidden="true"></span>
-            </button>
-            <div class="rh-season__body" hidden>
-              <p class="rh-names">JD · Johan · Jonathan · Lucas · Nicy · Eddy · Maxime · Loan · Lena · Lina · Priscilla · Nolan</p>
-            </div>
-          </div>
-
-          <div class="rh-season">
-            <button class="rh-season__toggle" aria-expanded="false">
-              <span class="rh-season__year">2025<em>–26</em></span>
-              <span class="rh-season__count">16 joueurs</span>
-              <span class="rh-season__chevron" aria-hidden="true"></span>
-            </button>
-            <div class="rh-season__body" hidden>
-              <p class="rh-names">JD · Johan · Jonathan · Lucas · Lina · Priscilla · Bolo · Vincent · Ulric · Sasha · Christina · Emmanuel · Kenael · Davys · Mélanie · Magali</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-  </div>
-</section>
-
 <!-- CALENDRIER -->
 <section class="section" id="calendrier">
   <div class="wrap">
-    <div class="head reveal"><p class="klabel">Calendrier · Saison 2026</p><h2 class="title">Compétitions</h2></div>
-    <div class="fix reveal">
-      <div class="fix__row"><div class="fix__d"><b>25</b><span>Avril</span></div><div class="fix__m"><b>Iguanes</b> <em>vs</em> <b>Canners</b><p>samedi 25 avril · Saint-Joseph</p></div><span class="pill pill--a">J1</span><div class="fix__t">0 - 15</div></div>
-      <div class="fix__row"><div class="fix__d"><b>03</b><span>Mai</span></div><div class="fix__m"><b>Iguanes</b> <em>vs</em> <b>Gators</b><p>dimanche 3 mai · Ducos</p></div><span class="pill pill--a">J2</span><div class="fix__t">18 - 19</div></div>
-      <div class="fix__row"><div class="fix__d"><b>09</b><span>Mai</span></div><div class="fix__m"><b>Iguanes</b> <em>vs</em> <b>Rapaces</b><p>samedi 9 mai · Osenat</p></div><span class="pill pill--a">J3</span><div class="fix__t">12 - 24</div></div>
-      <div class="fix__row"><div class="fix__d"><b>24</b><span>Mai</span></div><div class="fix__m"><b>Iguanes</b> <em>vs</em> <b>Canners</b><p>dimanche 24 mai · B. Gondeau</p></div><span class="pill pill--a">J4</span><div class="fix__t">6 - 22</div></div>
-      <div class="fix__row"><div class="fix__d"><b>30</b><span>Mai</span></div><div class="fix__m"><b>Iguanes</b> <em>vs</em> <b>Gators</b><p>samedi 30 mai · Schœlcher</p></div><span class="pill pill--a">J5</span><div class="fix__t">12 - 14</div></div>
-      <div class="fix__row fix__row--next"><div class="fix__d"><b>06</b><span>Juin</span></div><div class="fix__m"><b>Iguanes</b> <em>vs</em> <b>Rapaces</b><p>samedi 6 juin · Saint-Joseph · 18h30</p></div><span class="pill pill--p pill--next">J6</span><div class="fix__t">– –</div></div>
-      <div class="fix__row"><div class="fix__d"><b>20</b><span>Juin</span></div><div class="fix__m"><b>Iguanes</b> <em>vs</em> <b>Adversaire à confirmer</b><p>samedi 20 juin · Le François</p></div><span class="pill pill--p">Finale</span><div class="fix__t">– –</div></div>
+    <div class="head reveal"><p class="klabel">Saison 2026</p><h2 class="title">Prochain match</h2></div>
+
+    <!-- Prochain match mis en avant -->
+    <div class="next-match reveal">
+      <div class="next-match__date">
+        <span class="next-match__day">06</span>
+        <span class="next-match__month">Juin</span>
+      </div>
+      <div class="next-match__info">
+        <div class="next-match__versus"><strong>Iguanes</strong> <em>vs</em> <strong>Rapaces</strong></div>
+        <div class="next-match__meta">Samedi 6 juin · Saint-Joseph · 18h30 · Journée 6</div>
+      </div>
+      <div class="next-match__badge">À venir</div>
     </div>
+
+    <!-- Finale à venir -->
+    <div class="next-match next-match--finale reveal">
+      <div class="next-match__date">
+        <span class="next-match__day">20</span>
+        <span class="next-match__month">Juin</span>
+      </div>
+      <div class="next-match__info">
+        <div class="next-match__versus"><strong>Finale</strong> · Adversaire à confirmer</div>
+        <div class="next-match__meta">Samedi 20 juin · Le François</div>
+      </div>
+      <div class="next-match__badge next-match__badge--finale">Finale</div>
+    </div>
+
+    <!-- Résultats journées passées -->
+    <details class="cal-history reveal">
+      <summary>Voir les 5 journées précédentes</summary>
+      <div class="fix">
+        <div class="fix__row"><div class="fix__d"><b>25</b><span>Avril</span></div><div class="fix__m"><b>Iguanes</b> <em>vs</em> <b>Canners</b><p>samedi 25 avril · Saint-Joseph</p></div><span class="pill pill--a">J1</span><div class="fix__t">0 - 15</div></div>
+        <div class="fix__row"><div class="fix__d"><b>03</b><span>Mai</span></div><div class="fix__m"><b>Iguanes</b> <em>vs</em> <b>Gators</b><p>dimanche 3 mai · Ducos</p></div><span class="pill pill--a">J2</span><div class="fix__t">18 - 19</div></div>
+        <div class="fix__row"><div class="fix__d"><b>09</b><span>Mai</span></div><div class="fix__m"><b>Iguanes</b> <em>vs</em> <b>Rapaces</b><p>samedi 9 mai · Osenat</p></div><span class="pill pill--a">J3</span><div class="fix__t">12 - 24</div></div>
+        <div class="fix__row"><div class="fix__d"><b>24</b><span>Mai</span></div><div class="fix__m"><b>Iguanes</b> <em>vs</em> <b>Canners</b><p>dimanche 24 mai · B. Gondeau</p></div><span class="pill pill--a">J4</span><div class="fix__t">6 - 22</div></div>
+        <div class="fix__row"><div class="fix__d"><b>30</b><span>Mai</span></div><div class="fix__m"><b>Iguanes</b> <em>vs</em> <b>Gators</b><p>samedi 30 mai · Schœlcher</p></div><span class="pill pill--a">J5</span><div class="fix__t">12 - 14</div></div>
+      </div>
+    </details>
   </div>
 </section>
 
@@ -288,26 +214,105 @@
   </div>
 </section>
 
-<!-- HISTOIRE -->
-<section class="section" id="histoire">
+<!-- CLUB (intro + effectif + histoire fusionnés) -->
+<section class="section section--club" id="club">
+  <div class="wrap club-intro">
+    <p class="klabel reveal">Le club</p>
+    <h2 class="intro__big reveal">Le flag football,<br><em>version créole.</em></h2>
+    <p class="club-tagline reveal d1">Premier club de flag football mixte de Martinique — fondé à Schœlcher en 2022, ouvert à tous dès 15 ans.</p>
+  </div>
+
+  <div class="club-stats-full reveal">
+    <div class="csf-item">
+      <b><span data-count="36" data-suffix="+">36+</span></b>
+      <span>Licenciés</span>
+    </div>
+    <div class="csf-sep" aria-hidden="true"></div>
+    <div class="csf-item">
+      <b><span data-count="1">1</span></b>
+      <span>Titre SINOBOWL</span>
+    </div>
+    <div class="csf-sep" aria-hidden="true"></div>
+    <div class="csf-item">
+      <b><span data-count="3">3</span></b>
+      <span>Saisons</span>
+    </div>
+    <div class="csf-sep" aria-hidden="true"></div>
+    <div class="csf-item">
+      <b><span data-count="2">2</span><span class="csf-unit">×</span></b>
+      <span>Séances / sem.</span>
+    </div>
+  </div>
+
+<!-- CLUB BANNER — séparateur visuel -->
+<div class="club-banner">
+  <div class="club-banner__img reveal">
+    <picture>
+      <source media="(max-width:900px)" srcset="assets-mobile/03-groupe/dsc00318.webp" />
+      <source media="(max-width:1320px)" srcset="assets-tablet/03-groupe/dsc00318.webp" />
+      <img src="assets-web/03-groupe/dsc00318.webp" alt="Joueuse et joueur des Iguanes — flag football mixte à Schœlcher" loading="lazy" />
+    </picture>
+    <span class="club-banner__credit">© JPK Visual</span>
+    <div class="club-banner__over" aria-hidden="true">IGUANES</div>
+  </div>
+</div>
+
+<!-- EFFECTIF 2025-2026 -->
+<div id="effectif">
+  <div class="wrap">
+    <div class="head reveal"><p class="klabel">L'effectif</p><h2 class="title">Effectif 2025-2026</h2></div>
+    <div class="roster-scroll-wrap">
+    <div class="roster">
+      <article class="pl reveal d1"><div class="pl__card"><div class="pl__img"><span class="pl__num">09</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/9-johan-LOVE-YOURZ/dsc00250.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/9-johan-LOVE-YOURZ/dsc00250.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/9-johan-LOVE-YOURZ/dsc00250.webp" alt="Johan, numéro 9" loading="lazy" /></picture></div></div><div class="pl__b"><div class="pl__pos">QB · WR · S</div><div class="pl__name">Johan</div><span class="pl__cap">Love Yourz</span></div></article>
+      <article class="pl reveal d2"><div class="pl__card"><div class="pl__img"><span class="pl__num">33</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/33-JD-PRESIDENT/dsc00261.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/33-JD-PRESIDENT/dsc00261.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/33-JD-PRESIDENT/dsc00261.webp" alt="JD, numéro 33" loading="lazy" /></picture></div></div><div class="pl__b"><div class="pl__pos">QB · Centre</div><div class="pl__name">JD</div></div></article>
+      <article class="pl reveal d3"><div class="pl__card"><div class="pl__img"><span class="pl__num">90</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/90-Sasha-PIKACHU/dsc00200.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/90-Sasha-PIKACHU/dsc00200.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/90-Sasha-PIKACHU/dsc00200.webp" alt="Sasha, numéro 90" loading="lazy" /></picture></div></div><div class="pl__b"><div class="pl__pos">LB · Rusher</div><div class="pl__name">Sasha</div><span class="pl__cap">Pikachu</span></div></article>
+      <article class="pl reveal d4"><div class="pl__card"><div class="pl__img"><span class="pl__num">67</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/67-Kenael-OBITO/dsc00111.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/67-Kenael-OBITO/dsc00111.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/67-Kenael-OBITO/dsc00111.webp" alt="Kenael, numéro 67" loading="lazy" /></picture></div></div><div class="pl__b"><div class="pl__pos">CB</div><div class="pl__name">Kenael</div><span class="pl__cap">Obito</span></div></article>
+      <article class="pl reveal d1"><div class="pl__card"><div class="pl__img"><span class="pl__num">99</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/99-Ulric/dsc00204.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/99-Ulric/dsc00204.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/99-Ulric/dsc00204.webp" alt="Ulric, numéro 99" loading="lazy" /></picture></div></div><div class="pl__b"><div class="pl__pos">CB · S</div><div class="pl__name">Ulric</div><span class="pl__cap">Wulfric</span></div></article>
+      <article class="pl reveal d2"><div class="pl__card"><div class="pl__img"><span class="pl__num">55</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/55-christina/dsc00142.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/55-christina/dsc00142.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/55-christina/dsc00142.webp" alt="Christina, numéro 55" loading="lazy" /></picture></div></div><div class="pl__b"><div class="pl__pos">LB · Rusher</div><div class="pl__name">Christina</div></div></article>
+      <article class="pl reveal d3"><div class="pl__card"><div class="pl__img"><span class="pl__num">00</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/0-davys-KABRERA/dsc00500.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/0-davys-KABRERA/dsc00500.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/0-davys-KABRERA/dsc00500.webp" alt="Davys, numéro 0" loading="lazy" /></picture></div></div><div class="pl__b"><div class="pl__pos">WR · Rusher</div><div class="pl__name">Davys</div><span class="pl__cap">Karma</span></div></article>
+      <article class="pl reveal d4"><div class="pl__card"><div class="pl__img"><span class="pl__num">24</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/24-Lucas/dsc00512.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/24-Lucas/dsc00512.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/24-Lucas/dsc00512.webp" alt="Lucas, numéro 24" loading="lazy" /></picture></div></div><div class="pl__b"><div class="pl__pos">WR · CB</div><div class="pl__name">Lucas</div></div></article>
+      <article class="pl reveal d1"><div class="pl__card"><div class="pl__img"><span class="pl__num">25</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/25-Vincent-VINCENTE/dsc00103.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/25-Vincent-VINCENTE/dsc00103.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/25-Vincent-VINCENTE/dsc00103.webp" alt="Vincent, numéro 25" loading="lazy" /></picture></div></div><div class="pl__b"><div class="pl__pos">WR</div><div class="pl__name">Vincent</div><span class="pl__cap">Vincente</span></div></article>
+      <article class="pl reveal d2"><div class="pl__card"><div class="pl__img"><span class="pl__num">84</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/84-Bolo/dsc00124.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/84-Bolo/dsc00124.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/84-Bolo/dsc00124.webp" alt="Bolo, numéro 84" loading="lazy" /></picture></div></div><div class="pl__b"><div class="pl__pos">Centre</div><div class="pl__name">Bolo</div></div></article>
+      <article class="pl reveal d3"><div class="pl__card"><div class="pl__img"><span class="pl__num">12</span><picture><source media="(max-width:900px)" srcset="assets-mobile/portraits-by-jersey/12-Jonathan/dsc00293.webp" /><source media="(max-width:1320px)" srcset="assets-tablet/portraits-by-jersey/12-Jonathan/dsc00293.webp" /><img class="media-img" src="assets-web/portraits-by-jersey/12-Jonathan/dsc00293.webp" alt="Jonathan, numéro 12" loading="lazy" /></picture></div></div><div class="pl__b"><div class="pl__pos">WR · CB · LB</div><div class="pl__name">Jonathan</div></div></article>
+      <article class="pl reveal d4"><div class="pl__card"><div class="pl__img"><div class="pl__img--placeholder"><span class="pl__initial">E</span></div></div></div><div class="pl__b"><div class="pl__pos">—</div><div class="pl__name">Emmanuel</div></div></article>
+      <article class="pl reveal d1"><div class="pl__card"><div class="pl__img"><div class="pl__img--placeholder"><span class="pl__initial">M</span></div></div></div><div class="pl__b"><div class="pl__pos">—</div><div class="pl__name">Mélanie</div></div></article>
+      <article class="pl reveal d2"><div class="pl__card"><div class="pl__img"><div class="pl__img--placeholder"><span class="pl__initial">M</span></div></div></div><div class="pl__b"><div class="pl__pos">—</div><div class="pl__name">Magali</div></div></article>
+      <article class="pl reveal d3"><div class="pl__card"><div class="pl__img"><div class="pl__img--placeholder"><span class="pl__initial">P</span></div></div></div><div class="pl__b"><div class="pl__pos">—</div><div class="pl__name">Priscilla</div></div></article>
+      <article class="pl reveal d4"><div class="pl__card"><div class="pl__img"><div class="pl__img--placeholder"><span class="pl__initial">L</span></div></div></div><div class="pl__b"><div class="pl__pos">—</div><div class="pl__name">Lina</div></div></article>
+    </div>
+    </div><!-- /.roster-scroll-wrap -->
+    <p class="note reveal">Portraits issus de la séance Flag Football · Les Iguanes · 30 mai 2026. Photos <a href="https://www.instagram.com/jpk.visual/" target="_blank" rel="noopener">© JPK Visual</a>.</p>
+  </div>
+</div><!-- /#effectif -->
+
+<!-- HISTOIRE (dans #club) -->
+<div id="histoire">
   <div class="wrap">
     <div class="head reveal"><p class="klabel">Histoire du club</p><h2 class="title">Une équipe née à Schœlcher</h2></div>
     <div class="history">
       <div class="history__copy reveal">
-        <p class="lead">De la création de l'AMFA à la victoire au SINOBOWL — Les Iguanes se sont construits match après match, entraînement après entraînement, à Schœlcher.</p>
-        <ul class="history__list">
-          <li><b>Oct. 2022</b><span>Création de l'AMFA (Association Martiniquaise de Football Américain) par un groupe de passionnés à Schœlcher.</span></li>
-          <li><b>Sept. 2023</b><span>Naissance des Iguanes, la section flag football de l'AMFA. Premier entraînement collectif, premières couleurs et lancement de l'identité du club.</span></li>
-          <li><b>Avr. 2024</b><span>Première rencontre officielle et première victoire.</span></li>
-          <li><b>Juil. 2024</b><span>Champions du SINOBOWL 2024 (1<sup>re</sup> édition) — à Saint-Joseph. Premier titre de l'histoire du club.</span></li>
-          <li><b>Sept. 2024</b><span>Début de la 2<sup>e</sup> saison des Iguanes.</span></li>
-          <li><b>8 mars 2025</b><span>Premier camp féminin de Martinique.</span></li>
-          <li><b>Mars 2025</b><span>Vice-champions du KARAMBOWL 2025.</span></li>
-          <li><b>Juin 2025</b><span>3<sup>e</sup> place au SINOBOWL 2025.</span></li>
-          <li><b>Sept. 2025</b><span>Début de la 3<sup>e</sup> saison des Iguanes.</span></li>
-          <li><b>Avr. 2026</b><span>5<sup>e</sup> place au KARAMBOWL 2026.</span></li>
-          <li><b>Juin 2026</b><span>SINOBOWL 2026 en cours. Recrutement ouvert pour la nouvelle saison. ANSANM'.</span></li>
-        </ul>
+        <ol class="htl" aria-label="Chronologie du club">
+          <li class="htl__item">
+            <span class="htl__year">2022</span>
+            <span class="htl__event">Création de l'AMFA à Schœlcher.</span>
+          </li>
+          <li class="htl__item">
+            <span class="htl__year">2023</span>
+            <span class="htl__event">Naissance des Iguanes. Premier entraînement.</span>
+          </li>
+          <li class="htl__item">
+            <span class="htl__year">2024</span>
+            <span class="htl__event htl__event--gold">Champions du SINOBOWL — premier titre.</span>
+          </li>
+          <li class="htl__item">
+            <span class="htl__year">2025</span>
+            <span class="htl__event">Vice-champions du KARAMBOWL. Premier camp féminin.</span>
+          </li>
+          <li class="htl__item">
+            <span class="htl__year">2026</span>
+            <span class="htl__event">3<sup>e</sup> saison. SINOBOWL en cours. ANSANM'.</span>
+          </li>
+        </ol>
         <div class="palmares-strip reveal" aria-label="Palmarès du club">
           <div class="palmares-strip__item palmares-strip__item--gold">
             <div class="palmares-strip__rank">1<sup>er</sup></div>
@@ -398,7 +403,8 @@
       </div>
     </div>
   </div>
-</section>
+</div><!-- /#histoire -->
+</section><!-- /#club -->
 
 <!-- BOUTIQUE : à activer saison 2027 -->
 <!-- PARTENAIRES : à activer quand logos disponibles -->
@@ -568,6 +574,12 @@
       </button>
 
     </div>
+    <div class="gallery-more reveal">
+      <button class="gallery-more__btn" id="gallery-show-more" aria-expanded="false">
+        <span class="gallery-more__label">Voir toutes les photos</span>
+        <span class="gallery-more__count"></span>
+      </button>
+    </div>
     <p class="note reveal">Photos <a href="https://www.instagram.com/jpk.visual/" target="_blank" rel="noopener">© JPK Visual</a> · Séance du 30 mai 2026 &amp; SINOBOWL 2024.</p>
   </div>
 </section>
@@ -697,34 +709,38 @@
 
 <!-- REJOINDRE -->
 <section class="section" id="rejoindre">
-  <div class="wrap">
-    <div class="join reveal">
-      <div class="join__glow"></div>
-      <div class="join__grid">
-        <div>
-          <p class="klabel">Recrutement · Saison 2026–2027</p>
-          <h2 class="title" style="margin-bottom:18px">Viens tester,<br>tu vas adorer.</h2>
-          <p class="lead" style="margin-bottom:28px">Tu cherches un club de flag football en Martinique ? Les Iguanes recrutent toute l'année — débutant ou confirmé, fille ou gars, dès 15 ans. Pas besoin d'équipement : on prête les flags, les premières séances sont gratuites. Viens juste avec des baskets et de l'eau.</p>
-          <ol>
-            <li><div><b>Débarque à l'entraînement</b><p>Mardi ou vendredi à 19h45 — portes ouvertes, aucune inscription nécessaire.</p></div></li>
-            <li><div><b>Essaie gratuitement</b><p>Premières séances découverte offertes, sans engagement.</p></div></li>
-            <li><div><b>Rejoins les Iguanes</b><p>Licence FFFA + adhésion, et bienvenue dans la famille.</p></div></li>
-          </ol>
+  <div class="wrap join-wrap reveal">
+    <p class="klabel">Recrutement · Saison 2026–2027</p>
+    <h2 class="join-title">Viens tester,<br><em>tu vas adorer.</em></h2>
+    <p class="join-sub">Débutant ou confirmé · Fille ou gars · Dès 15 ans · Baskets + eau, on s'occupe du reste.</p>
+
+    <ol class="join-steps">
+      <li class="join-step">
+        <span class="join-step__num">01</span>
+        <div class="join-step__body">
+          <b>Débarque à l'entraînement</b>
+          <span>Mardi ou vendredi · 19h45 · Terrain Osenat, Schœlcher</span>
         </div>
-        <div>
-          <div class="infos">
-            <div><span>Entraînements</span><b>Mardi &amp; vendredi · 19h45–21h45</b></div>
-            <div><span>Lieu</span><b>Terrain Osenat · Schœlcher</b></div>
-            <div><span>Niveau</span><b>Débutant à confirmé · mixte</b></div>
-            <div><span>Âge</span><b>Dès 15 ans (naissance 2012)</b></div>
-            <div><span>Équipement</span><b>Baskets + eau — flags prêtés par le club</b></div>
-          </div>
-          <div class="infos--cta">
-            <a class="btn btn--p" href="https://www.instagram.com/iguanes_footus_972/" target="_blank" rel="noopener"><span>Nous suivre sur Instagram</span></a>
-            <a class="btn btn--g" href="https://whatsapp.com/channel/0029Vb8N8n230LKLoF0cRj2o" target="_blank" rel="noopener"><span>Rejoindre la chaîne WhatsApp</span></a>
-          </div>
+      </li>
+      <li class="join-step">
+        <span class="join-step__num">02</span>
+        <div class="join-step__body">
+          <b>Essaie gratuitement</b>
+          <span>Premières séances offertes, sans inscription.</span>
         </div>
-      </div>
+      </li>
+      <li class="join-step">
+        <span class="join-step__num">03</span>
+        <div class="join-step__body">
+          <b>Rejoins la famille</b>
+          <span>Licence FFFA + adhésion — bienvenue chez les Iguanes.</span>
+        </div>
+      </li>
+    </ol>
+
+    <div class="join-cta">
+      <a class="btn btn--p" href="https://whatsapp.com/channel/0029Vb8N8n230LKLoF0cRj2o" target="_blank" rel="noopener"><span>Rejoindre la chaîne WhatsApp</span></a>
+      <a class="join-cta__sec" href="https://www.instagram.com/iguanes_footus_972/" target="_blank" rel="noopener">@iguanes_footus_972 →</a>
     </div>
   </div>
 </section>
@@ -779,26 +795,41 @@
 <!-- FOOTER -->
 <footer class="footer">
   <div class="wrap">
-    <div class="footer__top">
-      <a class="brand" href="#top"><img class="brand__logo" src="public/logos/logo-01.png" alt="" aria-hidden="true" /><b>Les <span>Iguanes</span></b></a>
-      <nav class="footer__nav">
-        <a href="#club">Le club</a><a href="#effectif">Effectif</a><a href="#calendrier">Calendrier</a><a href="#histoire">Histoire</a><a href="#galerie">Galerie</a><a href="#palmares">Palmarès</a><a href="#rejoindre">Rejoindre</a><a href="#contact">Contact</a>
+
+    <!-- Logo centré -->
+    <div class="footer__brand">
+      <a href="#top" aria-label="Retour en haut">
+        <img src="public/logos/logo-01.png" alt="Les Iguanes" class="footer__logo" />
+      </a>
+      <p class="footer__tagline">Flag football mixte · Schœlcher, Martinique</p>
+    </div>
+
+    <!-- Nav + social -->
+    <div class="footer__mid">
+      <nav class="footer__nav" aria-label="Navigation secondaire">
+        <a href="#club">Le club</a>
+        <a href="#calendrier">Calendrier</a>
+        <a href="#resultats">Résultats</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#rejoindre">Rejoindre</a>
+        <a href="#contact">Contact</a>
       </nav>
+      <div class="footer__social">
+        <a class="footer__social-link" href="https://www.instagram.com/iguanes_footus_972/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a class="footer__social-link" href="https://whatsapp.com/channel/0029Vb8N8n230LKLoF0cRj2o" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
+      </div>
     </div>
-    <div class="footer__social">
-      <a class="footer__social-link" href="https://www.instagram.com/iguanes_footus_972/" target="_blank" rel="noopener" aria-label="Instagram des Iguanes">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
-        <span>@iguanes_footus_972</span>
-      </a>
-      <a class="footer__social-link" href="https://whatsapp.com/channel/0029Vb8N8n230LKLoF0cRj2o" target="_blank" rel="noopener" aria-label="Chaîne WhatsApp des Iguanes">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-        <span>Chaîne WhatsApp</span>
-      </a>
-    </div>
+
+    <!-- Copyright -->
     <div class="footer__bot">
-      <span>© 2026 Les Iguanes · AMFA — Schœlcher, Martinique (972)</span>
-      <span>Club de flag football mixte · ANSANM' · <a href="mentions-legales.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Mentions légales</a> · <a href="https://nox.scionx.io" class="nox-credit" data-text="🦎 Designed by Nox">Made by Nox</a></span>
+      <span>© 2026 Les Iguanes · AMFA · ANSANM'</span>
+      <span><a href="mentions-legales.html">Mentions légales</a> · <a href="https://nox.scionx.io" class="nox-credit" data-text="🦎 Designed by Nox">Made by Nox</a></span>
     </div>
+
   </div>
 </footer>
 

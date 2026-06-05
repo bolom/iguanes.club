@@ -270,24 +270,66 @@
       trigger.addEventListener('click', function () { openLightbox(trigger); });
     });
 
-    // ---- Gallery tab filters ----
+    // ---- Gallery tab filters + show-more ----
+    var GALLERY_LIMIT = 8;
     var tabs = document.querySelectorAll('.gtab');
     var cells = document.querySelectorAll('.gallery-grid .gcell');
+    var showMoreBtn = document.getElementById('gallery-show-more');
+    var showMoreWrap = showMoreBtn ? showMoreBtn.closest('.gallery-more') : null;
+    var currentFilter = 'all';
+    var expanded = false;
+
+    function applyGallery() {
+      var visible = 0;
+      var total = 0;
+      cells.forEach(function (cell) {
+        var matches = currentFilter === 'all' || cell.getAttribute('data-tab') === currentFilter;
+        if (!matches) { cell.style.display = 'none'; return; }
+        total++;
+        if (expanded || visible < GALLERY_LIMIT) {
+          cell.style.display = '';
+          visible++;
+        } else {
+          cell.style.display = 'none';
+        }
+      });
+      if (showMoreBtn) {
+        var hidden = total - visible;
+        if (hidden > 0) {
+          showMoreBtn.setAttribute('aria-expanded', 'false');
+          showMoreBtn.querySelector('.gallery-more__label').textContent = 'Voir toutes les photos';
+          showMoreBtn.querySelector('.gallery-more__count').textContent = '+' + hidden;
+          if (showMoreWrap) showMoreWrap.style.display = '';
+        } else if (expanded && total > GALLERY_LIMIT) {
+          showMoreBtn.setAttribute('aria-expanded', 'true');
+          showMoreBtn.querySelector('.gallery-more__label').textContent = 'Réduire';
+          showMoreBtn.querySelector('.gallery-more__count').textContent = '';
+          if (showMoreWrap) showMoreWrap.style.display = '';
+        } else {
+          if (showMoreWrap) showMoreWrap.style.display = 'none';
+        }
+      }
+    }
+
     tabs.forEach(function (tab) {
       tab.addEventListener('click', function () {
         tabs.forEach(function (t) { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
         tab.classList.add('active');
         tab.setAttribute('aria-selected', 'true');
-        var filter = tab.getAttribute('data-tab');
-        cells.forEach(function (cell) {
-          if (filter === 'all' || cell.getAttribute('data-tab') === filter) {
-            cell.style.display = '';
-          } else {
-            cell.style.display = 'none';
-          }
-        });
+        currentFilter = tab.getAttribute('data-tab');
+        expanded = false;
+        applyGallery();
       });
     });
+
+    if (showMoreBtn) {
+      showMoreBtn.addEventListener('click', function () {
+        expanded = !expanded;
+        applyGallery();
+      });
+    }
+
+    applyGallery();
 
     // ---- Roster history accordéon ----
     document.querySelectorAll('.rh-season__toggle').forEach(function (btn) {
@@ -375,4 +417,138 @@
         btn.disabled = false;
       });
   });
+})();
+
+/* =================== HERO SPARKS =================== */
+(function () {
+  var canvas = document.getElementById('heroSparks');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+
+  // Réduit sur mobile pour les perfs
+  var isMobile = window.innerWidth < 620;
+  var MAX = isMobile ? 60 : 120;
+  var particles = [];
+
+  function resize() {
+    canvas.width  = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  // Zone 1 : titre IGUANES (bas)
+  function emitTitle() {
+    var w = canvas.width, h = canvas.height;
+    return {
+      x: w * 0.05 + Math.random() * w * 0.6,
+      y: h * 0.55 + Math.random() * h * 0.18
+    };
+  }
+
+  // Zone 2 : cheveux + explosion épaules du joueur (haut centre-gauche)
+  function emitPlayer() {
+    var w = canvas.width, h = canvas.height;
+    // cheveux : ~30-55% x, 5-22% y
+    // épaules : ~25-60% x, 25-42% y
+    var zone = Math.random() < 0.55 ? 'hair' : 'shoulder';
+    if (zone === 'hair') {
+      return { x: w * 0.28 + Math.random() * w * 0.28, y: h * 0.05 + Math.random() * h * 0.17 };
+    } else {
+      return { x: w * 0.22 + Math.random() * w * 0.38, y: h * 0.26 + Math.random() * h * 0.16 };
+    }
+  }
+
+  function spawn() {
+    var isPlayer = Math.random() < 0.45;
+    var p = isPlayer ? emitPlayer() : emitTitle();
+
+    var angle, speed, size, decay;
+    if (isPlayer) {
+      // Particules légères qui s'envolent vers la droite (effet explosion eau)
+      angle = -Math.PI * 0.6 + Math.random() * Math.PI * 0.9;
+      speed = 0.3 + Math.random() * 1.2;
+      size  = 0.6 + Math.random() * 1.6;
+      decay = 0.012 + Math.random() * 0.02;
+    } else {
+      // Étincelles titre — plus visibles, montées
+      angle = -Math.PI * 0.5 + (Math.random() - 0.5) * Math.PI * 1.2;
+      speed = 0.4 + Math.random() * 1.6;
+      size  = 1 + Math.random() * 2.5;
+      decay = 0.008 + Math.random() * 0.014;
+    }
+
+    particles.push({
+      x: p.x, y: p.y,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed - (isPlayer ? 0.3 : 0.5),
+      life: 1,
+      decay: decay,
+      size: size,
+      isPlayer: isPlayer,
+      trail: []
+    });
+  }
+
+  var COLORS_TITLE  = ['#9bff00', '#c2ff55', '#ffffff', '#d4ff88'];
+  var COLORS_PLAYER = ['#aaddff', '#ffffff', '#88ccff', '#ccf0ff', '#9bff00'];
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Spawn progressif
+    if (particles.length < MAX && Math.random() < 0.35) spawn();
+
+    for (var i = particles.length - 1; i >= 0; i--) {
+      var p = particles[i];
+
+      // Physique
+      p.trail.push({ x: p.x, y: p.y });
+      if (p.trail.length > 5) p.trail.shift();
+      p.x  += p.vx;
+      p.y  += p.vy;
+      p.vy += 0.015; // légère gravité
+      p.vx *= 0.995;
+      p.life -= p.decay;
+
+      if (p.life <= 0) { particles.splice(i, 1); continue; }
+
+      var palette = p.isPlayer ? COLORS_PLAYER : COLORS_TITLE;
+      var col = palette[Math.floor(Math.random() * palette.length)];
+      var alpha = p.life * (p.isPlayer ? 0.7 : 0.85);
+      var glowColor = p.isPlayer ? '#88ccff' : '#9bff00';
+
+      // Trail
+      if (p.trail.length > 1) {
+        ctx.beginPath();
+        ctx.moveTo(p.trail[0].x, p.trail[0].y);
+        for (var t = 1; t < p.trail.length; t++) {
+          ctx.lineTo(p.trail[t].x, p.trail[t].y);
+        }
+        ctx.strokeStyle = p.isPlayer
+          ? 'rgba(150,210,255,' + (alpha * 0.2) + ')'
+          : 'rgba(155,255,0,' + (alpha * 0.25) + ')';
+        ctx.lineWidth = p.size * 0.5;
+        ctx.stroke();
+      }
+
+      // Point + glow
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size * p.life, 0, Math.PI * 2);
+      ctx.shadowBlur = p.isPlayer ? 6 : 8;
+      ctx.shadowColor = glowColor;
+      if (p.isPlayer) {
+        ctx.fillStyle = 'rgba(180,220,255,' + alpha + ')';
+      } else {
+        ctx.fillStyle = 'rgba(155,255,0,' + alpha + ')';
+      }
+      ctx.fill();
+      ctx.shadowBlur = 0;
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  // Démarre après le chargement de la page
+  setTimeout(draw, 300);
 })();
