@@ -502,29 +502,33 @@ html.shown .hero h1 .w i { animation: none !important; transform: none !importan
 .note { color: var(--faint); font-size: 0.82rem; letter-spacing: 0.04em; margin-top: 36px; }
 
 /* =================== HISTORIQUE EFFECTIFS =================== */
-.roster-history { margin-top: clamp(72px, 12vw, 120px); }
-.rh-head { margin-bottom: clamp(32px, 6vw, 56px); }
-.rh-title { font-family: var(--font-display); font-weight: 900; text-transform: uppercase; font-size: clamp(1.8rem, 6vw, 2.8rem); letter-spacing: -0.02em; }
-.rh-sub { color: var(--muted); font-size: 0.88rem; letter-spacing: 0.03em; margin-top: 12px; }
-/* Onglets */
-.rh-tabs { display: flex; gap: 0; margin-bottom: 0; border-bottom: 1px solid var(--line); }
-.rh-tab { background: transparent; border: 0; border-bottom: 2px solid transparent; color: var(--muted); margin-bottom: -1px; padding: 16px 24px 16px 0; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; transition: color .25s, border-color .25s; }
-.rh-tab:hover { color: var(--text); }
-.rh-tab.active { color: var(--text); border-bottom-color: var(--text); }
-/* Titre de saison — masqué sur mobile */
-.rh-season__title { display: none; }
-.rh-list { list-style: none; margin: 0; padding: 0; }
-.rh-list li { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line); }
-.rh-list li:first-child { border-top: 1px solid var(--line); }
-.rh-name { font-weight: 600; color: var(--text); font-size: 1rem; letter-spacing: 0.01em; }
-.rh-pos { color: var(--muted); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; }
-/* Desktop : onglets masqués, 3 saisons côte à côte */
+.roster-history { margin-bottom: clamp(48px, 8vw, 80px); padding-bottom: clamp(48px, 8vw, 80px); border-bottom: 1px solid var(--line); }
+.rh-head { display: flex; align-items: baseline; gap: 20px; margin-bottom: clamp(28px, 5vw, 48px); flex-wrap: wrap; }
+.rh-eyebrow { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+.rh-title { font-family: var(--font-display); font-weight: 900; text-transform: uppercase; font-size: clamp(2rem, 7vw, 3.2rem); letter-spacing: -0.03em; line-height: 1; }
+/* Accordéon saison */
+.rh-season { border-top: 1px solid var(--line); }
+.rh-season:last-child { border-bottom: 1px solid var(--line); }
+.rh-season__toggle { width: 100%; background: transparent; border: 0; display: flex; align-items: center; gap: 16px; padding: 20px 0; cursor: pointer; text-align: left; }
+.rh-season__year { font-family: var(--font-display); font-weight: 900; text-transform: uppercase; font-size: 1.15rem; letter-spacing: -0.01em; color: var(--text); flex: 0 0 auto; }
+.rh-season__year em { font-style: normal; color: var(--muted); }
+.rh-season__count { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); flex: 1; }
+.rh-season__chevron { width: 12px; height: 12px; border-right: 1.5px solid var(--muted); border-bottom: 1.5px solid var(--muted); transform: rotate(45deg); flex-shrink: 0; transition: transform .25s; margin-top: -4px; }
+.rh-season__toggle[aria-expanded="true"] .rh-season__chevron { transform: rotate(-135deg); margin-top: 4px; }
+.rh-season__body { padding-bottom: 24px; }
+.rh-season__body[hidden] { display: none; }
+.rh-names { color: var(--muted); font-size: 0.9rem; line-height: 1.8; letter-spacing: 0.02em; }
+/* Desktop : accordéon → 3 colonnes fixes */
 @media (min-width: 700px) {
-  .rh-tabs { display: none; }
-  .rh-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(32px, 4vw, 64px); }
-  .rh-season[hidden] { display: block; }
-  .rh-season__title { display: block; font-family: var(--font-display); font-weight: 900; text-transform: uppercase; font-size: 1.4rem; letter-spacing: -0.02em; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--line); color: var(--text); }
-  .rh-season__title span { color: var(--muted); }
+  .rh-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(32px, 4vw, 64px); }
+  .rh-season { border-top: 0; border-bottom: 0; border-left: 1px solid var(--line); padding-left: clamp(20px, 2.5vw, 36px); }
+  .rh-season:first-child { border-left: 0; padding-left: 0; }
+  .rh-season:last-child { border-bottom: 0; }
+  .rh-season__toggle { pointer-events: none; padding: 0 0 20px 0; }
+  .rh-season__chevron { display: none; }
+  .rh-season__body, .rh-season__body[hidden] { display: block; padding-bottom: 0; }
+  .rh-season__count { display: none; }
+  .rh-season__year { font-size: 1rem; }
 }
 
 /* =================== CALENDAR =================== */
