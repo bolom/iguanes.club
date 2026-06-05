@@ -502,27 +502,28 @@ html.shown .hero h1 .w i { animation: none !important; transform: none !importan
 .note { color: var(--faint); font-size: 0.82rem; letter-spacing: 0.04em; margin-top: 36px; }
 
 /* =================== HISTORIQUE EFFECTIFS =================== */
-.roster-history { margin-top: clamp(56px, 8vw, 96px); }
-.rh-head { margin-bottom: clamp(24px, 4vw, 36px); }
-.rh-title { font-family: var(--font-display); font-weight: 900; text-transform: uppercase; font-size: clamp(1.6rem, 5vw, 2.4rem); letter-spacing: -0.01em; }
-.rh-sub { color: var(--muted); font-size: 0.92rem; margin-top: 8px; }
-/* Onglets — réutilise le langage visuel des .gtab */
-.rh-tabs { display: flex; flex-wrap: wrap; gap: 0; margin-bottom: 28px; border-bottom: 1px solid var(--line); }
-.rh-tab { background: transparent; border: 0; border-bottom: 1px solid transparent; color: var(--muted); margin-bottom: -1px; padding: 12px 18px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; transition: color .3s, border-color .3s; }
+.roster-history { margin-top: clamp(72px, 12vw, 120px); }
+.rh-head { margin-bottom: clamp(32px, 6vw, 56px); }
+.rh-title { font-family: var(--font-display); font-weight: 900; text-transform: uppercase; font-size: clamp(1.8rem, 6vw, 2.8rem); letter-spacing: -0.02em; }
+.rh-sub { color: var(--muted); font-size: 0.88rem; letter-spacing: 0.03em; margin-top: 12px; }
+/* Onglets */
+.rh-tabs { display: flex; gap: 0; margin-bottom: 0; border-bottom: 1px solid var(--line); }
+.rh-tab { background: transparent; border: 0; border-bottom: 2px solid transparent; color: var(--muted); margin-bottom: -1px; padding: 16px 24px 16px 0; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; transition: color .25s, border-color .25s; }
 .rh-tab:hover { color: var(--text); }
 .rh-tab.active { color: var(--text); border-bottom-color: var(--text); }
-/* Titre de saison — masqué sur mobile (l'onglet l'indique déjà) */
+/* Titre de saison — masqué sur mobile */
 .rh-season__title { display: none; }
-.rh-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
-.rh-list li { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--line); }
-.rh-name { font-weight: 700; color: var(--text); font-size: 0.98rem; }
-.rh-pos { color: var(--muted); font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+.rh-list { list-style: none; margin: 0; padding: 0; }
+.rh-list li { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.rh-list li:first-child { border-top: 1px solid var(--line); }
+.rh-name { font-weight: 600; color: var(--text); font-size: 1rem; letter-spacing: 0.01em; }
+.rh-pos { color: var(--muted); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; }
 /* Desktop : onglets masqués, 3 saisons côte à côte */
 @media (min-width: 700px) {
   .rh-tabs { display: none; }
-  .rh-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(24px, 3vw, 48px); }
-  .rh-season[hidden] { display: block; } /* override l'attribut hidden sur desktop */
-  .rh-season__title { display: block; font-family: var(--font-display); font-weight: 900; text-transform: uppercase; font-size: 1.5rem; letter-spacing: -0.01em; margin-bottom: 16px; color: var(--text); }
+  .rh-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(32px, 4vw, 64px); }
+  .rh-season[hidden] { display: block; }
+  .rh-season__title { display: block; font-family: var(--font-display); font-weight: 900; text-transform: uppercase; font-size: 1.4rem; letter-spacing: -0.02em; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--line); color: var(--text); }
   .rh-season__title span { color: var(--muted); }
 }
 
