@@ -35,13 +35,52 @@
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  // ---- Burger ----
+  // ---- Drawer mobile ----
   var burger = document.getElementById('burger');
-  if (burger) {
-    burger.addEventListener('click', function () { nav.classList.toggle('open'); });
-    nav.querySelectorAll('.nav__links a').forEach(function (a) {
-      a.addEventListener('click', function () { nav.classList.remove('open'); });
-    });
+  var drawer = document.getElementById('nav-drawer');
+  var drawerOverlay = document.getElementById('drawer-overlay');
+  var drawerClose = document.getElementById('drawer-close');
+  var drawerLinks = drawer ? drawer.querySelectorAll('.drawer__link') : [];
+
+  function openDrawer() {
+    drawer.classList.add('open');
+    drawer.setAttribute('aria-hidden', 'false');
+    burger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    if (drawerClose) drawerClose.focus();
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    burger.focus();
+  }
+
+  if (burger) burger.addEventListener('click', openDrawer);
+  if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
+  if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
+  drawerLinks.forEach(function (link) { link.addEventListener('click', closeDrawer); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && drawer && drawer.classList.contains('open')) closeDrawer();
+  });
+
+  // ---- Section active dans la nav ----
+  var allSections = document.querySelectorAll('section[id]');
+  var allNavLinks = document.querySelectorAll('.nav__links a, .drawer__link');
+  if ('IntersectionObserver' in window) {
+    var sectionObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var id = entry.target.id;
+          allNavLinks.forEach(function (link) {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+    allSections.forEach(function (s) { sectionObserver.observe(s); });
   }
 
   // ---- Stat counters ----
