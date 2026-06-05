@@ -573,7 +573,22 @@ html.shown .hero h1 .w i { animation: none !important; transform: none !importan
 /* =================== ROSTER =================== */
 .head { margin-bottom: clamp(34px, 5vw, 58px); }
 .head .title { margin-top: 4px; }
-.roster { display: grid; grid-template-columns: 1fr; gap: clamp(10px, 1.4vw, 16px); }
+
+/* Scroll-snap mobile — désactivé sur tablet+ */
+.roster-scroll-wrap {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  margin-inline: calc(-1 * var(--pad));
+  padding-inline: var(--pad);
+  -webkit-mask-image: linear-gradient(to right, transparent 0, black var(--pad), black calc(100% - var(--pad)), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, black var(--pad), black calc(100% - var(--pad)), transparent 100%);
+}
+.roster-scroll-wrap::-webkit-scrollbar { display: none; }
+
+.roster { display: flex; flex-wrap: nowrap; gap: 12px; width: max-content; }
+.pl { flex: 0 0 72vw; max-width: 300px; scroll-snap-align: start; }
 .pl { position: relative; }
 .pl__img { position: relative; border-radius: 2px; overflow: hidden; }
 .pl__img--placeholder { aspect-ratio: 3/4; background: repeating-linear-gradient(135deg, rgba(244,242,236,0.03) 0px, rgba(244,242,236,0.03) 1px, transparent 1px, transparent 12px); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; }
@@ -919,7 +934,16 @@ body.lightbox-open { overflow: hidden; }
   .history__gallery { grid-template-columns: repeat(2, 1fr); }
   .history__card--tall { min-height: 260px; }
 
-  .roster { grid-template-columns: repeat(3, 1fr); }
+  /* Désactiver le scroll-snap sur tablet+ */
+  .roster-scroll-wrap {
+    overflow-x: visible;
+    -webkit-mask-image: none;
+    mask-image: none;
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+  .roster { display: grid; grid-template-columns: repeat(3, 1fr); width: auto; }
+  .pl { flex: none; max-width: none; }
 
   .grid-g { grid-template-columns: repeat(3, 1fr); }
   .g-wide, .g-tall { grid-column: auto; grid-row: auto; }
