@@ -709,10 +709,29 @@ html.shown .hero h1 .w i { animation: none !important; transform: none !importan
 .pl__img--placeholder {
   position: absolute;
   inset: 0;
-  background: #ccc8be;
+  background: #1a1a18;
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(244,242,236,0.03) 0px, rgba(244,242,236,0.03) 1px,
+    transparent 1px, transparent 14px
+  );
   display: flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(244,242,236,0.08);
 }
-.pl__img--placeholder svg { width: 40%; height: 40%; color: #999; }
+.pl__initial {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(4rem, 16vw, 6rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  background: var(--gold-metal);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  opacity: 0.7;
+  user-select: none;
+}
 .pl__img img {
   position: absolute;
   inset: 0;
