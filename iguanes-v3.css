@@ -674,7 +674,19 @@ html.shown .hero h1 .w i { animation: none !important; transform: none !importan
 /* =================== GALLERY =================== */
 .gallery-head { display: grid; gap: 18px; }
 .gallery-head__note { max-width: 34ch; color: var(--muted); font-size: 0.96rem; line-height: 1.6; }
-.gallery-tabs { display: flex; flex-wrap: wrap; gap: 0; margin-bottom: 36px; border-bottom: 1px solid var(--line); }
+.gallery-tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0;
+  margin-bottom: 36px;
+  border-bottom: 1px solid var(--line);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  -webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
+  mask-image: linear-gradient(to right, black 80%, transparent 100%);
+}
+.gallery-tabs::-webkit-scrollbar { display: none; }
 .gtab { background: transparent; border: 0; border-bottom: 1px solid transparent; color: var(--muted); margin-bottom: -1px; padding: 12px 20px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; transition: color .3s, border-color .3s; }
 .gtab:hover { color: var(--text); }
 .gtab.active { color: var(--text); border-bottom-color: var(--text); }
@@ -948,6 +960,12 @@ body.lightbox-open { overflow: hidden; }
   .grid-g { grid-template-columns: repeat(3, 1fr); }
   .g-wide, .g-tall { grid-column: auto; grid-row: auto; }
 
+  .gallery-tabs {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
   .gallery-head { display: flex; align-items: end; justify-content: space-between; gap: 28px; }
 
   .history__proof { grid-template-columns: repeat(3, 1fr); }

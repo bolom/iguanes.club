@@ -311,6 +311,23 @@
   }
 })();
 
+// ── Labels courts galerie sur mobile ──────────────────────────────────────────
+(function () {
+  function syncGalleryTabLabels() {
+    var tabs = document.querySelectorAll('.gtab[data-short]');
+    var isMobile = window.innerWidth < 620;
+    tabs.forEach(function (tab) {
+      tab.textContent = isMobile ? tab.dataset.short : tab.dataset.long;
+    });
+  }
+  syncGalleryTabLabels();
+  var resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(syncGalleryTabLabels, 150);
+  });
+})();
+
 // Contact form — Cloudflare Worker + Resend
 (function () {
   var WORKER_URL = 'https://api.iguanes.club/contact';
