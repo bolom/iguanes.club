@@ -35,32 +35,30 @@
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  // ---- Drawer mobile ----
+  // ---- Drawer plein écran mobile ----
   var burger = document.getElementById('burger');
   var drawer = document.getElementById('nav-drawer');
-  var drawerOverlay = document.getElementById('drawer-overlay');
-  var drawerClose = document.getElementById('drawer-close');
   var drawerLinks = drawer ? drawer.querySelectorAll('.drawer__link') : [];
 
   function openDrawer() {
     drawer.classList.add('open');
+    burger.classList.add('open');
     drawer.setAttribute('aria-hidden', 'false');
     burger.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
-    if (drawerClose) drawerClose.focus();
   }
 
   function closeDrawer() {
     drawer.classList.remove('open');
+    burger.classList.remove('open');
     drawer.setAttribute('aria-hidden', 'true');
     burger.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
-    burger.focus();
   }
 
-  if (burger) burger.addEventListener('click', openDrawer);
-  if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
-  if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
+  if (burger) burger.addEventListener('click', function () {
+    drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+  });
   drawerLinks.forEach(function (link) { link.addEventListener('click', closeDrawer); });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && drawer && drawer.classList.contains('open')) closeDrawer();
