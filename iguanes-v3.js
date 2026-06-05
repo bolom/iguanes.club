@@ -252,6 +252,21 @@
       });
     });
 
+    // ---- Roster history season tabs ----
+    var rhTabs = document.querySelectorAll('.rh-tab');
+    var rhSeasons = document.querySelectorAll('.rh-season');
+    rhTabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var season = tab.getAttribute('data-season');
+        rhTabs.forEach(function (t) { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        rhSeasons.forEach(function (sec) {
+          sec.hidden = sec.getAttribute('data-season') !== season;
+        });
+      });
+    });
+
     lightbox.querySelectorAll('[data-lightbox-close]').forEach(function (node) {
       node.addEventListener('click', closeLightbox);
     });
