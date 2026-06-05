@@ -930,6 +930,25 @@ body.lightbox-open { overflow: hidden; }
 .footer__nav { display: flex; gap: 28px; flex-wrap: wrap; }
 .footer__nav a { color: var(--muted); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; transition: color .3s; }
 .footer__nav a:hover { color: var(--text); }
+.footer__social {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+.footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  transition: color 0.2s;
+}
+.footer__social-link:hover { color: var(--text); }
+.footer__social-link svg { width: 18px; height: 18px; flex-shrink: 0; }
 .footer__bot { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding-top: 26px; color: var(--faint); font-size: 0.74rem; letter-spacing: 0.04em; }
 
 /* =================== RESPONSIVE — mobile-first =================== */
